@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
+		C998034E22FAFE5F008E6A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* ViewController.swift */; };
+		C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998034F22FAFE5F008E6A28 /* Main.storyboard */; };
+		C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C998035222FAFE5F008E6A28 /* BillCutter.xcdatamodeld */; };
+		C998035622FAFE61008E6A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C998035522FAFE61008E6A28 /* Assets.xcassets */; };
+		C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */; };
+		C998036422FAFE62008E6A28 /* BillCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036322FAFE62008E6A28 /* BillCutterTests.swift */; };
+		C998036F22FAFE62008E6A28 /* BillCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C998036022FAFE62008E6A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C998034022FAFE5F008E6A28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C998034722FAFE5F008E6A28;
+			remoteInfo = BillCutter;
+		};
+		C998036B22FAFE62008E6A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C998034022FAFE5F008E6A28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C998034722FAFE5F008E6A28;
+			remoteInfo = BillCutter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C998034D22FAFE5F008E6A28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C998035022FAFE5F008E6A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C998035322FAFE5F008E6A28 /* BillCutter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillCutter.xcdatamodel; sourceTree = "<group>"; };
+		C998035522FAFE61008E6A28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C998035822FAFE61008E6A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C998035A22FAFE61008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C998035F22FAFE62008E6A28 /* BillCutterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillCutterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C998036322FAFE62008E6A28 /* BillCutterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCutterTests.swift; sourceTree = "<group>"; };
+		C998036522FAFE62008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C998036A22FAFE62008E6A28 /* BillCutterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillCutterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCutterUITests.swift; sourceTree = "<group>"; };
+		C998037022FAFE62008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C998037C22FAFF11008E6A28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C998034522FAFE5F008E6A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998035C22FAFE62008E6A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998036722FAFE62008E6A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C998033F22FAFE5F008E6A28 = {
+			isa = PBXGroup;
+			children = (
+				C998037C22FAFF11008E6A28 /* README.md */,
+				C998034A22FAFE5F008E6A28 /* BillCutter */,
+				C998036222FAFE62008E6A28 /* BillCutterTests */,
+				C998036D22FAFE62008E6A28 /* BillCutterUITests */,
+				C998034922FAFE5F008E6A28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C998034922FAFE5F008E6A28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C998034822FAFE5F008E6A28 /* BillCutter.app */,
+				C998035F22FAFE62008E6A28 /* BillCutterTests.xctest */,
+				C998036A22FAFE62008E6A28 /* BillCutterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
+			isa = PBXGroup;
+			children = (
+				C998034B22FAFE5F008E6A28 /* AppDelegate.swift */,
+				C998034D22FAFE5F008E6A28 /* ViewController.swift */,
+				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
+				C998035522FAFE61008E6A28 /* Assets.xcassets */,
+				C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */,
+				C998035A22FAFE61008E6A28 /* Info.plist */,
+				C998035222FAFE5F008E6A28 /* BillCutter.xcdatamodeld */,
+			);
+			path = BillCutter;
+			sourceTree = "<group>";
+		};
+		C998036222FAFE62008E6A28 /* BillCutterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C998036322FAFE62008E6A28 /* BillCutterTests.swift */,
+				C998036522FAFE62008E6A28 /* Info.plist */,
+			);
+			path = BillCutterTests;
+			sourceTree = "<group>";
+		};
+		C998036D22FAFE62008E6A28 /* BillCutterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */,
+				C998037022FAFE62008E6A28 /* Info.plist */,
+			);
+			path = BillCutterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C998034722FAFE5F008E6A28 /* BillCutter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C998037322FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutter" */;
+			buildPhases = (
+				C998034422FAFE5F008E6A28 /* Sources */,
+				C998034522FAFE5F008E6A28 /* Frameworks */,
+				C998034622FAFE5F008E6A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BillCutter;
+			productName = BillCutter;
+			productReference = C998034822FAFE5F008E6A28 /* BillCutter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C998035E22FAFE62008E6A28 /* BillCutterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C998037622FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterTests" */;
+			buildPhases = (
+				C998035B22FAFE62008E6A28 /* Sources */,
+				C998035C22FAFE62008E6A28 /* Frameworks */,
+				C998035D22FAFE62008E6A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C998036122FAFE62008E6A28 /* PBXTargetDependency */,
+			);
+			name = BillCutterTests;
+			productName = BillCutterTests;
+			productReference = C998035F22FAFE62008E6A28 /* BillCutterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C998036922FAFE62008E6A28 /* BillCutterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C998037922FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterUITests" */;
+			buildPhases = (
+				C998036622FAFE62008E6A28 /* Sources */,
+				C998036722FAFE62008E6A28 /* Frameworks */,
+				C998036822FAFE62008E6A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C998036C22FAFE62008E6A28 /* PBXTargetDependency */,
+			);
+			name = BillCutterUITests;
+			productName = BillCutterUITests;
+			productReference = C998036A22FAFE62008E6A28 /* BillCutterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C998034022FAFE5F008E6A28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Heru Prasetia";
+				TargetAttributes = {
+					C998034722FAFE5F008E6A28 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					C998035E22FAFE62008E6A28 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C998034722FAFE5F008E6A28;
+					};
+					C998036922FAFE62008E6A28 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C998034722FAFE5F008E6A28;
+					};
+				};
+			};
+			buildConfigurationList = C998034322FAFE5F008E6A28 /* Build configuration list for PBXProject "BillCutter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C998033F22FAFE5F008E6A28;
+			productRefGroup = C998034922FAFE5F008E6A28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C998034722FAFE5F008E6A28 /* BillCutter */,
+				C998035E22FAFE62008E6A28 /* BillCutterTests */,
+				C998036922FAFE62008E6A28 /* BillCutterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C998034622FAFE5F008E6A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */,
+				C998035622FAFE61008E6A28 /* Assets.xcassets in Resources */,
+				C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998035D22FAFE62008E6A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998036822FAFE62008E6A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C998034422FAFE5F008E6A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C998034E22FAFE5F008E6A28 /* ViewController.swift in Sources */,
+				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
+				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998035B22FAFE62008E6A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C998036422FAFE62008E6A28 /* BillCutterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C998036622FAFE62008E6A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C998036F22FAFE62008E6A28 /* BillCutterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C998036122FAFE62008E6A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C998034722FAFE5F008E6A28 /* BillCutter */;
+			targetProxy = C998036022FAFE62008E6A28 /* PBXContainerItemProxy */;
+		};
+		C998036C22FAFE62008E6A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C998034722FAFE5F008E6A28 /* BillCutter */;
+			targetProxy = C998036B22FAFE62008E6A28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C998034F22FAFE5F008E6A28 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C998035022FAFE5F008E6A28 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C998035822FAFE61008E6A28 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C998037122FAFE62008E6A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C998037222FAFE62008E6A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C998037422FAFE62008E6A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C998037522FAFE62008E6A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C998037722FAFE62008E6A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BillCutter.app/BillCutter";
+			};
+			name = Debug;
+		};
+		C998037822FAFE62008E6A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BillCutter.app/BillCutter";
+			};
+			name = Release;
+		};
+		C998037A22FAFE62008E6A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BillCutter;
+			};
+			name = Debug;
+		};
+		C998037B22FAFE62008E6A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BillCutterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeroseventwo.BillCutterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BillCutter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C998034322FAFE5F008E6A28 /* Build configuration list for PBXProject "BillCutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C998037122FAFE62008E6A28 /* Debug */,
+				C998037222FAFE62008E6A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C998037322FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C998037422FAFE62008E6A28 /* Debug */,
+				C998037522FAFE62008E6A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C998037622FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C998037722FAFE62008E6A28 /* Debug */,
+				C998037822FAFE62008E6A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C998037922FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C998037A22FAFE62008E6A28 /* Debug */,
+				C998037B22FAFE62008E6A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C998035222FAFE5F008E6A28 /* BillCutter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C998035322FAFE5F008E6A28 /* BillCutter.xcdatamodel */,
+			);
+			currentVersion = C998035322FAFE5F008E6A28 /* BillCutter.xcdatamodel */;
+			path = BillCutter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C998034022FAFE5F008E6A28 /* Project object */;
+}
