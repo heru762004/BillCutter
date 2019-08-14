@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
 		C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* LoginViewController.swift */; };
@@ -16,6 +17,8 @@
 		C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */; };
 		C998036422FAFE62008E6A28 /* BillCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036322FAFE62008E6A28 /* BillCutterTests.swift */; };
 		C998036F22FAFE62008E6A28 /* BillCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */; };
+		D23B23AB10CE2904B54E837B /* Pods_BillCutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */; };
+		FF7C71DD0E427AEED174BB35 /* Pods_BillCutterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.debug.xcconfig"; sourceTree = "<group>"; };
+		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
+		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +62,8 @@
 		C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCutterUITests.swift; sourceTree = "<group>"; };
 		C998037022FAFE62008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C998037C22FAFF11008E6A28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D4F6824FB9082730B375305C /* Pods-BillCutterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.release.xcconfig"; sourceTree = "<group>"; };
+		F2170B3DCF8FB1596BAB4B6D /* Pods-BillCutterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23B23AB10CE2904B54E837B /* Pods_BillCutter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7C71DD0E427AEED174BB35 /* Pods_BillCutterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +87,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085A3D23A61BE1CA653BF239 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */,
+				BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */,
+				C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */,
+				D4F6824FB9082730B375305C /* Pods-BillCutterTests.release.xcconfig */,
+				C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */,
+				F2170B3DCF8FB1596BAB4B6D /* Pods-BillCutterUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		46A25E56B937754147C0D6E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */,
+				2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */,
+				0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C998033F22FAFE5F008E6A28 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +125,8 @@
 				C998036222FAFE62008E6A28 /* BillCutterTests */,
 				C998036D22FAFE62008E6A28 /* BillCutterUITests */,
 				C998034922FAFE5F008E6A28 /* Products */,
+				085A3D23A61BE1CA653BF239 /* Pods */,
+				46A25E56B937754147C0D6E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C998037322FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutter" */;
 			buildPhases = (
+				FF4DC11DB3B98D11C1C313DB /* [CP] Check Pods Manifest.lock */,
 				C998034422FAFE5F008E6A28 /* Sources */,
 				C998034522FAFE5F008E6A28 /* Frameworks */,
 				C998034622FAFE5F008E6A28 /* Resources */,
+				E1E56AE537A5BE0004277712 /* [CP] Embed Pods Frameworks */,
+				4C48D1DCF244E9A93F275E36 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C998037622FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterTests" */;
 			buildPhases = (
+				EB96B87F6BA344A5FA25C1A5 /* [CP] Check Pods Manifest.lock */,
 				C998035B22FAFE62008E6A28 /* Sources */,
 				C998035C22FAFE62008E6A28 /* Frameworks */,
 				C998035D22FAFE62008E6A28 /* Resources */,
@@ -175,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C998037922FAFE62008E6A28 /* Build configuration list for PBXNativeTarget "BillCutterUITests" */;
 			buildPhases = (
+				B1E40978F2116415F7A1AC41 /* [CP] Check Pods Manifest.lock */,
 				C998036622FAFE62008E6A28 /* Sources */,
 				C998036722FAFE62008E6A28 /* Frameworks */,
 				C998036822FAFE62008E6A28 /* Resources */,
@@ -258,6 +303,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C48D1DCF244E9A93F275E36 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1E40978F2116415F7A1AC41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BillCutterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E56AE537A5BE0004277712 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB96B87F6BA344A5FA25C1A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BillCutterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF4DC11DB3B98D11C1C313DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BillCutter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C998034422FAFE5F008E6A28 /* Sources */ = {
@@ -440,6 +608,7 @@
 		};
 		C998037422FAFE62008E6A28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +627,7 @@
 		};
 		C998037522FAFE62008E6A28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +646,7 @@
 		};
 		C998037722FAFE62008E6A28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +667,7 @@
 		};
 		C998037822FAFE62008E6A28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4F6824FB9082730B375305C /* Pods-BillCutterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +688,7 @@
 		};
 		C998037A22FAFE62008E6A28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +708,7 @@
 		};
 		C998037B22FAFE62008E6A28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2170B3DCF8FB1596BAB4B6D /* Pods-BillCutterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

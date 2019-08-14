@@ -6,6 +6,9 @@ target 'BillCutter' do
   use_frameworks!
 
   # Pods for BillCutter
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
 
   target 'BillCutterTests' do
     inherit! :search_paths
