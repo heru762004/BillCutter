@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
-		C998034E22FAFE5F008E6A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* ViewController.swift */; };
+		C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* LoginViewController.swift */; };
 		C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998034F22FAFE5F008E6A28 /* Main.storyboard */; };
 		C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C998035222FAFE5F008E6A28 /* BillCutter.xcdatamodeld */; };
 		C998035622FAFE61008E6A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C998035522FAFE61008E6A28 /* Assets.xcassets */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C998034D22FAFE5F008E6A28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C998034D22FAFE5F008E6A28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C998035022FAFE5F008E6A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C998035322FAFE5F008E6A28 /* BillCutter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillCutter.xcdatamodel; sourceTree = "<group>"; };
 		C998035522FAFE61008E6A28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				C998034B22FAFE5F008E6A28 /* AppDelegate.swift */,
-				C998034D22FAFE5F008E6A28 /* ViewController.swift */,
+				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
+				C96F758E230407ED00988758 /* RegisterViewController.swift */,
 				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
 				C998035522FAFE61008E6A28 /* Assets.xcassets */,
 				C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */,
@@ -261,9 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C998034E22FAFE5F008E6A28 /* ViewController.swift in Sources */,
+				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
+				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YU75YNV6V;
 				INFOPLIST_FILE = BillCutter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2YU75YNV6V;
 				INFOPLIST_FILE = BillCutter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
