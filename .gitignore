@@ -372,3 +372,7 @@ Pods/Target Support Files/Protobuf/Protobuf-prefix.pch
 Pods/Target Support Files/Protobuf/Protobuf-umbrella.h
 Pods/Target Support Files/Protobuf/Protobuf.modulemap
 Pods/Target Support Files/Protobuf/Protobuf.xcconfig
+Podfile.lock
+Pods/Firebase/CoreOnly/Sources/Firebase.h
+Pods/Firebase/CoreOnly/Sources/module.modulemap
+Pods/Firebase/README.md
