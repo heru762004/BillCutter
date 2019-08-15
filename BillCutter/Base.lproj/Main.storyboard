@@ -521,7 +521,7 @@
         <!--Scan-->
         <scene sceneID="2yt-15-gpK">
             <objects>
-                <viewController id="Agh-it-xzv" sceneMemberID="viewController">
+                <viewController id="Agh-it-xzv" customClass="ScanViewController" customModule="BillCutter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4I-bb-pW9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeA-g4-d2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1868"/>
+            <point key="canvasLocation" x="0.0" y="1867.663043478261"/>
         </scene>
         <!--Notification-->
         <scene sceneID="ivF-by-K6z">

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>524276034359-lakam5h7792reinfacsd368j3eo31cgq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.524276034359-lakam5h7792reinfacsd368j3eo31cgq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDc6O8ZdBR-5MfzmHa25Yc3gq9IbD9eqDk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>524276034359</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zeroseventwo.BillCutter</string>
+	<key>PROJECT_ID</key>
+	<string>billcutter-072</string>
+	<key>STORAGE_BUCKET</key>
+	<string>billcutter-072.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:524276034359:ios:5aaaa0f73d256bb4</string>
+	<key>DATABASE_URL</key>
+	<string>https://billcutter-072.firebaseio.com</string>
+</dict>
+</plist>

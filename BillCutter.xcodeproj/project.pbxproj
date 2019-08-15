@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */; };
+		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
+		C92C233923058A4900B85772 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233823058A4900B85772 /* ScanViewController.swift */; };
+		C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */; };
+		C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
 		C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* LoginViewController.swift */; };
@@ -46,6 +50,10 @@
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C92C233623058A0000B85772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C92C233823058A4900B85772 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
+		C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledElementProcessor.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C92C233C230596D600B85772 /* ImageProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */,
+				C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */,
+			);
+			path = ImageProcessor;
+			sourceTree = "<group>";
+		};
 		C998033F22FAFE5F008E6A28 = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +160,12 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				C92C233C230596D600B85772 /* ImageProcessor */,
+				C92C233623058A0000B85772 /* GoogleService-Info.plist */,
 				C998034B22FAFE5F008E6A28 /* AppDelegate.swift */,
 				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
 				C96F758E230407ED00988758 /* RegisterViewController.swift */,
+				C92C233823058A4900B85772 /* ScanViewController.swift */,
 				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
 				C998035522FAFE61008E6A28 /* Assets.xcassets */,
 				C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */,
@@ -283,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */,
+				C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */,
 				C998035622FAFE61008E6A28 /* Assets.xcassets in Resources */,
 				C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */,
 			);
@@ -434,6 +455,9 @@
 			files = (
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
+				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
+				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,
+				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 			);
