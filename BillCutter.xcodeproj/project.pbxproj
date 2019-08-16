@@ -160,12 +160,10 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				C9B9431D2306E5F9004A704F /* ViewControllers */,
 				C92C233C230596D600B85772 /* ImageProcessor */,
 				C92C233623058A0000B85772 /* GoogleService-Info.plist */,
 				C998034B22FAFE5F008E6A28 /* AppDelegate.swift */,
-				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
-				C96F758E230407ED00988758 /* RegisterViewController.swift */,
-				C92C233823058A4900B85772 /* ScanViewController.swift */,
 				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
 				C998035522FAFE61008E6A28 /* Assets.xcassets */,
 				C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */,
@@ -191,6 +189,16 @@
 				C998037022FAFE62008E6A28 /* Info.plist */,
 			);
 			path = BillCutterUITests;
+			sourceTree = "<group>";
+		};
+		C9B9431D2306E5F9004A704F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
+				C96F758E230407ED00988758 /* RegisterViewController.swift */,
+				C92C233823058A4900B85772 /* ScanViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -24,12 +24,14 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         if isCameraCancelPressed == false {
-            if imagePicker == nil {
-                imagePicker =  UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = .camera
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                if imagePicker == nil {
+                    imagePicker =  UIImagePickerController()
+                    imagePicker.delegate = self
+                    imagePicker.sourceType = .camera
+                }
+                present(imagePicker, animated: true, completion: nil)
             }
-            present(imagePicker, animated: true, completion: nil)
         }
     }
     
