@@ -14,6 +14,8 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var imagePicker: UIImagePickerController!
     var processor: ScaledElementProcessor?
     
+    var items: [Item] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,6 +57,7 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     DispatchQueue.main.async{
                         self.dismiss(animated: true, completion: {
                             //self.showAlert(message: text)
+                            self.items = text
                             self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
                         })
                     }
@@ -110,14 +113,18 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             present(imagePicker, animated: true, completion: nil)
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "goToReceiptScanResult" {
+            if let detailReceipt = segue.destination as? DetailReceiptViewController {
+                detailReceipt.items = items
+            }
+        }
     }
-    */
 
 }
