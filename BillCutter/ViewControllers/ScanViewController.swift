@@ -36,36 +36,38 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        self.showLoading()
-        imageView.image = info[.originalImage] as? UIImage
-        if let img = imageView.image {
-            imageView.image = img.fixedOrientation()
-            if let img2 = imageView.image {
-                imageView.image = img2.scaledImage(1000) ?? img2
+        self.imageView.image = info[.originalImage] as? UIImage
+        self.imagePicker.dismiss(animated: true) {
+            self.showLoading()
+            guard let image = self.imageView.image else { return }
+            
+            DispatchQueue.global().async() {
+                
+                let img2 =  image.fixedOrientation()
+                let img3 = img2.scaledImage(3000) ?? img2
                 // add GPUImage processing to improve the detection
-                let preprocessedImage = imageView.image!.preprocessedImage() ?? imageView.image!
-                imageView.image = preprocessedImage
-            }
-        }
-        guard let image = imageView.image else { return }
-        DispatchQueue.global().async() {
-            if self.processor == nil {
-                self.processor = ScaledElementProcessor()
-            }
-            if self.processor != nil {
-                self.processor?.process(in: image) { text in
-                    DispatchQueue.main.async{
-                        self.dismiss(animated: true, completion: {
-                            //self.showAlert(message: text)
-                            self.items = text
-                            self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
-                        })
+                let preprocessedImage = img3.preprocessedImage() ?? img3
+                
+                DispatchQueue.main.async{
+                    self.imageView.image = preprocessedImage
+                }
+                
+                if self.processor == nil {
+                    self.processor = ScaledElementProcessor()
+                }
+                if self.processor != nil {
+                    self.processor?.process(in: preprocessedImage) { text in
+                        DispatchQueue.main.async{
+                            self.dismiss(animated: true, completion: {
+                                //self.showAlert(message: text)
+                                self.items = text
+                                self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
+                            })
+                        }
                     }
                 }
             }
         }
-        
-        
     }
     
     func showAlert(message: String) {
