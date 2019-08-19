@@ -9,6 +9,7 @@ target 'BillCutter' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
+  pod 'GPUImage'
 
   target 'BillCutterTests' do
     inherit! :search_paths

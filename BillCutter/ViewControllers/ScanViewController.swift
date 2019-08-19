@@ -10,10 +10,9 @@ import UIKit
 
 class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
     var imagePicker: UIImagePickerController!
-    var myImage: UIImage!
     var processor: ScaledElementProcessor?
-    var isCameraCancelPressed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,39 +22,30 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if isCameraCancelPressed == false {
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                if imagePicker == nil {
-                    imagePicker =  UIImagePickerController()
-                    imagePicker.delegate = self
-                    imagePicker.sourceType = .camera
-                }
-                present(imagePicker, animated: true, completion: nil)
-            }
-        }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        isCameraCancelPressed = false
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        isCameraCancelPressed = true
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        isCameraCancelPressed = true
         self.showLoading()
-        myImage = info[.originalImage] as? UIImage
-        if let img = myImage {
-            myImage = img.fixedOrientation()
-            if let img2 = myImage {
-                myImage = img2.scaledImage(1000) ?? img2
+        imageView.image = info[.originalImage] as? UIImage
+        if let img = imageView.image {
+            imageView.image = img.fixedOrientation()
+            if let img2 = imageView.image {
+                imageView.image = img2.scaledImage(1000) ?? img2
+                // add GPUImage processing to improve the detection
+                let preprocessedImage = imageView.image!.preprocessedImage() ?? imageView.image!
+                imageView.image = preprocessedImage
             }
         }
-        guard let image = myImage else { return }
+        guard let image = imageView.image else { return }
         DispatchQueue.global().async() {
             if self.processor == nil {
                 self.processor = ScaledElementProcessor()
@@ -64,7 +54,8 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.processor?.process(in: image) { text in
                     DispatchQueue.main.async{
                         self.dismiss(animated: true, completion: {
-                            self.showAlert(message: text)
+                            //self.showAlert(message: text)
+                            self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
                         })
                     }
                 }
@@ -97,6 +88,28 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func takePhoto(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            if imagePicker == nil {
+                imagePicker =  UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .camera
+            }
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func showLibrary(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            if imagePicker == nil {
+                imagePicker =  UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+            }
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

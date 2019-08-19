@@ -21,6 +21,10 @@
 		C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */; };
 		C998036422FAFE62008E6A28 /* BillCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036322FAFE62008E6A28 /* BillCutterTests.swift */; };
 		C998036F22FAFE62008E6A28 /* BillCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */; };
+		C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */; };
+		CD734CB8230A56F4007D4A6B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734CB7230A56F4007D4A6B /* Item.swift */; };
+		CD734CBA230A5729007D4A6B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734CB9230A5729007D4A6B /* Person.swift */; };
+		CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC2CC96230A7DFD00F533FD /* DetailReceiptViewController.swift */; };
 		D23B23AB10CE2904B54E837B /* Pods_BillCutter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */; };
 		FF7C71DD0E427AEED174BB35 /* Pods_BillCutterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +74,10 @@
 		C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCutterUITests.swift; sourceTree = "<group>"; };
 		C998037022FAFE62008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C998037C22FAFF11008E6A28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReceiptTableViewCell.swift; sourceTree = "<group>"; };
+		CD734CB7230A56F4007D4A6B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CD734CB9230A5729007D4A6B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		CDC2CC96230A7DFD00F533FD /* DetailReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReceiptViewController.swift; sourceTree = "<group>"; };
 		D4F6824FB9082730B375305C /* Pods-BillCutterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2170B3DCF8FB1596BAB4B6D /* Pods-BillCutterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +168,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				CD734CB6230A56D3007D4A6B /* Model */,
 				C9B9431D2306E5F9004A704F /* ViewControllers */,
 				C92C233C230596D600B85772 /* ImageProcessor */,
 				C92C233623058A0000B85772 /* GoogleService-Info.plist */,
@@ -197,8 +206,19 @@
 				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
 				C96F758E230407ED00988758 /* RegisterViewController.swift */,
 				C92C233823058A4900B85772 /* ScanViewController.swift */,
+				CDC2CC96230A7DFD00F533FD /* DetailReceiptViewController.swift */,
+				C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CD734CB6230A56D3007D4A6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD734CB7230A56F4007D4A6B /* Item.swift */,
+				CD734CB9230A5729007D4A6B /* Person.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,15 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
 			);
@@ -361,15 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BillCutterUITests-checkManifestLockResult.txt",
 			);
@@ -383,10 +395,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -395,9 +406,8 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -415,15 +425,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BillCutterTests-checkManifestLockResult.txt",
 			);
@@ -437,15 +443,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BillCutter-checkManifestLockResult.txt",
 			);
@@ -463,11 +465,15 @@
 			files = (
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
+				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
 				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,
+				CD734CB8230A56F4007D4A6B /* Item.swift in Sources */,
 				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
+				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
+				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

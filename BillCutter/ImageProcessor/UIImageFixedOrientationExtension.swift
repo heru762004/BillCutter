@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GPUImage
 
 extension UIImage {
     
@@ -77,5 +78,16 @@ extension UIImage {
         UIGraphicsEndImageContext()
         // 6
         return scaledImage
+    }
+    
+    func preprocessedImage() -> UIImage? {
+        // 1
+        let stillImageFilter = GPUImageAdaptiveThresholdFilter()
+        // 2
+        stillImageFilter.blurRadiusInPixels = 40.0
+        // 3
+        let filteredImage = stillImageFilter.image(byFilteringImage: self)
+        // 4
+        return filteredImage
     }
 }

@@ -1,26 +1,17 @@
 //
-//  RegisterViewController.swift
+//  DetailReceiptViewController.swift
 //  BillCutter
 //
-//  Created by Heru Prasetia on 14/8/19.
+//  Created by Heru Prasetia on 19/8/19.
 //  Copyright © 2019 Heru Prasetia. All rights reserved.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableReceipt: UITableView!
 
-    @IBOutlet weak var usernameText: UITextField!
-    
-    @IBOutlet weak var mobileNumberText: UITextField!
-    
-    @IBOutlet weak var emailAddressText: UITextField!
-    
-    @IBOutlet weak var passwordText: UITextField!
-    
-    @IBOutlet weak var verifyPasswordText: UITextField!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,8 +19,6 @@ class RegisterViewController: UIViewController {
     }
     
 
-    @IBAction func registerPressed(_ sender: Any) {
-    }
     /*
     // MARK: - Navigation
 
@@ -39,5 +28,15 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiptCell", for: indexPath)
+        return cell
+    }
 
 }
