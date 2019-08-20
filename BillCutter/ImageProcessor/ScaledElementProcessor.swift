@@ -37,8 +37,59 @@ class ScaledElementProcessor {
             }
             // 5
             //callback(result.text)
+            // process
+            self.processReceipt(result: result)
             self.processText(recognizedText: result.text)
             callback(self.items)
+        }
+    }
+    
+    private func processReceipt(result: VisionText) {
+        // 1. define farthest right x coordinate
+        var endx: CGFloat = 0.0
+        var endXMin: CGFloat = 0.0
+        let thresholdXPct: CGFloat = 20.0
+        let thresholdYPct: CGFloat = 10.0
+        for block in result.blocks {
+            print("MAX X = \(block.frame.maxX)")
+            if endx < block.frame.maxX {
+                endx = block.frame.maxX
+            }
+//            if let cornerPoints = block.cornerPoints {
+//                for point in cornerPoints {
+//                    if endx < point.cgPointValue.x {
+//                        endx = point.cgPointValue.x
+//                    }
+//                }
+//            }
+        }
+        print("endX Points = \(endx)")
+        endXMin = endx - thresholdXPct*endx/100.0 // calculate threshold for x
+        print("endX Min Points = \(endXMin)")
+        
+        // 2. construct sentence line by line. // find price
+        var arrayY: [CGFloat] = []
+        for block in result.blocks {
+            for line in block.lines {
+                if line.frame.maxX >= endXMin {
+                    if line.text.contains(".") {
+                        arrayY.append(line.frame.minY)
+                        print("TEXT = \(line.text)")
+                    }
+                }
+            }
+        }
+        for block in result.blocks {
+            for line in block.lines {
+                print("TEXT LINE = \(line.text)")
+                print("LINE FRAME = \(line.frame)")
+                for posY in arrayY {
+                    if line.frame.minY == posY {
+                        print("TEXT 2 = \(line.text)")
+                        break
+                    }
+                }
+            }
         }
     }
     

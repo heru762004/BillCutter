@@ -79,8 +79,8 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @objc func deleteButtonTapped(sender: UIButton!) {
+        
         self.items.remove(at: sender.tag)
         self.tableReceipt.reloadData()
-//        self.tableReceipt.deleteRows(at: [IndexPath(row: sender.tag, section: 0)], with: .left)
     }
 }
