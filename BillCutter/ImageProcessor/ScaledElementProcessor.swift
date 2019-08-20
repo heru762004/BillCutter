@@ -39,21 +39,27 @@ class ScaledElementProcessor {
             //callback(result.text)
             // process
             self.processReceipt(result: result)
-            self.processText(recognizedText: result.text)
+//            self.processText(recognizedText: result.text)
             callback(self.items)
         }
     }
     
     private func processReceipt(result: VisionText) {
+        self.items.removeAll()
+        
         // 1. define farthest right x coordinate
         var endx: CGFloat = 0.0
         var endXMin: CGFloat = 0.0
         let thresholdXPct: CGFloat = 20.0
-        let thresholdYPct: CGFloat = 10.0
+        let thresholdYPct: CGFloat = 35.0
         for block in result.blocks {
             print("MAX X = \(block.frame.maxX)")
-            if endx < block.frame.maxX {
-                endx = block.frame.maxX
+            for line in block.lines {
+                if line.text.contains(".") && line.text.count > 1 {
+                    if endx < line.frame.maxX {
+                        endx = line.frame.maxX
+                    }
+                }
             }
 //            if let cornerPoints = block.cornerPoints {
 //                for point in cornerPoints {
@@ -68,12 +74,17 @@ class ScaledElementProcessor {
         print("endX Min Points = \(endXMin)")
         
         // 2. construct sentence line by line. // find price
-        var arrayY: [CGFloat] = []
+        var arrayYMin: [CGFloat] = []
+        var arrayMoney : [String] = []
+        var arrayText : [String] = []
         for block in result.blocks {
             for line in block.lines {
                 if line.frame.maxX >= endXMin {
-                    if line.text.contains(".") {
-                        arrayY.append(line.frame.minY)
+                    if line.text.contains(".") && line.text.count > 1 && !line.text.contains(" ") {
+                        let price = line.text.replacingOccurrences(of: "$", with: "")
+                        let endYMin = line.frame.midY //- thresholdYPct*line.frame.maxY/100.0
+                        arrayYMin.append(endYMin)
+                        arrayMoney.append(price)
                         print("TEXT = \(line.text)")
                     }
                 }
@@ -83,14 +94,40 @@ class ScaledElementProcessor {
             for line in block.lines {
                 print("TEXT LINE = \(line.text)")
                 print("LINE FRAME = \(line.frame)")
-                for posY in arrayY {
-                    if line.frame.minY == posY {
-                        print("TEXT 2 = \(line.text)")
-                        break
+                if arrayYMin.count == 0 {
+                    break;
+                }
+                var idx: Int = 0
+                for posY in arrayYMin {
+                    print("LINE MID Y = \(line.frame.midY) vs \(posY))")
+                    if abs((posY - line.frame.midY)) <= thresholdYPct && abs((posY - line.frame.midY)) > 0 {
+//                        print("TEXT 2 = \(line.text)")
+                        let abc = line.text.replacingOccurrences(of: "$", with: "")
+                        let set = NSCharacterSet.alphanumerics
+                        if abc.rangeOfCharacter(from: set) == .none {
+
+                        } else {
+                            if (line.text.count > 1) {
+                                arrayText.append(abc)
+                                arrayYMin.remove(at: idx)
+                                break
+                            }
+                        }
                     }
+                    idx+=1
                 }
             }
         }
+        
+        var idx: Int = 0
+        for text in arrayText {
+            print("Title = \(text)")
+            print("Amount = \(arrayMoney[idx])")
+            let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue)
+            items.append(item)
+            idx+=1
+        }
+        
     }
     
     // Split the processed text into lines and store
