@@ -44,7 +44,7 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             DispatchQueue.global().async() {
                 
                 let img2 =  image.fixedOrientation()
-                let img3 = img2.scaledImage(3000) ?? img2
+                let img3 = img2.scaledImage(3500) ?? img2
                 // add GPUImage processing to improve the detection
                 let preprocessedImage = img3.preprocessedImage() ?? img3
                 
