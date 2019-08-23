@@ -817,3 +817,15 @@ Pods/Target Support Files/GPUImage/Info.plist
 Pods/FirebaseCore/Firebase/Core/Private/FIRAnalyticsConfiguration.h
 Pods/FirebaseCore/Firebase/Core/Private/FIRConfigurationInternal.h
 Pods/FirebaseCore/Firebase/Core/Private/FIRLibrary.h
+Pods/CurrencyTextField/CurrencyTextField/CurrencyTextField.swift
+Pods/CurrencyTextField/LICENSE
+Pods/CurrencyTextField/README.md
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/CurrencyTextField.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/FirebaseInstanceID.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/GPUImage.xcscheme
+Pods/Target Support Files/CurrencyTextField/CurrencyTextField-dummy.m
+Pods/Target Support Files/CurrencyTextField/CurrencyTextField-prefix.pch
+Pods/Target Support Files/CurrencyTextField/CurrencyTextField-umbrella.h
+Pods/Target Support Files/CurrencyTextField/CurrencyTextField.modulemap
+Pods/Target Support Files/CurrencyTextField/CurrencyTextField.xcconfig
+Pods/Target Support Files/CurrencyTextField/Info.plist
