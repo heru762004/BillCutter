@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */; };
+		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
+		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
 		C92C233923058A4900B85772 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233823058A4900B85772 /* ScanViewController.swift */; };
 		C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */; };
@@ -55,6 +57,8 @@
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9168D93231056E000396BA0 /* billcutter-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "billcutter-bridging-header.h"; sourceTree = "<group>"; };
+		C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDetailReceiptViewController.swift; sourceTree = "<group>"; };
+		C9168D972310F57200396BA0 /* ItemDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataController.swift; sourceTree = "<group>"; };
 		C92C233623058A0000B85772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C92C233823058A4900B85772 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9168D962310EF8500396BA0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9168D972310F57200396BA0 /* ItemDataController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C92C233C230596D600B85772 /* ImageProcessor */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				C9168D962310EF8500396BA0 /* Controllers */,
 				CD734CB6230A56D3007D4A6B /* Model */,
 				C9B9431D2306E5F9004A704F /* ViewControllers */,
 				C92C233C230596D600B85772 /* ImageProcessor */,
@@ -210,6 +223,7 @@
 				C92C233823058A4900B85772 /* ScanViewController.swift */,
 				CDC2CC96230A7DFD00F533FD /* DetailReceiptViewController.swift */,
 				C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */,
+				C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -472,9 +486,11 @@
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
 				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,
+				C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */,
 				CD734CB8230A56F4007D4A6B /* Item.swift in Sources */,
 				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
+				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,

@@ -51,7 +51,7 @@ class ScaledElementProcessor {
         var endx: CGFloat = 0.0
         var endXMin: CGFloat = 0.0
         let thresholdXPct: CGFloat = 20.0
-        let thresholdYPct: CGFloat = 35.0
+        let thresholdYPct: CGFloat = 40.0
         for block in result.blocks {
             print("MAX X = \(block.frame.maxX)")
             for line in block.lines {

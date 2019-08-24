@@ -60,7 +60,11 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         DispatchQueue.main.async{
                             self.dismiss(animated: true, completion: {
                                 //self.showAlert(message: text)
+                                ItemDataController.shared.removeAllItem()
                                 self.items = text
+                                for item in self.items {
+                                    ItemDataController.shared.addItem(item: item)
+                                }
                                 self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
                             })
                         }
@@ -98,8 +102,8 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if imagePicker == nil {
                 imagePicker =  UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .camera
             }
+            imagePicker.sourceType = .camera
             present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -110,8 +114,8 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if imagePicker == nil {
                 imagePicker =  UIImagePickerController()
                 imagePicker.delegate = self
-                imagePicker.sourceType = .photoLibrary
             }
+            imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -123,9 +127,9 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "goToReceiptScanResult" {
-            if let detailReceipt = segue.destination as? DetailReceiptViewController {
-                detailReceipt.items = items
-            }
+//            if let detailReceipt = segue.destination as? DetailReceiptViewController {
+//                detailReceipt.items = items
+//            }
         }
     }
 
