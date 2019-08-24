@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CurrencyTextField
 
 class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -56,9 +57,10 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
         let alert = UIAlertController(title: "Enter Price", message: nil, preferredStyle: .alert)
         
         // Add the text field
-        alert.addTextField { (textField) in
+        alert.addTextField { (textField ) in
             textField.keyboardType = .decimalPad
         }
+        
         
         // Grab the value from the text field,
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
