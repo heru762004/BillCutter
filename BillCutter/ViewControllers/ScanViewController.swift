@@ -17,6 +17,9 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var items: [Item] = []
     
     override func viewDidLoad() {
+        self.navigationItem.title = "Scan Receipt"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         

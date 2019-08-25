@@ -82,6 +82,8 @@ class ScaledElementProcessor {
                 if line.frame.maxX >= endXMin {
                     var strNum = line.text.replacingOccurrences(of: " ", with: "")
                     strNum = strNum.replacingOccurrences(of: "$", with: "")
+                    // in case the receipt has 'S' char
+                    strNum = strNum.replacingOccurrences(of: "S", with: "")
                     if strNum.contains(".") && strNum.count > 1 {
                         if Double(strNum) != nil  {
                             let price = strNum

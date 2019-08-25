@@ -87,6 +87,11 @@ extension UIImage {
         stillImageFilter.blurRadiusInPixels = 40.0
         // 3
         let filteredImage = stillImageFilter.image(byFilteringImage: self)
+        
+//        let sharpenImage = GPUImageSharpenFilter()
+//        sharpenImage.sharpness = 4.0
+//
+//        let filteredImage2 = sharpenImage.image(byFilteringImage: filteredImage)
         // 4
         return filteredImage
     }
