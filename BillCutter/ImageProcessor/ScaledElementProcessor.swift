@@ -80,12 +80,17 @@ class ScaledElementProcessor {
         for block in result.blocks {
             for line in block.lines {
                 if line.frame.maxX >= endXMin {
-                    if line.text.contains(".") && line.text.count > 1 && !line.text.contains(" ") {
-                        let price = line.text.replacingOccurrences(of: "$", with: "")
-                        let endYMin = line.frame.midY //- thresholdYPct*line.frame.maxY/100.0
-                        arrayYMin.append(endYMin)
-                        arrayMoney.append(price)
-                        print("TEXT = \(line.text)")
+                    var strNum = line.text.replacingOccurrences(of: " ", with: "")
+                    strNum = strNum.replacingOccurrences(of: "$", with: "")
+                    if strNum.contains(".") && strNum.count > 1 {
+                        if Double(strNum) != nil  {
+                            let price = strNum
+                            let endYMin = line.frame.midY //- thresholdYPct*line.frame.maxY/100.0
+                            arrayYMin.append(endYMin)
+                            arrayMoney.append(price)
+                            print("TEXT = \(line.text)")
+                        }
+                        
                     }
                 }
             }
