@@ -17,15 +17,16 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     var typeEditor = 0
     
     override func viewDidLoad() {
+        self.navigationItem.title = "Receipt Details"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Receipt Details"
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
-        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         items = ItemDataController.shared.getAllItem()
         self.tableReceipt.reloadData()
     }
@@ -56,7 +57,7 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiptCell", for: indexPath) as! DetailReceiptTableViewCell
         cell.itemName.text = items[indexPath.row].name
-        let twoDecimalPlaces = String(format: "%.2f", items[indexPath.row].price)
+        let twoDecimalPlaces = String(format: "$%.2f", items[indexPath.row].price)
         cell.buttonPrice.setTitle(twoDecimalPlaces, for: .normal)
         cell.buttonPrice.tag = indexPath.row
         
@@ -113,5 +114,6 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func showAssignTo(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
     }
 }
