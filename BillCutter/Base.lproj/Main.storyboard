@@ -367,7 +367,7 @@
         <!--Groups-->
         <scene sceneID="Z9R-zq-sOR">
             <objects>
-                <viewController id="yWA-jR-p0A" sceneMemberID="viewController">
+                <viewController id="yWA-jR-p0A" customClass="CreateGroupsViewController" customModule="BillCutter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YuK-vI-htD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -407,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMP-u6-KNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890.4000000000001" y="1625.9370314842579"/>
+            <point key="canvasLocation" x="2938" y="1867"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Ks-Dz-3YR">
@@ -807,14 +807,14 @@
                     <navigationItem key="navigationItem" id="gvL-Tw-hnW"/>
                     <connections>
                         <outlet property="imageView" destination="RDy-Ok-Vx2" id="IUA-ny-Zbe"/>
-                        <segue destination="3GO-dg-tjA" kind="show" identifier="goToReceiptScanResult" id="Exe-4p-LeX"/>
+                        <segue destination="3GO-dg-tjA" kind="push" identifier="goToReceiptScanResult" id="Exe-4p-LeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeA-g4-d2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938.39999999999998" y="1867.0164917541231"/>
         </scene>
-        <!--Title-->
+        <!--Detail Receipt View Controller-->
         <scene sceneID="Fvb-Fj-MuV">
             <objects>
                 <viewController id="3GO-dg-tjA" customClass="DetailReceiptViewController" customModule="BillCutter" sceneMemberID="viewController">
@@ -927,8 +927,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pAa-SG-oGV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="fny-Ny-Jcu">
-                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="4lA-ip-LVD"/>
+                    <navigationItem key="navigationItem" id="mWs-F6-YIX">
+                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="Gio-Lw-ZIt">
+                            <connections>
+                                <action selector="showAssignTo:" destination="3GO-dg-tjA" id="MGV-s7-dR3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableReceipt" destination="Aq6-Z5-WuV" id="rXL-hb-ty0"/>

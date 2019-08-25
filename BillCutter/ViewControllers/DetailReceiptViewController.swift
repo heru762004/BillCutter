@@ -15,7 +15,7 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     var items: [Item] = []
     var selectedIdx = -1
     var typeEditor = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,6 +23,9 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Receipt Details"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         items = ItemDataController.shared.getAllItem()
         self.tableReceipt.reloadData()
     }
@@ -107,5 +110,8 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func showAddItem(_ sender: Any) {
         self.typeEditor = ModifyDetailReceiptViewController.TYPE_ADD
         self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
+    }
+    
+    @IBAction func showAssignTo(_ sender: Any) {
     }
 }
