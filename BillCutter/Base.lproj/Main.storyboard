@@ -1024,7 +1024,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWA-6s-usc">
-                                <rect key="frame" x="42" y="307" width="291" height="52"/>
+                                <rect key="frame" x="42" y="342" width="291" height="52"/>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.70588235290000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="6gU-q7-G1i"/>
@@ -1038,23 +1038,51 @@
                                     <action selector="saveItem:" destination="XkT-tf-fIZ" eventType="touchUpInside" id="yJD-DX-D55"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEw-wa-KgY" customClass="CheckBox" customModule="BillCutter" customModuleProvider="target">
+                                <rect key="frame" x="66" y="290" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.087707435180000001" blue="0.1479096251" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="AaN-le-TNb"/>
+                                    <constraint firstAttribute="height" constant="30" id="pbh-6X-SFP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
+                                        <color key="value" red="0.95540267229999998" green="0.7063135505" blue="0.1578969657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
+                                        <color key="value" red="0.95540267229999998" green="0.7063135505" blue="0.1578969657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is Discount ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRq-fT-jHO">
+                                <rect key="frame" x="117" y="295" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.95540267229999998" green="0.7063135505" blue="0.1578969657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bYP-UP-1my" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" constant="42" id="03J-9K-444"/>
+                            <constraint firstItem="wWA-6s-usc" firstAttribute="top" secondItem="uEw-wa-KgY" secondAttribute="bottom" constant="22" id="4PR-OF-xLI"/>
                             <constraint firstItem="ng9-0b-TwD" firstAttribute="top" secondItem="Hpr-cd-Ea6" secondAttribute="top" constant="21" id="4am-ou-BER"/>
                             <constraint firstItem="LF7-Uf-tvJ" firstAttribute="top" secondItem="ng9-0b-TwD" secondAttribute="bottom" constant="30" id="4r8-dw-thc"/>
                             <constraint firstItem="gOy-dX-fJx" firstAttribute="trailing" secondItem="Hpr-cd-Ea6" secondAttribute="trailing" id="6CJ-45-ZOL"/>
-                            <constraint firstItem="wWA-6s-usc" firstAttribute="top" secondItem="bYP-UP-1my" secondAttribute="bottom" constant="39" id="Kk1-Dw-vxm"/>
+                            <constraint firstItem="KRq-fT-jHO" firstAttribute="leading" secondItem="uEw-wa-KgY" secondAttribute="trailing" constant="21" id="7pX-5e-eGO"/>
+                            <constraint firstItem="KRq-fT-jHO" firstAttribute="top" secondItem="bYP-UP-1my" secondAttribute="bottom" constant="27" id="HLO-H0-kJT"/>
                             <constraint firstAttribute="bottom" secondItem="gOy-dX-fJx" secondAttribute="bottom" id="MKX-0l-xAe"/>
                             <constraint firstItem="Hpr-cd-Ea6" firstAttribute="trailing" secondItem="wWA-6s-usc" secondAttribute="trailing" constant="42" id="NmH-fS-9cE"/>
                             <constraint firstItem="ng9-0b-TwD" firstAttribute="centerX" secondItem="Oeh-Ih-J3V" secondAttribute="centerX" id="Qtf-wA-Qiv"/>
                             <constraint firstItem="wWA-6s-usc" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" constant="42" id="TEf-GS-SEW"/>
                             <constraint firstItem="Hpr-cd-Ea6" firstAttribute="trailing" secondItem="bYP-UP-1my" secondAttribute="trailing" constant="42" id="YGk-z8-yTq"/>
                             <constraint firstItem="Hpr-cd-Ea6" firstAttribute="trailing" secondItem="LF7-Uf-tvJ" secondAttribute="trailing" constant="42" id="ayz-ci-ENq"/>
+                            <constraint firstItem="uEw-wa-KgY" firstAttribute="leading" secondItem="Oeh-Ih-J3V" secondAttribute="leadingMargin" constant="50" id="eTn-fH-5x1"/>
+                            <constraint firstItem="uEw-wa-KgY" firstAttribute="top" secondItem="bYP-UP-1my" secondAttribute="bottom" constant="22" id="i04-j8-ZtL"/>
                             <constraint firstItem="bYP-UP-1my" firstAttribute="top" secondItem="LF7-Uf-tvJ" secondAttribute="bottom" constant="25" id="p43-JA-FHa"/>
                             <constraint firstItem="LF7-Uf-tvJ" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" constant="42" id="tDk-pf-No4"/>
                             <constraint firstItem="gOy-dX-fJx" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" id="tz7-h7-8eO"/>
+                            <constraint firstItem="Hpr-cd-Ea6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KRq-fT-jHO" secondAttribute="trailing" symbolic="YES" id="v96-jj-WBh"/>
                             <constraint firstItem="gOy-dX-fJx" firstAttribute="top" secondItem="Hpr-cd-Ea6" secondAttribute="top" id="zMN-vC-EtF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hpr-cd-Ea6"/>
@@ -1068,6 +1096,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkIsDiscount" destination="uEw-wa-KgY" id="gby-H0-wgd"/>
                         <outlet property="itemName" destination="48C-dC-hjU" id="igC-Y3-gDc"/>
                         <outlet property="itemPrice" destination="HK8-CY-ffb" id="roH-nL-wIM"/>
                         <outlet property="saveButton" destination="wWA-6s-usc" id="THJ-Gi-UAG"/>

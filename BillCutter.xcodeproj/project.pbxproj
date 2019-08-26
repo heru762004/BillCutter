@@ -16,6 +16,7 @@
 		C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */; };
 		C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
+		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
 		C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* LoginViewController.swift */; };
 		C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998034F22FAFE5F008E6A28 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledElementProcessor.swift; sourceTree = "<group>"; };
 		C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C998034D22FAFE5F008E6A28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			path = ImageProcessor;
 			sourceTree = "<group>";
 		};
+		C9906CD52313CFD700E3EEB0 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C9906CD82313D08A00E3EEB0 /* CheckBox.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		C998033F22FAFE5F008E6A28 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +230,7 @@
 		C9B9431D2306E5F9004A704F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9906CD52313CFD700E3EEB0 /* CustomView */,
 				C998034D22FAFE5F008E6A28 /* LoginViewController.swift */,
 				C96F758E230407ED00988758 /* RegisterViewController.swift */,
 				C92C233823058A4900B85772 /* ScanViewController.swift */,
@@ -498,6 +509,7 @@
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */,
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
+				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

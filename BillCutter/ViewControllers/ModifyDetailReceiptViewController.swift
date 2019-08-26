@@ -15,6 +15,8 @@ class ModifyDetailReceiptViewController: UIViewController {
     
     @IBOutlet weak var itemPrice: UITextField!
     
+    @IBOutlet weak var checkIsDiscount: CheckBox!
+    
     var items: [Item] = []
     var selectedIdx: Int = 0
     
@@ -45,6 +47,9 @@ class ModifyDetailReceiptViewController: UIViewController {
         
         itemPrice.delegate = textFieldDelegate
         itemPrice.keyboardType = .numberPad
+        
+        checkIsDiscount.style = .tick
+        checkIsDiscount.addTarget(self, action: #selector(onCheckBoxValueChange(_:)), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,8 +65,12 @@ class ModifyDetailReceiptViewController: UIViewController {
             // Do any additional setup after loading the view.
             if (items.count > selectedIdx) {
                 itemName.text = items[selectedIdx].name
-                let formattedString = textFieldDelegate.formatter.string(from: Double(items[selectedIdx].price))
+                let price = Double(items[selectedIdx].price)
+                let formattedString = textFieldDelegate.formatter.string(from: price)
                 itemPrice.text = formattedString
+                if price < 0.0 {
+                    checkIsDiscount.isChecked = true
+                }
             }
         }
     }
@@ -81,7 +90,7 @@ class ModifyDetailReceiptViewController: UIViewController {
                 if let textFieldString = textFieldStr{
                     
                     //Remove $ sign
-                    var toArray = textFieldString.components(separatedBy: "$")
+                    let toArray = textFieldString.components(separatedBy: "$")
                     cleanNumericString = toArray.joined(separator: "")
                     
                 }
@@ -89,7 +98,7 @@ class ModifyDetailReceiptViewController: UIViewController {
                 var amoutFloat: Float = 0.0
                 if let textFieldNumber = textFieldNumber{
                     amoutFloat = Float(textFieldNumber)
-                    var myItem = Item(name: myItemName, price: amoutFloat)
+                    let myItem = Item(name: myItemName, price: amoutFloat)
                     self.items.append(myItem)
                     
                     ItemDataController.shared.removeAllItem()
@@ -108,7 +117,7 @@ class ModifyDetailReceiptViewController: UIViewController {
                 if let textFieldString = textFieldStr{
                     
                     //Remove $ sign
-                    var toArray = textFieldString.components(separatedBy: "$")
+                    let toArray = textFieldString.components(separatedBy: "$")
                     cleanNumericString = toArray.joined(separator: "")
                     
                 }
@@ -127,8 +136,26 @@ class ModifyDetailReceiptViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
-        
+    }
+    
+    @objc func onCheckBoxValueChange(_ sender: CheckBox) {
+        if type == ModifyDetailReceiptViewController.TYPE_EDIT {
+            var price = Double(items[selectedIdx].price)
+            price = price * -1.0
+            let formattedString = textFieldDelegate.formatter.string(from: price)
+            itemPrice.text = formattedString
+            items[selectedIdx].price = Float(price)
+        } else if type == ModifyDetailReceiptViewController.TYPE_ADD {
+            if let priceItem = itemPrice.text {
+                var strPrice = priceItem.replacingOccurrences(of: "$", with: "")
+                if var price = textFieldDelegate.formatter.double(from: strPrice) {
+                    print("ORI PRICE = \(price)")
+                    price = price * -1.0
+                    let formattedString = textFieldDelegate.formatter.string(from: price)
+                    itemPrice.text = formattedString
+                }
+            }
+        }
     }
     /*
     // MARK: - Navigation
