@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import CurrencyTextField
+import CurrencyText
 
 class ModifyDetailReceiptViewController: UIViewController {
 
     @IBOutlet weak var itemName: UITextField!
     
-    @IBOutlet weak var itemPrice: CurrencyTextField!
+    @IBOutlet weak var itemPrice: UITextField!
     
     var items: [Item] = []
     var selectedIdx: Int = 0
@@ -27,8 +27,24 @@ class ModifyDetailReceiptViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
+    private var textFieldDelegate: CurrencyUITextFieldDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let currencyFormatter = CurrencyFormatter {
+            $0.maxValue = 1000000
+            $0.minValue = -1000000
+            $0.currency = .dollar
+            $0.locale = CurrencyLocale.englishSingapore
+            $0.hasDecimals = true
+            $0.currencySymbol = "$"
+        }
+        textFieldDelegate = CurrencyUITextFieldDelegate(formatter: currencyFormatter)
+        textFieldDelegate.clearsWhenValueIsZero = true
+        
+        itemPrice.delegate = textFieldDelegate
+        itemPrice.keyboardType = .numberPad
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,14 +52,16 @@ class ModifyDetailReceiptViewController: UIViewController {
             titleText.text = "Add Item"
             saveButton.setTitle("Add", for: .normal)
             itemName.text = ""
-            itemPrice.setAmount(0.00)
+            let formattedString = textFieldDelegate.formatter.string(from: Double(0.00))
+            itemPrice.text = formattedString
         } else if type == ModifyDetailReceiptViewController.TYPE_EDIT {
             titleText.text = "Manage Item"
             saveButton.setTitle("Save", for: .normal)
             // Do any additional setup after loading the view.
             if (items.count > selectedIdx) {
                 itemName.text = items[selectedIdx].name
-                itemPrice.setAmount(Double(items[selectedIdx].price))
+                let formattedString = textFieldDelegate.formatter.string(from: Double(items[selectedIdx].price))
+                itemPrice.text = formattedString
             }
         }
     }

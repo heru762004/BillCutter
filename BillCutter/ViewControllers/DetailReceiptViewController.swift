@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CurrencyTextField
 
 class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

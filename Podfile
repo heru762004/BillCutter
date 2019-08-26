@@ -10,7 +10,8 @@ target 'BillCutter' do
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
   pod 'GPUImage'
-  pod 'CurrencyTextField'
+  #pod 'CurrencyTextField'
+  pod 'CurrencyText'
 
   target 'BillCutterTests' do
     inherit! :search_paths

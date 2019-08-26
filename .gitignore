@@ -829,3 +829,19 @@ Pods/Target Support Files/CurrencyTextField/CurrencyTextField-umbrella.h
 Pods/Target Support Files/CurrencyTextField/CurrencyTextField.modulemap
 Pods/Target Support Files/CurrencyTextField/CurrencyTextField.xcconfig
 Pods/Target Support Files/CurrencyTextField/Info.plist
+Pods/CurrencyText/LICENSE
+Pods/CurrencyText/README.md
+Pods/CurrencyText/Sources/Formatter/Currency.swift
+Pods/CurrencyText/Sources/Formatter/CurrencyFormatter.swift
+Pods/CurrencyText/Sources/Formatter/CurrencyLocale.swift
+Pods/CurrencyText/Sources/Formatter/NumberFormatter.swift
+Pods/CurrencyText/Sources/Formatter/String.swift
+Pods/CurrencyText/Sources/TextField/CurrencyUITextFieldDelegate.swift
+Pods/CurrencyText/Sources/TextField/UITextField.swift
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/CurrencyText.xcscheme
+Pods/Target Support Files/CurrencyText/CurrencyText-dummy.m
+Pods/Target Support Files/CurrencyText/CurrencyText-prefix.pch
+Pods/Target Support Files/CurrencyText/CurrencyText-umbrella.h
+Pods/Target Support Files/CurrencyText/CurrencyText.modulemap
+Pods/Target Support Files/CurrencyText/CurrencyText.xcconfig
+Pods/Target Support Files/CurrencyText/Info.plist
