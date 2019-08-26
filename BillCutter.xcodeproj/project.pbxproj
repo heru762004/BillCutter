@@ -17,6 +17,8 @@
 		C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
+		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
+		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
 		C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034B22FAFE5F008E6A28 /* AppDelegate.swift */; };
 		C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998034D22FAFE5F008E6A28 /* LoginViewController.swift */; };
 		C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998034F22FAFE5F008E6A28 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
+		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C998034822FAFE5F008E6A28 /* BillCutter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillCutter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998034B22FAFE5F008E6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C998034D22FAFE5F008E6A28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */,
 				D23B23AB10CE2904B54E837B /* Pods_BillCutter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +140,7 @@
 		46A25E56B937754147C0D6E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9906CDF231410E300E3EEB0 /* CoreData.framework */,
 				1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */,
 				2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */,
 				0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */,
@@ -145,7 +151,7 @@
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9168D972310F57200396BA0 /* ItemDataController.swift */,
+				C9906CDE23140F8A00E3EEB0 /* Data */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +171,15 @@
 				C9906CD82313D08A00E3EEB0 /* CheckBox.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		C9906CDE23140F8A00E3EEB0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C9168D972310F57200396BA0 /* ItemDataController.swift */,
+				C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		C998033F22FAFE5F008E6A28 = {
@@ -506,6 +521,7 @@
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
+				C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */,
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
