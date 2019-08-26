@@ -57,7 +57,14 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiptCell", for: indexPath) as! DetailReceiptTableViewCell
         cell.itemName.text = items[indexPath.row].name
-        let twoDecimalPlaces = String(format: "$%.2f", items[indexPath.row].price)
+        var twoDecimalPlaces = ""
+        if items[indexPath.row].price >= 0.0 {
+            twoDecimalPlaces = String(format: "$%.2f", items[indexPath.row].price)
+        } else {
+            twoDecimalPlaces = String(format: "%.2f", items[indexPath.row].price)
+            twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+            twoDecimalPlaces = String(format: "-$%@", twoDecimalPlaces)
+        }
         cell.buttonPrice.setTitle(twoDecimalPlaces, for: .normal)
         cell.buttonPrice.tag = indexPath.row
         

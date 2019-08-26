@@ -26,9 +26,9 @@ class ModifyDetailReceiptViewController: UIViewController {
     @IBOutlet weak var titleText: UILabel!
     
     @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
