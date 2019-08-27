@@ -845,3 +845,303 @@ Pods/Target Support Files/CurrencyText/CurrencyText-umbrella.h
 Pods/Target Support Files/CurrencyText/CurrencyText.modulemap
 Pods/Target Support Files/CurrencyText/CurrencyText.xcconfig
 Pods/Target Support Files/CurrencyText/Info.plist
+Pods/Alamofire/LICENSE
+Pods/Alamofire/README.md
+Pods/Alamofire/Source/AFError.swift
+Pods/Alamofire/Source/Alamofire.swift
+Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Pods/Alamofire/Source/MultipartFormData.swift
+Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Pods/Alamofire/Source/Notifications.swift
+Pods/Alamofire/Source/ParameterEncoding.swift
+Pods/Alamofire/Source/Request.swift
+Pods/Alamofire/Source/Response.swift
+Pods/Alamofire/Source/ResponseSerialization.swift
+Pods/Alamofire/Source/Result.swift
+Pods/Alamofire/Source/ServerTrustPolicy.swift
+Pods/Alamofire/Source/SessionDelegate.swift
+Pods/Alamofire/Source/SessionManager.swift
+Pods/Alamofire/Source/TaskDelegate.swift
+Pods/Alamofire/Source/Timeline.swift
+Pods/Alamofire/Source/Validation.swift
+Pods/FirebaseCore/Firebase/Core/FIRCoreDiagnosticsConnector.m
+Pods/FirebaseCore/Firebase/Core/FIRDiagnosticsData.m
+Pods/FirebaseCore/Firebase/Core/Private/FIRCoreDiagnosticsConnector.h
+Pods/FirebaseCore/Firebase/Core/Private/FIRDiagnosticsData.h
+Pods/FirebaseCoreDiagnostics/LICENSE
+Pods/FirebaseCoreDiagnostics/README.md
+Pods/FirebaseCoreDiagnostics/Firebase/CoreDiagnostics/FIRCDLibrary/FIRCoreDiagnostics.m
+Pods/FirebaseCoreDiagnostics/Firebase/CoreDiagnostics/FIRCDLibrary/FIRCoreDiagnosticsDateFileStorage.h
+Pods/FirebaseCoreDiagnostics/Firebase/CoreDiagnostics/FIRCDLibrary/FIRCoreDiagnosticsDateFileStorage.m
+Pods/FirebaseCoreDiagnostics/Firebase/CoreDiagnostics/FIRCDLibrary/Protogen/nanopb/firebasecore.nanopb.c
+Pods/FirebaseCoreDiagnostics/Firebase/CoreDiagnostics/FIRCDLibrary/Protogen/nanopb/firebasecore.nanopb.h
+Pods/FirebaseCoreDiagnosticsInterop/LICENSE
+Pods/FirebaseCoreDiagnosticsInterop/README.md
+Pods/FirebaseCoreDiagnosticsInterop/Interop/CoreDiagnostics/Public/FIRCoreDiagnosticsData.h
+Pods/FirebaseCoreDiagnosticsInterop/Interop/CoreDiagnostics/Public/FIRCoreDiagnosticsInterop.h
+Pods/GoogleDataTransport/LICENSE
+Pods/GoogleDataTransport/README.md
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTAssert.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTClock.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTConsoleLogger.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTDataFuture.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTEvent.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTLifecycle.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTPlatform.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTReachability.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTRegistrar.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTStorage.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTStoredEvent.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTTransformer.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTTransport.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTUploadCoordinator.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/GDTUploadPackage.m
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTAssert.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTEvent_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTReachability.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTReachability_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTRegistrar_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTStorage.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTStorage_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTTransformer.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTTransformer_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTTransport_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTUploadCoordinator.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Private/GDTUploadPackage_Private.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTClock.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTConsoleLogger.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTDataFuture.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTEvent.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTEventDataObject.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTEventTransformer.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTLifecycle.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTPlatform.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTPrioritizer.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTRegistrar.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTStoredEvent.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTTargets.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTTransport.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTUploader.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GDTUploadPackage.h
+Pods/GoogleDataTransport/GoogleDataTransport/GDTLibrary/Public/GoogleDataTransport.h
+Pods/GoogleDataTransportCCTSupport/LICENSE
+Pods/GoogleDataTransportCCTSupport/README.md
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/GDTCCTNanopbHelpers.m
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/GDTCCTPrioritizer.m
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/GDTCCTUploader.m
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/Private/GDTCCTNanopbHelpers.h
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/Private/GDTCCTPrioritizer.h
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/Private/GDTCCTUploader.h
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/Protogen/nanopb/cct.nanopb.c
+Pods/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport/GDTCCTLibrary/Protogen/nanopb/cct.nanopb.h
+Pods/Headers/Private/FirebaseCoreDiagnosticsInterop/FIRCoreDiagnosticsData.h
+Pods/Headers/Private/FirebaseCoreDiagnosticsInterop/FIRCoreDiagnosticsInterop.h
+Pods/Headers/Public/FirebaseCoreDiagnosticsInterop/FIRCoreDiagnosticsData.h
+Pods/Headers/Public/FirebaseCoreDiagnosticsInterop/FIRCoreDiagnosticsInterop.h
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/Alamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/CurrencyText.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/FirebaseCore.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/FirebaseCoreDiagnostics.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/FirebaseInstanceID.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleAPIClientForREST.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleDataTransport.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleDataTransportCCTSupport.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleMobileVision-GoogleMVTextDetectorResources.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleToolboxForMac.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GoogleUtilities.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GPUImage.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/GTMSessionFetcher.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/nanopb.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/Pods-BillCutter.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/Pods-BillCutterTests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/Pods-BillCutterUITests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/Protobuf.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/RxAlamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/RxSwift.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/RxAlamofire/LICENSE.md
+Pods/RxAlamofire/README.md
+Pods/RxAlamofire/Sources/RxAlamofire.swift
+Pods/RxSwift/LICENSE.md
+Pods/RxSwift/README.md
+Pods/RxSwift/Platform/AtomicInt.swift
+Pods/RxSwift/Platform/DispatchQueue+Extensions.swift
+Pods/RxSwift/Platform/Platform.Darwin.swift
+Pods/RxSwift/Platform/Platform.Linux.swift
+Pods/RxSwift/Platform/RecursiveLock.swift
+Pods/RxSwift/Platform/DataStructures/Bag.swift
+Pods/RxSwift/Platform/DataStructures/InfiniteSequence.swift
+Pods/RxSwift/Platform/DataStructures/PriorityQueue.swift
+Pods/RxSwift/Platform/DataStructures/Queue.swift
+Pods/RxSwift/RxSwift/AnyObserver.swift
+Pods/RxSwift/RxSwift/Cancelable.swift
+Pods/RxSwift/RxSwift/ConnectableObservableType.swift
+Pods/RxSwift/RxSwift/Date+Dispatch.swift
+Pods/RxSwift/RxSwift/Deprecated.swift
+Pods/RxSwift/RxSwift/Disposable.swift
+Pods/RxSwift/RxSwift/Errors.swift
+Pods/RxSwift/RxSwift/Event.swift
+Pods/RxSwift/RxSwift/GroupedObservable.swift
+Pods/RxSwift/RxSwift/ImmediateSchedulerType.swift
+Pods/RxSwift/RxSwift/Observable.swift
+Pods/RxSwift/RxSwift/ObservableConvertibleType.swift
+Pods/RxSwift/RxSwift/ObservableType+Extensions.swift
+Pods/RxSwift/RxSwift/ObservableType.swift
+Pods/RxSwift/RxSwift/ObserverType.swift
+Pods/RxSwift/RxSwift/Reactive.swift
+Pods/RxSwift/RxSwift/Rx.swift
+Pods/RxSwift/RxSwift/RxMutableBox.swift
+Pods/RxSwift/RxSwift/SchedulerType.swift
+Pods/RxSwift/RxSwift/Concurrency/AsyncLock.swift
+Pods/RxSwift/RxSwift/Concurrency/Lock.swift
+Pods/RxSwift/RxSwift/Concurrency/LockOwnerType.swift
+Pods/RxSwift/RxSwift/Concurrency/SynchronizedDisposeType.swift
+Pods/RxSwift/RxSwift/Concurrency/SynchronizedOnType.swift
+Pods/RxSwift/RxSwift/Concurrency/SynchronizedUnsubscribeType.swift
+Pods/RxSwift/RxSwift/Disposables/AnonymousDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/BinaryDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/BooleanDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/CompositeDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/Disposables.swift
+Pods/RxSwift/RxSwift/Disposables/DisposeBag.swift
+Pods/RxSwift/RxSwift/Disposables/DisposeBase.swift
+Pods/RxSwift/RxSwift/Disposables/NopDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/RefCountDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/ScheduledDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/SerialDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/SingleAssignmentDisposable.swift
+Pods/RxSwift/RxSwift/Disposables/SubscriptionDisposable.swift
+Pods/RxSwift/RxSwift/Extensions/Bag+Rx.swift
+Pods/RxSwift/RxSwift/Extensions/String+Rx.swift
+Pods/RxSwift/RxSwift/Observables/AddRef.swift
+Pods/RxSwift/RxSwift/Observables/Amb.swift
+Pods/RxSwift/RxSwift/Observables/AsMaybe.swift
+Pods/RxSwift/RxSwift/Observables/AsSingle.swift
+Pods/RxSwift/RxSwift/Observables/Buffer.swift
+Pods/RxSwift/RxSwift/Observables/Catch.swift
+Pods/RxSwift/RxSwift/Observables/CombineLatest+arity.swift
+Pods/RxSwift/RxSwift/Observables/CombineLatest+Collection.swift
+Pods/RxSwift/RxSwift/Observables/CombineLatest.swift
+Pods/RxSwift/RxSwift/Observables/CompactMap.swift
+Pods/RxSwift/RxSwift/Observables/Concat.swift
+Pods/RxSwift/RxSwift/Observables/Create.swift
+Pods/RxSwift/RxSwift/Observables/Debounce.swift
+Pods/RxSwift/RxSwift/Observables/Debug.swift
+Pods/RxSwift/RxSwift/Observables/DefaultIfEmpty.swift
+Pods/RxSwift/RxSwift/Observables/Deferred.swift
+Pods/RxSwift/RxSwift/Observables/Delay.swift
+Pods/RxSwift/RxSwift/Observables/DelaySubscription.swift
+Pods/RxSwift/RxSwift/Observables/Dematerialize.swift
+Pods/RxSwift/RxSwift/Observables/DistinctUntilChanged.swift
+Pods/RxSwift/RxSwift/Observables/Do.swift
+Pods/RxSwift/RxSwift/Observables/ElementAt.swift
+Pods/RxSwift/RxSwift/Observables/Empty.swift
+Pods/RxSwift/RxSwift/Observables/Enumerated.swift
+Pods/RxSwift/RxSwift/Observables/Error.swift
+Pods/RxSwift/RxSwift/Observables/Filter.swift
+Pods/RxSwift/RxSwift/Observables/First.swift
+Pods/RxSwift/RxSwift/Observables/Generate.swift
+Pods/RxSwift/RxSwift/Observables/GroupBy.swift
+Pods/RxSwift/RxSwift/Observables/Just.swift
+Pods/RxSwift/RxSwift/Observables/Map.swift
+Pods/RxSwift/RxSwift/Observables/Materialize.swift
+Pods/RxSwift/RxSwift/Observables/Merge.swift
+Pods/RxSwift/RxSwift/Observables/Multicast.swift
+Pods/RxSwift/RxSwift/Observables/Never.swift
+Pods/RxSwift/RxSwift/Observables/ObserveOn.swift
+Pods/RxSwift/RxSwift/Observables/Optional.swift
+Pods/RxSwift/RxSwift/Observables/Producer.swift
+Pods/RxSwift/RxSwift/Observables/Range.swift
+Pods/RxSwift/RxSwift/Observables/Reduce.swift
+Pods/RxSwift/RxSwift/Observables/Repeat.swift
+Pods/RxSwift/RxSwift/Observables/RetryWhen.swift
+Pods/RxSwift/RxSwift/Observables/Sample.swift
+Pods/RxSwift/RxSwift/Observables/Scan.swift
+Pods/RxSwift/RxSwift/Observables/Sequence.swift
+Pods/RxSwift/RxSwift/Observables/ShareReplayScope.swift
+Pods/RxSwift/RxSwift/Observables/SingleAsync.swift
+Pods/RxSwift/RxSwift/Observables/Sink.swift
+Pods/RxSwift/RxSwift/Observables/Skip.swift
+Pods/RxSwift/RxSwift/Observables/SkipUntil.swift
+Pods/RxSwift/RxSwift/Observables/SkipWhile.swift
+Pods/RxSwift/RxSwift/Observables/StartWith.swift
+Pods/RxSwift/RxSwift/Observables/SubscribeOn.swift
+Pods/RxSwift/RxSwift/Observables/Switch.swift
+Pods/RxSwift/RxSwift/Observables/SwitchIfEmpty.swift
+Pods/RxSwift/RxSwift/Observables/Take.swift
+Pods/RxSwift/RxSwift/Observables/TakeLast.swift
+Pods/RxSwift/RxSwift/Observables/TakeUntil.swift
+Pods/RxSwift/RxSwift/Observables/TakeWhile.swift
+Pods/RxSwift/RxSwift/Observables/Throttle.swift
+Pods/RxSwift/RxSwift/Observables/Timeout.swift
+Pods/RxSwift/RxSwift/Observables/Timer.swift
+Pods/RxSwift/RxSwift/Observables/ToArray.swift
+Pods/RxSwift/RxSwift/Observables/Using.swift
+Pods/RxSwift/RxSwift/Observables/Window.swift
+Pods/RxSwift/RxSwift/Observables/WithLatestFrom.swift
+Pods/RxSwift/RxSwift/Observables/Zip+arity.swift
+Pods/RxSwift/RxSwift/Observables/Zip+Collection.swift
+Pods/RxSwift/RxSwift/Observables/Zip.swift
+Pods/RxSwift/RxSwift/Observers/AnonymousObserver.swift
+Pods/RxSwift/RxSwift/Observers/ObserverBase.swift
+Pods/RxSwift/RxSwift/Observers/TailRecursiveSink.swift
+Pods/RxSwift/RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/ConcurrentMainScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/CurrentThreadScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/HistoricalScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/HistoricalSchedulerTimeConverter.swift
+Pods/RxSwift/RxSwift/Schedulers/MainScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/OperationQueueScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/RecursiveScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/SchedulerServices+Emulation.swift
+Pods/RxSwift/RxSwift/Schedulers/SerialDispatchQueueScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/VirtualTimeConverterType.swift
+Pods/RxSwift/RxSwift/Schedulers/VirtualTimeScheduler.swift
+Pods/RxSwift/RxSwift/Schedulers/Internal/DispatchQueueConfiguration.swift
+Pods/RxSwift/RxSwift/Schedulers/Internal/InvocableScheduledItem.swift
+Pods/RxSwift/RxSwift/Schedulers/Internal/InvocableType.swift
+Pods/RxSwift/RxSwift/Schedulers/Internal/ScheduledItem.swift
+Pods/RxSwift/RxSwift/Schedulers/Internal/ScheduledItemType.swift
+Pods/RxSwift/RxSwift/Subjects/AsyncSubject.swift
+Pods/RxSwift/RxSwift/Subjects/BehaviorSubject.swift
+Pods/RxSwift/RxSwift/Subjects/PublishSubject.swift
+Pods/RxSwift/RxSwift/Subjects/ReplaySubject.swift
+Pods/RxSwift/RxSwift/Subjects/SubjectType.swift
+Pods/RxSwift/RxSwift/SwiftSupport/SwiftSupport.swift
+Pods/RxSwift/RxSwift/Traits/Completable+AndThen.swift
+Pods/RxSwift/RxSwift/Traits/Completable.swift
+Pods/RxSwift/RxSwift/Traits/Maybe.swift
+Pods/RxSwift/RxSwift/Traits/ObservableType+PrimitiveSequence.swift
+Pods/RxSwift/RxSwift/Traits/PrimitiveSequence+Zip+arity.swift
+Pods/RxSwift/RxSwift/Traits/PrimitiveSequence.swift
+Pods/RxSwift/RxSwift/Traits/Single.swift
+Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+Pods/Target Support Files/Alamofire/Alamofire.modulemap
+Pods/Target Support Files/Alamofire/Alamofire.xcconfig
+Pods/Target Support Files/Alamofire/Info.plist
+Pods/Target Support Files/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics-dummy.m
+Pods/Target Support Files/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics-umbrella.h
+Pods/Target Support Files/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.modulemap
+Pods/Target Support Files/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.xcconfig
+Pods/Target Support Files/GoogleDataTransport/GoogleDataTransport-dummy.m
+Pods/Target Support Files/GoogleDataTransport/GoogleDataTransport-umbrella.h
+Pods/Target Support Files/GoogleDataTransport/GoogleDataTransport.modulemap
+Pods/Target Support Files/GoogleDataTransport/GoogleDataTransport.xcconfig
+Pods/Target Support Files/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport-dummy.m
+Pods/Target Support Files/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport-umbrella.h
+Pods/Target Support Files/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.modulemap
+Pods/Target Support Files/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.xcconfig
+Pods/Target Support Files/RxAlamofire/Info.plist
+Pods/Target Support Files/RxAlamofire/RxAlamofire-dummy.m
+Pods/Target Support Files/RxAlamofire/RxAlamofire-prefix.pch
+Pods/Target Support Files/RxAlamofire/RxAlamofire-umbrella.h
+Pods/Target Support Files/RxAlamofire/RxAlamofire.modulemap
+Pods/Target Support Files/RxAlamofire/RxAlamofire.xcconfig
+Pods/Target Support Files/RxSwift/Info.plist
+Pods/Target Support Files/RxSwift/RxSwift-dummy.m
+Pods/Target Support Files/RxSwift/RxSwift-prefix.pch
+Pods/Target Support Files/RxSwift/RxSwift-umbrella.h
+Pods/Target Support Files/RxSwift/RxSwift.modulemap
+Pods/Target Support Files/RxSwift/RxSwift.xcconfig
