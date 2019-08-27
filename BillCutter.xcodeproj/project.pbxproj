@@ -14,6 +14,8 @@
 		C92C233923058A4900B85772 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233823058A4900B85772 /* ScanViewController.swift */; };
 		C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */; };
 		C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */; };
+		C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CDCD92314FF7700416851 /* UserDefaultService.swift */; };
+		C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CDCE02315078000416851 /* AddGroupViewController.swift */; };
 		C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
@@ -67,6 +69,8 @@
 		C92C233823058A4900B85772 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
 		C92C233E2305970B00B85772 /* ScaledElementProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaledElementProcessor.swift; sourceTree = "<group>"; };
+		C93CDCD92314FF7700416851 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		C93CDCE02315078000416851 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C93CDCDB2314FF8000416851 /* Service */,
 				C9906CDE23140F8A00E3EEB0 /* Data */,
 			);
 			path = Controllers;
@@ -163,6 +168,14 @@
 				C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */,
 			);
 			path = ImageProcessor;
+			sourceTree = "<group>";
+		};
+		C93CDCDB2314FF8000416851 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C93CDCD92314FF7700416851 /* UserDefaultService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C9906CD52313CFD700E3EEB0 /* CustomView */ = {
@@ -253,6 +266,7 @@
 				C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */,
 				C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */,
 				C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */,
+				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -510,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
@@ -525,6 +540,7 @@
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */,
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
+				C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

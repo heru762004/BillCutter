@@ -12,7 +12,7 @@
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Group" positionX="-193.2578125" positionY="-115.21875" width="128" height="75"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="120"/>
     </elements>
 </model>

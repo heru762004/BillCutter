@@ -14,46 +14,51 @@ class GroupDataController {
     static let shared = GroupDataController()
     
     var context: NSManagedObjectContext!
-    var entity: NSEntityDescription!
+    
     //Initializer access level change now
     private init(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
-        self.entity = NSEntityDescription.entity(forEntityName: "Group", in: context)
+        
+        
     }
     
     private func save() {
-        do {
-            try context.save()
-        } catch {
-            print("Failed saving")
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Failed saving")
+            }
         }
     }
     
     func insertIntoGroup(groupName: String) {
-        let newGroup = NSManagedObject(entity: entity!, insertInto: context)
-        newGroup.setValue(groupName, forKey: "groupName")
+        let idGroup = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_GROUP)
+        var group: Group
+        
+        group = Group(context: context)
+//        let entity = NSEntityDescription.entity(forEntityName: "Group", in: context)
+        group.groupId = idGroup
+        group.groupName = groupName
+//        let newGroup = Group(entity: entity!, insertInto: context)
         save()
+        UserDefaultService.shared.store(key: UserDefaultService.Key.ID_GROUP, value: (idGroup + 1))
     }
     
     func getAllGroups() -> [Group] {
-        var groups: [Group] = []
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Group")
+        
+        let request: NSFetchRequest<Group> = Group.fetchRequest()
         //request.predicate = NSPredicate(format: "age = %@", "12")
-        request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                let group = Group()
-                group.groupId = data.value(forKey: "groupId") as! Int64
-                group.groupName = data.value(forKey: "groupName") as! String
-                groups.append(group)
-            }
-            
+            return result
         } catch {
             
             print("Failed")
         }
-        return groups
+        return []
     }
+    
+    
 }

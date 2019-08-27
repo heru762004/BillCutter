@@ -16,7 +16,7 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
     var typeEditor = 0
     
     override func viewDidLoad() {
-        self.navigationItem.title = "Receipt Details"
+        self.navigationItem.title = "Review Items"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
