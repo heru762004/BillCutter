@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ContactsUI
 
 class AddGroupViewController: UIViewController {
 
@@ -31,6 +32,17 @@ class AddGroupViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    
+    @IBAction func doAddMember(_ sender: Any) {
+        // 1
+        let contactPicker = CNContactPickerViewController()
+        contactPicker.delegate = self
+        // 2
+        contactPicker.predicateForEnablingContact = NSPredicate(
+            format: "ANY self.phoneNumbers.'value'.'digits' BEGINSWITH %@", "+65")
+        present(contactPicker, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -41,4 +53,23 @@ class AddGroupViewController: UIViewController {
     }
     */
 
+}
+
+extension AddGroupViewController: CNContactPickerDelegate {
+    func contactPicker(_ picker: CNContactPickerViewController,
+                       didSelect contacts: [CNContact]) {
+        
+        for contact in contacts {
+            print("Contact = \(contact.givenName) \(contact.familyName)")
+            let phoneNumber = (contact.phoneNumbers[0].value as! CNPhoneNumber).value(forKey: "digits") as! String
+            print("Phone = \(phoneNumber)")
+        }
+//        let newFriends = contacts.compactMap { Friend(contact: $0) }
+//        for friend in newFriends {
+//            if !friendsList.contains(friend) {
+//                friendsList.append(friend)
+//            }
+//        }
+//        tableView.reloadData()
+    }
 }

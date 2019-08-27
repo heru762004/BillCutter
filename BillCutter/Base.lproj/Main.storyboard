@@ -470,16 +470,60 @@
                                     <constraint firstAttribute="width" constant="291" id="vKZ-4c-l9Z"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-kW-qrg">
+                                <rect key="frame" x="67" y="167" width="241" height="52"/>
+                                <color key="backgroundColor" red="0.93114674090000005" green="0.68919003010000002" blue="0.16114076969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="241" id="Qld-Xe-WxU"/>
+                                    <constraint firstAttribute="height" constant="52" id="qMY-ji-eL5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="xpa-T0-5II"/>
+                                </constraints>
+                                <state key="normal" title="Add Member">
+                                    <color key="titleColor" red="0.087576784190000007" green="0.16763728859999999" blue="0.19601753350000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doAddMember:" destination="beG-H8-FwT" eventType="touchUpInside" id="giE-Ob-JEe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uap-j7-Dau">
+                                <rect key="frame" x="16" y="248" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B6E-vW-9ZB">
+                                <rect key="frame" x="0.0" y="285" width="375" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" id="IqX-ul-6gW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IqX-ul-6gW" id="JdR-83-mUO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="e6z-Jk-WLG" firstAttribute="leading" secondItem="lHo-59-Jn6" secondAttribute="leading" constant="42" id="09R-ZF-PA1"/>
+                            <constraint firstItem="B6E-vW-9ZB" firstAttribute="top" secondItem="uap-j7-Dau" secondAttribute="bottom" constant="16" id="15N-8T-BCl"/>
+                            <constraint firstItem="B6E-vW-9ZB" firstAttribute="trailing" secondItem="lHo-59-Jn6" secondAttribute="trailing" id="AV6-W7-gwJ"/>
                             <constraint firstItem="4Vb-dk-Ttc" firstAttribute="leading" secondItem="lHo-59-Jn6" secondAttribute="leading" id="AcU-96-fpY"/>
+                            <constraint firstItem="B6E-vW-9ZB" firstAttribute="bottom" secondItem="lHo-59-Jn6" secondAttribute="bottom" id="CFw-LR-2fZ"/>
                             <constraint firstAttribute="bottom" secondItem="4Vb-dk-Ttc" secondAttribute="bottom" id="DfX-ZK-DPH"/>
                             <constraint firstItem="lHo-59-Jn6" firstAttribute="trailing" secondItem="e6z-Jk-WLG" secondAttribute="trailing" constant="42" id="DnO-UG-jbK"/>
+                            <constraint firstItem="B6E-vW-9ZB" firstAttribute="leading" secondItem="lHo-59-Jn6" secondAttribute="leading" id="DoV-9J-Vbj"/>
+                            <constraint firstItem="uap-j7-Dau" firstAttribute="leading" secondItem="lHo-59-Jn6" secondAttribute="leading" constant="16" id="Ozd-Bx-Okf"/>
                             <constraint firstItem="4Vb-dk-Ttc" firstAttribute="top" secondItem="lHo-59-Jn6" secondAttribute="top" id="QDj-eX-qye"/>
+                            <constraint firstItem="uap-j7-Dau" firstAttribute="top" secondItem="y9f-kW-qrg" secondAttribute="bottom" constant="29" id="Sxc-xf-w8L"/>
+                            <constraint firstItem="y9f-kW-qrg" firstAttribute="centerX" secondItem="wy5-w6-R8O" secondAttribute="centerX" id="YsO-KB-EiI"/>
+                            <constraint firstItem="lHo-59-Jn6" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uap-j7-Dau" secondAttribute="trailing" symbolic="YES" id="dbi-Ok-pyN"/>
                             <constraint firstItem="4Vb-dk-Ttc" firstAttribute="trailing" secondItem="lHo-59-Jn6" secondAttribute="trailing" id="fV1-De-p3Y"/>
                             <constraint firstItem="e6z-Jk-WLG" firstAttribute="top" secondItem="lHo-59-Jn6" secondAttribute="top" constant="23" id="t0v-Rw-RHv"/>
+                            <constraint firstItem="y9f-kW-qrg" firstAttribute="top" secondItem="e6z-Jk-WLG" secondAttribute="bottom" constant="30" id="xP1-0c-kVW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lHo-59-Jn6"/>
                     </view>
@@ -503,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUu-nZ-CWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5454" y="1868"/>
+            <point key="canvasLocation" x="5453.6000000000004" y="1867.9160419790107"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Ks-Dz-3YR">
@@ -858,7 +902,6 @@
                                     <color key="titleColor" red="0.087576784193515778" green="0.16763728857040405" blue="0.19601753354072571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOA-j1-31E"/>
                                     <action selector="takePhoto:" destination="Agh-it-xzv" eventType="touchUpInside" id="CRT-av-7Ly"/>
                                 </connections>
                             </button>
@@ -879,7 +922,6 @@
                                     <color key="titleColor" red="0.087576784193515778" green="0.16763728857040405" blue="0.19601753354072571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGy-Xe-8ec"/>
                                     <action selector="showLibrary:" destination="Agh-it-xzv" eventType="touchUpInside" id="e1M-id-eEI"/>
                                 </connections>
                             </button>
@@ -1001,8 +1043,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerPressed:" destination="DXj-CB-cpF" eventType="touchUpInside" id="FSQ-xe-gXQ"/>
-                                    <action selector="saveItem:" destination="XkT-tf-fIZ" eventType="touchUpInside" id="Juk-Ea-d6j"/>
                                     <action selector="showAddItem:" destination="3GO-dg-tjA" eventType="touchUpInside" id="sYM-wE-uzx"/>
                                 </connections>
                             </button>
@@ -1135,7 +1175,6 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerPressed:" destination="DXj-CB-cpF" eventType="touchUpInside" id="4H0-BS-AYB"/>
                                     <action selector="saveItem:" destination="XkT-tf-fIZ" eventType="touchUpInside" id="yJD-DX-D55"/>
                                 </connections>
                             </button>
