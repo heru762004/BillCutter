@@ -158,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				A71142B423144DEE00257E6E /* ApiService.swift */,
+				C93CDCD92314FF7700416851 /* UserDefaultService.swift */,
 			);
 			path = ApiServices;
 			sourceTree = "<group>";
@@ -165,7 +166,6 @@
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C93CDCDB2314FF8000416851 /* Service */,
 				C9906CDE23140F8A00E3EEB0 /* Data */,
 			);
 			path = Controllers;
@@ -178,14 +178,6 @@
 				C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */,
 			);
 			path = ImageProcessor;
-			sourceTree = "<group>";
-		};
-		C93CDCDB2314FF8000416851 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				C93CDCD92314FF7700416851 /* UserDefaultService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		C9906CD52313CFD700E3EEB0 /* CustomView */ = {

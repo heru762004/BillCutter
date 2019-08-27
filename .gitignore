@@ -1145,3 +1145,6 @@ Pods/Target Support Files/RxSwift/RxSwift-prefix.pch
 Pods/Target Support Files/RxSwift/RxSwift-umbrella.h
 Pods/Target Support Files/RxSwift/RxSwift.modulemap
 Pods/Target Support Files/RxSwift/RxSwift.xcconfig
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/Alamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/RxAlamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/RxSwift.xcscheme
