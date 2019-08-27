@@ -12,6 +12,9 @@ target 'BillCutter' do
   pod 'GPUImage'
   #pod 'CurrencyTextField'
   pod 'CurrencyText'
+  pod 'RxSwift'
+  pod 'Alamofire'
+  pod 'RxAlamofire'
 
   target 'BillCutterTests' do
     inherit! :search_paths

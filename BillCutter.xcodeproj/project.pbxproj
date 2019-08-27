@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */; };
+		A71142B523144DEE00257E6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71142B423144DEE00257E6E /* ApiService.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
@@ -59,6 +60,7 @@
 		1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.debug.xcconfig"; sourceTree = "<group>"; };
+		A71142B423144DEE00257E6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A71142B323144DC900257E6E /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				A71142B423144DEE00257E6E /* ApiService.swift */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				A71142B323144DC900257E6E /* ApiServices */,
 				C9168D962310EF8500396BA0 /* Controllers */,
 				CD734CB6230A56D3007D4A6B /* Model */,
 				C9B9431D2306E5F9004A704F /* ViewControllers */,
@@ -456,6 +467,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CurrencyText/CurrencyText.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -463,10 +475,13 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CurrencyText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -474,6 +489,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +544,7 @@
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
+				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
 				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,
