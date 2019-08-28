@@ -42,7 +42,21 @@ class AddGroupViewController: UIViewController {
     
     @IBAction func doSubmit(_ sender: Any) {
         if let groupName = groupNameText.text {
-            GroupDataController.shared.insertIntoGroup(groupName: groupName)
+            GroupDataController.shared.insertIntoGroup(groupName: groupName, numOfMember: listPerson.count)
+            var idGroup: Int64 = -1
+            if selectedGroupId == -1 {
+                idGroup = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_GROUP)
+                print(idGroup)
+                for person in listPerson {
+                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: (Int(idGroup) - 1), phoneNumber: person.phoneNumber)
+                }
+            } else {
+                idGroup = Int64(selectedGroupId)
+                for person in listPerson {
+                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: Int(idGroup), phoneNumber: person.phoneNumber)
+                }
+            }
+            
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -54,8 +68,28 @@ class AddGroupViewController: UIViewController {
         contactPicker.delegate = self
         contactPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey]
         // 2
-        contactPicker.predicateForEnablingContact = NSPredicate(
+        var listPN: [String] = []
+        for person in listPerson {
+            listPN.append(person.phoneNumber)
+        }
+        
+        let predicate1 = NSPredicate(
             format: "ANY self.phoneNumbers.'value'.'digits' BEGINSWITH %@", "+65")
+        if listPN.count > 0 {
+            var listPredicate: [NSPredicate] = []
+            listPredicate.append(predicate1)
+            for i in 0..<listPN.count {
+                let predicate2 = NSPredicate(
+                    format: "NOT (self.phoneNumbers.'value'.'digits' CONTAINS[c] %@)", listPN[i])
+                listPredicate.append(predicate2)
+            }
+            
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: listPredicate)
+            contactPicker.predicateForEnablingContact = predicate
+        } else {
+            contactPicker.predicateForEnablingContact = predicate1
+        }
+        
         present(contactPicker, animated: true, completion: nil)
     }
     /*

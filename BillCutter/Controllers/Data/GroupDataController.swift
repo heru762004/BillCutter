@@ -33,17 +33,32 @@ class GroupDataController {
         }
     }
     
-    func insertIntoGroup(groupName: String) {
+    func insertIntoGroup(groupName: String, numOfMember: Int) {
         let idGroup = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_GROUP)
-        var group: Group
+        let fetchRequest: NSFetchRequest<Group> = Group.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "groupName = %@", groupName)
         
-        group = Group(context: context)
-//        let entity = NSEntityDescription.entity(forEntityName: "Group", in: context)
-        group.groupId = idGroup
-        group.groupName = groupName
-//        let newGroup = Group(entity: entity!, insertInto: context)
-        save()
-        UserDefaultService.shared.store(key: UserDefaultService.Key.ID_GROUP, value: (idGroup + 1))
+        do {
+            let fetchResults = try context.fetch(fetchRequest)
+            if fetchResults.count != 0 {
+                // update
+                let managedObject = fetchResults[0]
+                managedObject.setValue(numOfMember, forKey: "numOfMember")
+                save()
+            } else {
+                //insert as new data
+                var group: Group
+                
+                group = Group(context: context)
+                group.groupId = idGroup
+                group.groupName = groupName
+                group.numOfMember = Int64(numOfMember)
+                save()
+                UserDefaultService.shared.store(key: UserDefaultService.Key.ID_GROUP, value: (idGroup + 1))
+            }
+        } catch {
+            
+        }
     }
     
     func getAllGroups() -> [Group] {

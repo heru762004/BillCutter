@@ -35,15 +35,37 @@ class UserDataController {
     
     func insertIntoGroup(userName: String, groupId: Int, phoneNumber: String) {
         let idUser = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_USER)
-        var user: User
         
-        user = User(context: context)
-        user.id = idUser
-        user.userName = userName
-        user.groupId = Int64(groupId)
-        user.phoneNumber = phoneNumber
-        save()
-        UserDefaultService.shared.store(key: UserDefaultService.Key.ID_USER, value: (idUser + 1))
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        
+        let predicate1 = NSPredicate(format: "userName = %@", userName)
+        let predicate2 = NSPredicate(format: "groupId = %d", groupId)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate1, predicate2])
+        fetchRequest.predicate = predicate
+        
+        do {
+            let fetchResults = try context.fetch(fetchRequest)
+            if fetchResults.count != 0 {
+                // update
+                let managedObject = fetchResults[0]
+                managedObject.setValue(userName, forKey: "userName")
+                save()
+            } else {
+                //insert as new data
+                var user: User
+                
+                user = User(context: context)
+                user.id = idUser
+                user.userName = userName
+                user.groupId = Int64(groupId)
+                user.phoneNumber = phoneNumber
+                save()
+                UserDefaultService.shared.store(key: UserDefaultService.Key.ID_USER, value: (idUser + 1))
+            }
+        } catch {
+            
+        }
+        
     }
     
     func getAllUser() -> [User] {

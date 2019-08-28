@@ -51,7 +51,7 @@ class CreateGroupsViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-        cell.textLabel?.text = groups[indexPath.row].groupName
+        cell.textLabel?.text = "\(groups[indexPath.row].groupName!) (\(groups[indexPath.row].numOfMember))"
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }
