@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailReceiptViewController: UIViewController {
     
     @IBOutlet weak var tableReceipt: UITableView!
     var items: [Item] = []
@@ -47,7 +47,31 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
+
+    @objc func priceButtonTapped(sender: UIButton!) {
+        self.typeEditor = ModifyDetailReceiptViewController.TYPE_EDIT
+        selectedIdx = sender.tag
+        self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
+    }
     
+    @objc func deleteButtonTapped(sender: UIButton!) {
+        
+        self.items.remove(at: sender.tag)
+        ItemDataController.shared.removeItemAtIndex(idx: sender.tag)
+        self.tableReceipt.reloadData()
+    }
+    
+    @IBAction func showAddItem(_ sender: Any) {
+        self.typeEditor = ModifyDetailReceiptViewController.TYPE_ADD
+        self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
+    }
+    
+    @IBAction func showAssignTo(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
+    }
+}
+
+extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count;
     }
@@ -74,52 +98,5 @@ class DetailReceiptViewController: UIViewController, UITableViewDelegate, UITabl
         // Add target to the deleteButton so that the row can be deleted when tapped
         cell.buttonDelete.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         return cell
-    }
-
-    @objc func priceButtonTapped(sender: UIButton!) {
-        self.typeEditor = ModifyDetailReceiptViewController.TYPE_EDIT
-        selectedIdx = sender.tag
-        // Create the alert controller.
-//        let alert = UIAlertController(title: "Enter Price", message: nil, preferredStyle: .alert)
-//
-//        // Add the text field
-//        alert.addTextField { (textField ) in
-//            textField.keyboardType = .decimalPad
-//        }
-//
-//
-//        // Grab the value from the text field,
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-//            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-//
-//            if !(textField?.text?.isEmpty)! {
-//
-//                self.items[sender.tag].price = Float((textField?.text)!)!
-//                self.tableReceipt.reloadData()
-//            }
-//        }))
-//
-//        // Add cancel button
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .default))
-//
-//        // Present the alert
-//        present(alert, animated: true, completion: nil)
-        self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
-    }
-    
-    @objc func deleteButtonTapped(sender: UIButton!) {
-        
-        self.items.remove(at: sender.tag)
-        ItemDataController.shared.removeItemAtIndex(idx: sender.tag)
-        self.tableReceipt.reloadData()
-    }
-    
-    @IBAction func showAddItem(_ sender: Any) {
-        self.typeEditor = ModifyDetailReceiptViewController.TYPE_ADD
-        self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
-    }
-    
-    @IBAction func showAssignTo(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGroupsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CreateGroupsViewController: UIViewController {
     
     @IBOutlet weak var tableGroup: UITableView!
     
@@ -44,6 +44,15 @@ class CreateGroupsViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+
+    @IBAction func doCreateGroup(_ sender: Any) {
+        self.selectedGroupId = -1
+        self.performSegue(withIdentifier: "goToCreateGroup", sender: nil)
+    }
+}
+
+extension CreateGroupsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
@@ -59,11 +68,6 @@ class CreateGroupsViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedGroupId = Int(groups[indexPath.row].groupId)
-        self.performSegue(withIdentifier: "goToCreateGroup", sender: nil)
-    }
-
-    @IBAction func doCreateGroup(_ sender: Any) {
-        self.selectedGroupId = -1
         self.performSegue(withIdentifier: "goToCreateGroup", sender: nil)
     }
 }

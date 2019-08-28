@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ScanViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker: UIImagePickerController!
@@ -32,49 +32,6 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        imagePicker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        self.imageView.image = info[.originalImage] as? UIImage
-        self.imagePicker.dismiss(animated: true) {
-            self.showLoading()
-            guard let image = self.imageView.image else { return }
-            
-            DispatchQueue.global().async() {
-                
-                let img2 =  image.fixedOrientation()
-                let img3 = img2.scaledImage(3500) ?? img2
-                // add GPUImage processing to improve the detection
-                let preprocessedImage = img3.preprocessedImage() ?? img3
-                
-                DispatchQueue.main.async{
-                    self.imageView.image = preprocessedImage
-                }
-                
-                if self.processor == nil {
-                    self.processor = ScaledElementProcessor()
-                }
-                if self.processor != nil {
-                    self.processor?.process(in: preprocessedImage) { text in
-                        DispatchQueue.main.async{
-                            self.dismiss(animated: true, completion: {
-                                //self.showAlert(message: text)
-                                ItemDataController.shared.removeAllItem()
-                                self.items = text
-                                for item in self.items {
-                                    ItemDataController.shared.addItem(item: item)
-                                }
-                                self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
-                            })
-                        }
-                    }
-                }
-            }
-        }
     }
     
     func showAlert(message: String) {
@@ -135,5 +92,50 @@ class ScanViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //            }
         }
     }
+}
 
+extension ScanViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.imageView.image = info[.originalImage] as? UIImage
+        self.imagePicker.dismiss(animated: true) {
+            self.showLoading()
+            guard let image = self.imageView.image else { return }
+            
+            DispatchQueue.global().async() {
+                
+                let img2 =  image.fixedOrientation()
+                let img3 = img2.scaledImage(3500) ?? img2
+                // add GPUImage processing to improve the detection
+                let preprocessedImage = img3.preprocessedImage() ?? img3
+                
+                DispatchQueue.main.async{
+                    self.imageView.image = preprocessedImage
+                }
+                
+                if self.processor == nil {
+                    self.processor = ScaledElementProcessor()
+                }
+                if self.processor != nil {
+                    self.processor?.process(in: preprocessedImage) { text in
+                        DispatchQueue.main.async{
+                            self.dismiss(animated: true, completion: {
+                                //self.showAlert(message: text)
+                                ItemDataController.shared.removeAllItem()
+                                self.items = text
+                                for item in self.items {
+                                    ItemDataController.shared.addItem(item: item)
+                                }
+                                self.performSegue(withIdentifier: "goToReceiptScanResult", sender: self)
+                            })
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
