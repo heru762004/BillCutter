@@ -56,12 +56,13 @@ class AddGroupViewController: UIViewController {
 }
 
 extension AddGroupViewController: CNContactPickerDelegate {
+    
     func contactPicker(_ picker: CNContactPickerViewController,
                        didSelect contacts: [CNContact]) {
         
         for contact in contacts {
             print("Contact = \(contact.givenName) \(contact.familyName)")
-            let phoneNumber = (contact.phoneNumbers[0].value as! CNPhoneNumber).value(forKey: "digits") as! String
+            let phoneNumber = (contact.phoneNumbers[0].value ).value(forKey: "digits") as! String
             print("Phone = \(phoneNumber)")
         }
 //        let newFriends = contacts.compactMap { Friend(contact: $0) }
