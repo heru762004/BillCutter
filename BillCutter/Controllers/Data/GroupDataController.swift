@@ -60,5 +60,17 @@ class GroupDataController {
         return []
     }
     
+    func getGroupWithFilter(groupId: Int) -> Group? {
+        let request: NSFetchRequest<Group> = Group.fetchRequest()
+        request.predicate = NSPredicate(format: "groupId = %d", groupId)
+        do {
+            let result = try context.fetch(request)
+            return result.first!
+        } catch {
+            
+            print("Failed")
+        }
+        return nil
+    }
     
 }

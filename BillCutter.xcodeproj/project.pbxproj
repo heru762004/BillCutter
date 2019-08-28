@@ -18,6 +18,7 @@
 		C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CDCD92314FF7700416851 /* UserDefaultService.swift */; };
 		C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CDCE02315078000416851 /* AddGroupViewController.swift */; };
 		C93CDCE32315671300416851 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93CDCE22315671200416851 /* ContactsUI.framework */; };
+		C93CDCE52316221E00416851 /* UserDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CDCE42316221E00416851 /* UserDataController.swift */; };
 		C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
@@ -75,6 +76,7 @@
 		C93CDCD92314FF7700416851 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		C93CDCE02315078000416851 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		C93CDCE22315671200416851 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		C93CDCE42316221E00416851 /* UserDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataController.swift; sourceTree = "<group>"; };
 		C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				C9168D972310F57200396BA0 /* ItemDataController.swift */,
 				C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */,
+				C93CDCE42316221E00416851 /* UserDataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
 				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
+				C93CDCE52316221E00416851 /* UserDataController.swift in Sources */,
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
 				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,

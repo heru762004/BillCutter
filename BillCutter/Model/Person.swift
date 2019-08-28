@@ -11,11 +11,13 @@ import Foundation
 class Person {
     
     var name: String
+    var phoneNumber: String
     var owe: Float
     var items: [Item]
     
-    init(name: String) {
+    init(name: String, phoneNumber: String) {
         self.name = name
+        self.phoneNumber = phoneNumber
         self.owe = 0.0
         self.items = []
     }

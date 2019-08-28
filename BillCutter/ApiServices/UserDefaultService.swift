@@ -14,6 +14,7 @@ class UserDefaultService {
     
     struct Key {
         static let ID_GROUP = "ID_GROUP"
+        static let ID_USER = "ID_USER"
     }
     
     //Initializer access level change now
