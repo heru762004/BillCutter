@@ -20,7 +20,11 @@ class AddGroupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if selectedGroupId != -1 {
+        if selectedGroupId == -1 {
+            // need to be replaced by username and registered phone number
+            let person = Person(name: "Me", phoneNumber: "+6588888888")
+            listPerson.append(person)
+        } else {
             if let selectedGroup: Group = GroupDataController.shared.getGroupWithFilter(groupId: selectedGroupId) {
                 groupNameText.text = selectedGroup.groupName
                 let listUser = UserDataController.shared.getGroupWithFilterGroupId(groupId: selectedGroupId)
@@ -113,17 +117,10 @@ extension AddGroupViewController: CNContactPickerDelegate {
             let phoneNumber = (contact.phoneNumbers[0].value ).value(forKey: "digits") as! String
             let person = Person(name: "\(contact.givenName) \(contact.familyName)", phoneNumber: phoneNumber)
             listPerson.append(person)
-            print("Contact = \(contact.givenName) \(contact.familyName)")            
-            print("Phone = \(phoneNumber)")
+//            print("Contact = \(contact.givenName) \(contact.familyName)")
+//            print("Phone = \(phoneNumber)")
         }
         tableContact.reloadData()
-//        let newFriends = contacts.compactMap { Friend(contact: $0) }
-//        for friend in newFriends {
-//            if !friendsList.contains(friend) {
-//                friendsList.append(friend)
-//            }
-//        }
-//        tableView.reloadData()
     }
 }
 

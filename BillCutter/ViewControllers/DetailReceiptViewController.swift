@@ -67,7 +67,7 @@ class DetailReceiptViewController: UIViewController {
     }
     
     @IBAction func showAssignTo(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
+        
     }
 }
 
@@ -98,5 +98,10 @@ extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSourc
         // Add target to the deleteButton so that the row can be deleted when tapped
         cell.buttonDelete.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
     }
 }

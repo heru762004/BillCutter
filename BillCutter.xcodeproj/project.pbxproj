@@ -11,6 +11,8 @@
 		A71142B523144DEE00257E6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71142B423144DEE00257E6E /* ApiService.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
+		C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CB2316BCFC001199FA /* AssignToViewController.swift */; };
+		C91F80CE2316C108001199FA /* DetailAssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CD2316C108001199FA /* DetailAssignViewController.swift */; };
 		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
 		C92C233923058A4900B85772 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233823058A4900B85772 /* ScanViewController.swift */; };
 		C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */; };
@@ -69,6 +71,8 @@
 		C9168D93231056E000396BA0 /* billcutter-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "billcutter-bridging-header.h"; sourceTree = "<group>"; };
 		C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDetailReceiptViewController.swift; sourceTree = "<group>"; };
 		C9168D972310F57200396BA0 /* ItemDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataController.swift; sourceTree = "<group>"; };
+		C91F80CB2316BCFC001199FA /* AssignToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignToViewController.swift; sourceTree = "<group>"; };
+		C91F80CD2316C108001199FA /* DetailAssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssignViewController.swift; sourceTree = "<group>"; };
 		C92C233623058A0000B85772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C92C233823058A4900B85772 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */,
 				C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */,
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
+				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
+				C91F80CD2316C108001199FA /* DetailAssignViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
+				C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
 				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
@@ -551,6 +558,7 @@
 				C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */,
 				CD734CB8230A56F4007D4A6B /* Item.swift in Sources */,
 				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
+				C91F80CE2316C108001199FA /* DetailAssignViewController.swift in Sources */,
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
