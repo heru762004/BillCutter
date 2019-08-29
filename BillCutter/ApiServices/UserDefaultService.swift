@@ -15,6 +15,7 @@ class UserDefaultService {
     struct Key {
         static let ID_GROUP = "ID_GROUP"
         static let ID_USER = "ID_USER"
+        static let ACCESS_TOKEN = "ACCESS_TOKEN"
     }
     
     //Initializer access level change now
@@ -32,6 +33,19 @@ class UserDefaultService {
             return 0
         } else {
             return self.userDefault.object(forKey: key) as! Int64
+        }
+    }
+    
+    func storeString(key: String, value: String) {
+        self.userDefault.set(value, forKey: key)
+        self.userDefault.synchronize()
+    }
+    
+    func retrieveString(key: String) -> String {
+        if self.userDefault.object(forKey: key) == nil {
+            return ""
+        } else {
+            return self.userDefault.object(forKey: key) as! String
         }
     }
 }
