@@ -14,7 +14,7 @@ import Alamofire
 class SweetEscapeApiClient {
     
     private let configuration = URLSessionConfiguration.default
-    private let serverUrl = ""
+    private let serverUrl = "https://w3uoqtppme.execute-api.ap-southeast-1.amazonaws.com/Prod"
     
     private static let successResponseCode = 200
     private static let sessionExpiredResponseCode = 401

@@ -13,6 +13,7 @@
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CB2316BCFC001199FA /* AssignToViewController.swift */; };
 		C91F80CE2316C108001199FA /* DetailAssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CD2316C108001199FA /* DetailAssignViewController.swift */; };
+		C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80D02317B15E001199FA /* LoginApiService.swift */; };
 		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
 		C92C233923058A4900B85772 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233823058A4900B85772 /* ScanViewController.swift */; };
 		C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */; };
@@ -73,6 +74,7 @@
 		C9168D972310F57200396BA0 /* ItemDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataController.swift; sourceTree = "<group>"; };
 		C91F80CB2316BCFC001199FA /* AssignToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignToViewController.swift; sourceTree = "<group>"; };
 		C91F80CD2316C108001199FA /* DetailAssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssignViewController.swift; sourceTree = "<group>"; };
+		C91F80D02317B15E001199FA /* LoginApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
 		C92C233623058A0000B85772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C92C233823058A4900B85772 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		C92C233D2305970B00B85772 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
@@ -176,9 +178,18 @@
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C91F80CF2317AB97001199FA /* Service */,
 				C9906CDE23140F8A00E3EEB0 /* Data */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C91F80CF2317AB97001199FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C91F80D02317B15E001199FA /* LoginApiService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		C92C233C230596D600B85772 /* ImageProcessor */ = {
@@ -546,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */,
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
 				C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,

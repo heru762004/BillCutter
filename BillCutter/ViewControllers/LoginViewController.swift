@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+        LoginApiService.shared.sendRequest(userName: "aaaa", password: "aaaa")
+        //self.performSegue(withIdentifier: "goToMainMenu", sender: self)
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
