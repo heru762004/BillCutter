@@ -61,7 +61,7 @@ class SweetEscapeApiClient {
             },
                 onCompleted: {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            })
+            }).debug()
             .map { (response, string) in
                 return (response.statusCode == SweetEscapeApiClient.successResponseCode, string)
         }

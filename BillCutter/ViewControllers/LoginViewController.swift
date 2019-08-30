@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: ParentViewController {
     
     @IBOutlet weak var usernameText: UITextField!
     
@@ -52,27 +52,5 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "goToRegister", sender: self)
     }
     
-    func showLoading() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-        
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showErrorMessage(errorCode :String, errorMessage :String) {
-        let alertController = UIAlertController(title: "Error : \(errorCode)", message: errorMessage, preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {(alert: UIAlertAction!) in
-            self.dismiss(animated: true, completion: {
-                // not used
-            })
-        }))
-        present(alertController, animated: true, completion: nil)
-    }
 }
 
