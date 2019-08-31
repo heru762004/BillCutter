@@ -9,25 +9,36 @@
 import UIKit
 
 class AssignToViewController: UIViewController {
-
-    @IBOutlet weak var tableGroup: UITableView!
     
-    var groups: [Group] = []
-    var selectedGroupId = -1
+    @IBOutlet weak var itemNameText: UILabel!
+    
+    @IBOutlet weak var priceText: UILabel!
+    
+    var itemName: String?
+    var itemPrice: Float = 0.0
     
     override func viewDidLoad() {
-        self.navigationItem.title = "Assign To"
+        self.navigationItem.title = "Split Item"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        itemNameText.text = itemName
+        var twoDecimalPlaces = ""
+        if itemPrice >= 0.0 {
+            twoDecimalPlaces = String(format: "$%.2f", itemPrice)
+        } else {
+            twoDecimalPlaces = String(format: "%.2f", itemPrice)
+            twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+            twoDecimalPlaces = String(format: "-$%@", twoDecimalPlaces)
+        }
+        priceText.text = twoDecimalPlaces
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        groups = GroupDataController.shared.getAllGroups()
-        tableGroup.reloadData()
+        
     }
     
     
@@ -38,34 +49,8 @@ class AssignToViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if selectedGroupId != -1 {
-            if segue.identifier == "goToDetailAssignGroup" {
-                if let detailAssignView = segue.destination as? DetailAssignViewController {
-                    detailAssignView.selectedGroupId = self.selectedGroupId
-                }
-            }
-        }
+       
     }
     
 }
 
-extension AssignToViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-        cell.textLabel?.text = "\(groups[indexPath.row].groupName!) (\(groups[indexPath.row].numOfMember))"
-        cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedGroupId = Int(groups[indexPath.row].groupId)
-        self.performSegue(withIdentifier: "goToDetailAssignGroup", sender: nil)
-    }
-}

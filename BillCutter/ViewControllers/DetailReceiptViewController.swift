@@ -43,6 +43,9 @@ class DetailReceiptViewController: UIViewController {
                 print(selectedIdx)
                 detailReceipt.selectedIdx = selectedIdx
             }
+        } else if let viewController = segue.destination as? AssignToViewController {
+            viewController.itemName = items[selectedIdx].name
+            viewController.itemPrice = items[selectedIdx].price
         }
         
     }
@@ -102,6 +105,7 @@ extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedIdx = indexPath.row
         self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
     }
 }

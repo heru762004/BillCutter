@@ -13,7 +13,6 @@
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C91DD88723192582003D2705 /* ListGroupApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD88623192582003D2705 /* ListGroupApiService.swift */; };
 		C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CB2316BCFC001199FA /* AssignToViewController.swift */; };
-		C91F80CE2316C108001199FA /* DetailAssignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80CD2316C108001199FA /* DetailAssignViewController.swift */; };
 		C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80D02317B15E001199FA /* LoginApiService.swift */; };
 		C91F80D32317F908001199FA /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91F80D22317F908001199FA /* ErrorResponse.swift */; };
 		C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C92C233623058A0000B85772 /* GoogleService-Info.plist */; };
@@ -77,7 +76,6 @@
 		C9168D972310F57200396BA0 /* ItemDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataController.swift; sourceTree = "<group>"; };
 		C91DD88623192582003D2705 /* ListGroupApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGroupApiService.swift; sourceTree = "<group>"; };
 		C91F80CB2316BCFC001199FA /* AssignToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignToViewController.swift; sourceTree = "<group>"; };
-		C91F80CD2316C108001199FA /* DetailAssignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAssignViewController.swift; sourceTree = "<group>"; };
 		C91F80D02317B15E001199FA /* LoginApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiService.swift; sourceTree = "<group>"; };
 		C91F80D22317F908001199FA /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		C92C233623058A0000B85772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -301,7 +299,6 @@
 				C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */,
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
-				C91F80CD2316C108001199FA /* DetailAssignViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -580,7 +577,6 @@
 				C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */,
 				CD734CB8230A56F4007D4A6B /* Item.swift in Sources */,
 				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
-				C91F80CE2316C108001199FA /* DetailAssignViewController.swift in Sources */,
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				C91F80D32317F908001199FA /* ErrorResponse.swift in Sources */,
 				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
