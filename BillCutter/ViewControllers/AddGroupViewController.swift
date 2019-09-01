@@ -22,7 +22,8 @@ class AddGroupViewController: UIViewController {
         super.viewDidLoad()
         if selectedGroupId == -1 {
             // need to be replaced by username and registered phone number
-            let person = Person(name: "Me", phoneNumber: "+6588888888")
+            let userName = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.USERNAME)
+            let person = Person(name: userName, phoneNumber: "+6588888888")
             listPerson.append(person)
         } else {
             if let selectedGroup: Group = GroupDataController.shared.getGroupWithFilter(groupId: selectedGroupId) {

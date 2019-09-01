@@ -1586,7 +1586,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="MV, FI" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QkW-9F-o4W">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkW-9F-o4W">
                                 <rect key="frame" x="46" y="262" width="283" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1649,11 +1649,17 @@
                         <viewLayoutGuide key="safeArea" id="EBE-xZ-uMS"/>
                     </view>
                     <navigationItem key="navigationItem" id="cch-cs-54c">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yCs-Zd-0Iy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yCs-Zd-0Iy">
+                            <connections>
+                                <action selector="doShowActionMenu:" destination="TNZ-2k-IXq" id="Zrw-c2-5Bz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemNameText" destination="plP-9F-1k1" id="vMC-Vu-PLe"/>
+                        <outlet property="paidByText" destination="hV5-rG-who" id="atL-o0-l6X"/>
                         <outlet property="priceText" destination="6ke-RV-9er" id="fIT-O1-EqZ"/>
+                        <outlet property="tagItemText" destination="QkW-9F-o4W" id="8sp-oY-BF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw0-M7-dX3" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -39,6 +39,7 @@ class LoginViewController: ParentViewController {
         self.showLoading()
         LoginApiService.shared.sendRequest(userName: userName, password: password, onSuccess: { (success) in
             self.dismiss(animated: true, completion: {
+                UserDefaultService.shared.storeString(key: UserDefaultService.Key.USERNAME, value: userName)
                 self.performSegue(withIdentifier: "goToMainMenu", sender: self)
             })
         }, onFailure: { (errResponse) in

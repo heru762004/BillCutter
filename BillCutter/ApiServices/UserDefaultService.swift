@@ -16,6 +16,7 @@ class UserDefaultService {
         static let ID_GROUP = "ID_GROUP"
         static let ID_USER = "ID_USER"
         static let ACCESS_TOKEN = "ACCESS_TOKEN"
+        static let USERNAME = "USERNAME"
     }
     
     //Initializer access level change now
