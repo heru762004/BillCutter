@@ -1148,3 +1148,36 @@ Pods/Target Support Files/RxSwift/RxSwift.xcconfig
 Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/Alamofire.xcscheme
 Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/RxAlamofire.xcscheme
 Pods/Pods.xcodeproj/xcuserdata/Heru.xcuserdatad/xcschemes/RxSwift.xcscheme
+Pods/ObjectMapper/LICENSE
+Pods/ObjectMapper/README-CN.md
+Pods/ObjectMapper/Sources/CodableTransform.swift
+Pods/ObjectMapper/Sources/CustomDateFormatTransform.swift
+Pods/ObjectMapper/Sources/DataTransform.swift
+Pods/ObjectMapper/Sources/DateFormatterTransform.swift
+Pods/ObjectMapper/Sources/DateTransform.swift
+Pods/ObjectMapper/Sources/DictionaryTransform.swift
+Pods/ObjectMapper/Sources/EnumOperators.swift
+Pods/ObjectMapper/Sources/EnumTransform.swift
+Pods/ObjectMapper/Sources/FromJSON.swift
+Pods/ObjectMapper/Sources/HexColorTransform.swift
+Pods/ObjectMapper/Sources/ImmutableMappable.swift
+Pods/ObjectMapper/Sources/IntegerOperators.swift
+Pods/ObjectMapper/Sources/ISO8601DateTransform.swift
+Pods/ObjectMapper/Sources/Map.swift
+Pods/ObjectMapper/Sources/MapError.swift
+Pods/ObjectMapper/Sources/Mappable.swift
+Pods/ObjectMapper/Sources/Mapper.swift
+Pods/ObjectMapper/Sources/NSDecimalNumberTransform.swift
+Pods/ObjectMapper/Sources/Operators.swift
+Pods/ObjectMapper/Sources/ToJSON.swift
+Pods/ObjectMapper/Sources/TransformOf.swift
+Pods/ObjectMapper/Sources/TransformOperators.swift
+Pods/ObjectMapper/Sources/TransformType.swift
+Pods/ObjectMapper/Sources/URLTransform.swift
+Pods/Pods.xcodeproj/xcuserdata/erick.xcuserdatad/xcschemes/ObjectMapper.xcscheme
+Pods/Target Support Files/ObjectMapper/Info.plist
+Pods/Target Support Files/ObjectMapper/ObjectMapper-dummy.m
+Pods/Target Support Files/ObjectMapper/ObjectMapper-prefix.pch
+Pods/Target Support Files/ObjectMapper/ObjectMapper-umbrella.h
+Pods/Target Support Files/ObjectMapper/ObjectMapper.modulemap
+Pods/Target Support Files/ObjectMapper/ObjectMapper.xcconfig

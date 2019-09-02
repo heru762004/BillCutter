@@ -15,7 +15,8 @@ target 'BillCutter' do
   pod 'RxSwift'
   pod 'Alamofire'
   pod 'RxAlamofire'
-
+  pod 'ObjectMapper', '~> 3.4'
+  
   target 'BillCutterTests' do
     inherit! :search_paths
     # Pods for testing

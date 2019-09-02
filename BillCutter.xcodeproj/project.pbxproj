@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		89AB9F86EC9200809F544E8C /* Pods_BillCutterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1A98084E417F8B791E4C93 /* Pods_BillCutterUITests.framework */; };
 		A71142B523144DEE00257E6E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71142B423144DEE00257E6E /* ApiService.swift */; };
+		A7651B39231D85D700035774 /* ApiStatusResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B38231D85D700035774 /* ApiStatusResultResponse.swift */; };
+		A7651B3B231D86E300035774 /* ApiStatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3A231D86E300035774 /* ApiStatusResult.swift */; };
+		A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3C231D881100035774 /* RegisterApiService.swift */; };
+		A7651B40231D921900035774 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3F231D921900035774 /* ViewUtil.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C91DD88723192582003D2705 /* ListGroupApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD88623192582003D2705 /* ListGroupApiService.swift */; };
@@ -68,6 +72,10 @@
 		2E952E99B825ACD7DAFE8C2B /* Pods_BillCutterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillCutterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.debug.xcconfig"; sourceTree = "<group>"; };
 		A71142B423144DEE00257E6E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		A7651B38231D85D700035774 /* ApiStatusResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatusResultResponse.swift; sourceTree = "<group>"; };
+		A7651B3A231D86E300035774 /* ApiStatusResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatusResult.swift; sourceTree = "<group>"; };
+		A7651B3C231D881100035774 /* RegisterApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiService.swift; sourceTree = "<group>"; };
+		A7651B3F231D921900035774 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,10 +181,27 @@
 		A71142B323144DC900257E6E /* ApiServices */ = {
 			isa = PBXGroup;
 			children = (
+				A7651B37231D857400035774 /* Responses */,
 				A71142B423144DEE00257E6E /* ApiService.swift */,
 				C93CDCD92314FF7700416851 /* UserDefaultService.swift */,
 			);
 			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		A7651B37231D857400035774 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A7651B38231D85D700035774 /* ApiStatusResultResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A7651B3E231D920100035774 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A7651B3F231D921900035774 /* ViewUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C9168D962310EF8500396BA0 /* Controllers */ = {
@@ -193,6 +218,7 @@
 			children = (
 				C91F80D02317B15E001199FA /* LoginApiService.swift */,
 				C91DD88623192582003D2705 /* ListGroupApiService.swift */,
+				A7651B3C231D881100035774 /* RegisterApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -250,6 +276,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				A7651B3E231D920100035774 /* Utils */,
 				A71142B323144DC900257E6E /* ApiServices */,
 				C9168D962310EF8500396BA0 /* Controllers */,
 				CD734CB6230A56D3007D4A6B /* Model */,
@@ -309,6 +336,7 @@
 				CD734CB7230A56F4007D4A6B /* Item.swift */,
 				CD734CB9230A5729007D4A6B /* Person.swift */,
 				C91F80D22317F908001199FA /* ErrorResponse.swift */,
+				A7651B3A231D86E300035774 /* ApiStatusResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -496,6 +524,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -510,6 +539,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -570,6 +600,7 @@
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
 				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
 				C93CDCE52316221E00416851 /* UserDataController.swift in Sources */,
+				A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */,
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
@@ -580,6 +611,7 @@
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				C91F80D32317F908001199FA /* ErrorResponse.swift in Sources */,
 				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
+				A7651B3B231D86E300035774 /* ApiStatusResult.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
 				C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
@@ -587,7 +619,9 @@
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
 				C91DD88723192582003D2705 /* ListGroupApiService.swift in Sources */,
 				C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */,
+				A7651B40231D921900035774 /* ViewUtil.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
+				A7651B39231D85D700035774 /* ApiStatusResultResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,11 @@ class ListGroupApiService {
     static let shared = ListGroupApiService()
     
     let path = "/groups"
-    
-    let apiService: SweetEscapeApiClient!
+    let apiService: ApiService!
     
     //Initializer access level change now
     private init(){
-        self.apiService = SweetEscapeApiClient()
+        self.apiService = ApiService()
     }
     
     func sendRequest(onSuccess success: @escaping (_ resp: String) -> Void, onFailure failure: @escaping (_ err: ErrorResponse) -> Void) {

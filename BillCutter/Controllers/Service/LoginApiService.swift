@@ -14,11 +14,11 @@ class LoginApiService {
     
     let path = "/oauth/token?grant_type=password&username="
     
-    let apiService: SweetEscapeApiClient!
+    let apiService: ApiService!
     
     //Initializer access level change now
     private init(){
-        self.apiService = SweetEscapeApiClient()
+        self.apiService = ApiService()
     }
     
     func sendRequest(userName: String, password: String, onSuccess success: @escaping (_ resp: String) -> Void, onFailure failure: @escaping (_ err: ErrorResponse) -> Void) {

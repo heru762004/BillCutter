@@ -11,7 +11,7 @@ import RxSwift
 import RxAlamofire
 import Alamofire
 
-class SweetEscapeApiClient {
+class ApiService {
     
     private let configuration = URLSessionConfiguration.default
     private let serverUrl = "https://w3uoqtppme.execute-api.ap-southeast-1.amazonaws.com/Prod"
@@ -19,16 +19,16 @@ class SweetEscapeApiClient {
     private static let successResponseCode = 200
     private static let sessionExpiredResponseCode = 401
     
-    func getString(path: String, headers: [String: String] =  ["":""], apiVersion: String = "v1/") -> Observable<(Bool, String)> {
-        return doRequest(path: path, headers: headers, method: .get, params: nil, apiVersion: apiVersion)
+    func getString(path: String, headers: [String: String] =  ["":""]) -> Observable<(Bool, String)> {
+        return doRequest(path: path, headers: headers, method: .get, params: nil)
     }
     
-    func postString(path: String, headers: [String: String], params: [String: Any], apiVersion: String = "v1/") -> Observable<(Bool, String)> {
-        return doRequest(path: path, headers: headers, method: .post, params: params, apiVersion: apiVersion)
+    func postString(path: String, headers: [String: String], params: [String: Any]) -> Observable<(Bool, String)> {
+        return doRequest(path: path, headers: headers, method: .post, params: params)
     }
     
-    func putString(path: String, headers: [String: String], params: [String: Any], apiVersion: String = "v1/") -> Observable<(Bool, String)> {
-        return doRequest(path: path, headers: headers, method: .put, params: params, apiVersion: apiVersion)
+    func putString(path: String, headers: [String: String], params: [String: Any]) -> Observable<(Bool, String)> {
+        return doRequest(path: path, headers: headers, method: .put, params: params)
     }
     
     private func populateHeaders(
@@ -45,7 +45,7 @@ class SweetEscapeApiClient {
         return headers
     }
     
-    private func doRequest(path: String, headers: [String: String], method: Alamofire.HTTPMethod, params: [String: Any]?, apiVersion: String) -> Observable<(Bool, String)> {
+    private func doRequest(path: String, headers: [String: String], method: Alamofire.HTTPMethod, params: [String: Any]?) -> Observable<(Bool, String)> {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let manager = SessionManager.default
@@ -63,7 +63,7 @@ class SweetEscapeApiClient {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }).debug()
             .map { (response, string) in
-                return (response.statusCode == SweetEscapeApiClient.successResponseCode, string)
+                return (response.statusCode == ApiService.successResponseCode, string)
         }
     }
 }
