@@ -79,7 +79,7 @@ extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
             if item.name == itemName {
                 for user in listUser {
                     let person = Person(name: user.userName!, phoneNumber: user.phoneNumber!)
-                    person.owe = owe
+                    person.owe += owe
                     item.addPerson(person: person)
                 }
                 ItemDataController.shared.addItem(item: item)
