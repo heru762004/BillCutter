@@ -45,6 +45,20 @@ class AssignToViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        var personString = ""
+        let listItem: [Item] = ItemDataController.shared.getAllItem()
+        for item in listItem {
+            if item.name == itemName {
+                for person in item.people {
+                    if personString.count > 0 {
+                        personString += ", "
+                    }
+                    personString += person.name
+                }
+            }
+            break
+        }
+        tagItemText.text = personString
         
     }
     
@@ -55,6 +69,7 @@ class AssignToViewController: UIViewController {
         // 2
         let groupTag = UIAlertAction(title: "Tag by Group", style: .default, handler: { (actionSheetController) in
             // show group menu
+            self.performSegue(withIdentifier: "goToGroupTag", sender: nil)
         })
         let userTag = UIAlertAction(title: "Tag by User", style: .default, handler: { (actionSheetController) in
             // show user menu
@@ -79,7 +94,12 @@ class AssignToViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-       
+        if let navController = segue.destination as? UINavigationController {
+            if let detailReceipt = navController.viewControllers.first as? GroupTagViewController {
+                detailReceipt.itemName = itemName
+                detailReceipt.itemPrice = itemPrice
+            }
+        }
     }
     
 }

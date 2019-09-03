@@ -41,6 +41,7 @@
 		C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */; };
 		C998036422FAFE62008E6A28 /* BillCutterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036322FAFE62008E6A28 /* BillCutterTests.swift */; };
 		C998036F22FAFE62008E6A28 /* BillCutterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */; };
+		C9B15770231E9E1900369D45 /* GroupTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1576F231E9E1900369D45 /* GroupTagViewController.swift */; };
 		C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */; };
 		CD734CB8230A56F4007D4A6B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734CB7230A56F4007D4A6B /* Item.swift */; };
 		CD734CBA230A5729007D4A6B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD734CB9230A5729007D4A6B /* Person.swift */; };
@@ -115,6 +116,7 @@
 		C998036E22FAFE62008E6A28 /* BillCutterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCutterUITests.swift; sourceTree = "<group>"; };
 		C998037022FAFE62008E6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C998037C22FAFF11008E6A28 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C9B1576F231E9E1900369D45 /* GroupTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTagViewController.swift; sourceTree = "<group>"; };
 		C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReceiptTableViewCell.swift; sourceTree = "<group>"; };
 		CD734CB7230A56F4007D4A6B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CD734CB9230A5729007D4A6B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */,
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
+				C9B1576F231E9E1900369D45 /* GroupTagViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				A7651B40231D921900035774 /* ViewUtil.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
 				A7651B39231D85D700035774 /* ApiStatusResultResponse.swift in Sources */,
+				C9B15770231E9E1900369D45 /* GroupTagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

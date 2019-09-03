@@ -21,6 +21,16 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        usernameText.resignFirstResponder()
+        mobileNumberText.resignFirstResponder()
+        emailAddressText.resignFirstResponder()
+        passwordText.resignFirstResponder()
+        verifyPasswordText.resignFirstResponder()
     }
 
     @IBAction func registerPressed(_ sender: Any) {
