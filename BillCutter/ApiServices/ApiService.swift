@@ -31,10 +31,9 @@ class ApiService {
         return doRequest(path: path, headers: headers, method: .put, params: params)
     }
     
-    private func populateHeaders(
-        dict: [String:String]? = nil) -> [String:String] {
+    private func populateHeaders(dict: [String:String]? = nil) -> [String:String] {
         var headers = [String:String]()
-        //        headers["API-KEY"] = "17d32457220C136fA34bA83964d493Be"
+//                headers["Content-Type"] = "application/json"
         
         if let dict = dict {
             for (k, v) in dict where !k.isEmpty {
@@ -49,7 +48,7 @@ class ApiService {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let manager = SessionManager.default
-        return manager.rx.request(method, serverUrl + path, parameters: params, headers: populateHeaders(dict: headers))
+        return manager.rx.request(method, serverUrl + path, parameters: params, encoding: JSONEncoding.default, headers: populateHeaders(dict: headers))
             .flatMap { alamofireRequest in
                 alamofireRequest.rx.responseString()
             }
