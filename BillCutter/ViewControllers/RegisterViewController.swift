@@ -59,7 +59,11 @@ class RegisterViewController: UIViewController {
             }
             .subscribe(onNext: { [weak self] apiResultStatus in
                 guard let weakSelf = self else { return }
-                ViewUtil.showAlert(controller: weakSelf, message: "\(apiResultStatus.message)")
+                ViewUtil.showAlert(controller: weakSelf, message: "", title: apiResultStatus.message, handler: { (uiAlertAction) in
+                    if apiResultStatus.error == false {
+                        self?.navigationController?.popViewController(animated: true)
+                    }
+                })
             }).disposed(by: disposeBag)
     }
 
