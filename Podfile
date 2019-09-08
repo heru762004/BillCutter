@@ -9,6 +9,7 @@ target 'BillCutter' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
+  pod 'Firebase/Messaging'
   pod 'GPUImage'
   #pod 'CurrencyTextField'
   pod 'CurrencyText'

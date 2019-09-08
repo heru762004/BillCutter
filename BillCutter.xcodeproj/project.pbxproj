@@ -30,6 +30,7 @@
 		C94369A32312B9B4009F2FB0 /* CreateGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */; };
+		C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D6CB923253A4700BE93F3 /* UserNotifications.framework */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -98,6 +99,8 @@
 		C94369A22312B9B4009F2FB0 /* CreateGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		C98D6CB923253A4700BE93F3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BillCutter.entitlements; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */,
 				C93CDCE32315671300416851 /* ContactsUI.framework in Frameworks */,
 				C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */,
 				D23B23AB10CE2904B54E837B /* Pods_BillCutter.framework in Frameworks */,
@@ -171,6 +175,7 @@
 		46A25E56B937754147C0D6E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C98D6CB923253A4700BE93F3 /* UserNotifications.framework */,
 				C93CDCE22315671200416851 /* ContactsUI.framework */,
 				C9906CDF231410E300E3EEB0 /* CoreData.framework */,
 				1CB40D90DDC1FDD79860C7A8 /* Pods_BillCutter.framework */,
@@ -278,6 +283,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */,
 				A7651B3E231D920100035774 /* Utils */,
 				A71142B323144DC900257E6E /* ApiServices */,
 				C9168D962310EF8500396BA0 /* Controllers */,
@@ -417,6 +423,11 @@
 				TargetAttributes = {
 					C998034722FAFE5F008E6A28 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C998035E22FAFE62008E6A28 = {
 						CreatedOnToolsVersion = 10.1;
@@ -801,6 +812,7 @@
 			baseConfigurationReference = 75E32FB5734C19FCA53027EC /* Pods-BillCutter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BillCutter/BillCutter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YU75YNV6V;
 				INFOPLIST_FILE = BillCutter/Info.plist;
@@ -821,6 +833,7 @@
 			baseConfigurationReference = BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BillCutter/BillCutter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2YU75YNV6V;
 				INFOPLIST_FILE = BillCutter/Info.plist;
