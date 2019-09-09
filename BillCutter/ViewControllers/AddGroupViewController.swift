@@ -40,9 +40,7 @@ class AddGroupViewController: UIViewController {
     
 
     @IBAction func doClose(_ sender: Any) {
-        self.dismiss(animated: true) {
-            
-        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func doSubmit(_ sender: Any) {
@@ -62,7 +60,7 @@ class AddGroupViewController: UIViewController {
                 }
             }
             
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
