@@ -51,11 +51,11 @@ class GroupsViewController: ParentViewController {
         if segue.identifier == "showGroupReceipt" {
             guard let destinationViewController = segue.destination as? GroupReceiptViewController, let groupReceipt = sender as? GroupReceipt else { return }
             destinationViewController.groupReceipt = groupReceipt
+            destinationViewController.groupId = selectedGroupId
         }
     }
 
     @IBAction func doCreateGroup(_ sender: Any) {
-        self.selectedGroupId = -1
         self.performSegue(withIdentifier: "goToCreateGroup", sender: nil)
     }
     
@@ -104,9 +104,8 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row < groups.count else { return }
-        let groupId = groups[indexPath.row].id
-        
-        GroupReceiptApiService.shared.getGroupReceipt(id: groupId)
+        selectedGroupId = groups[indexPath.row].id
+        GroupReceiptApiService.shared.getGroupReceipt(id: selectedGroupId)
             .catchError {  _ in
                 ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
                 return Observable.empty()
