@@ -161,6 +161,7 @@ extension AppDelegate : MessagingDelegate {
         let dataDict:[String: String] = ["token": fcmToken]
 //        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         print("FIREBASE REGISTRATION TOKEN = \(dataDict)")
+        UserDefaultService.shared.storeString(key: UserDefaultService.Key.FIREBASE_TOKEN, value: fcmToken)
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }

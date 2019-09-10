@@ -39,6 +39,7 @@
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */; };
 		C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D6CB923253A4700BE93F3 /* UserNotifications.framework */; };
+		C98D6CBD2327970100BE93F3 /* ReceiptApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -117,6 +118,7 @@
 		C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		C98D6CB923253A4700BE93F3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BillCutter.entitlements; sourceTree = "<group>"; };
+		C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptApiService.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -246,6 +248,7 @@
 				C91DD88623192582003D2705 /* ListGroupApiService.swift */,
 				A7651B3C231D881100035774 /* RegisterApiService.swift */,
 				A70CEA3923269C5F006BF5E5 /* GroupReceiptApiService.swift */,
+				C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */,
 				A7651B40231D921900035774 /* ViewUtil.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
+				C98D6CBD2327970100BE93F3 /* ReceiptApiService.swift in Sources */,
 				A70CEA2E23269011006BF5E5 /* GroupReceipt.swift in Sources */,
 				A7651B39231D85D700035774 /* ApiStatusResultResponse.swift in Sources */,
 				C9B15770231E9E1900369D45 /* GroupTagViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import ObjectMapper
 
 class LoginApiService {
     static let shared = LoginApiService()
@@ -35,7 +36,16 @@ class LoginApiService {
                     // need to be store because we need to pass it during other request
                     if let accessToken = dicData["access_token"] as? String {
                         UserDefaultService.shared.storeString(key: UserDefaultService.Key.ACCESS_TOKEN, value: accessToken)
-                        success("")
+                        
+                        self.updateProfile()
+                            .catchError {  _ in
+                                let errObj = ErrorResponse(errorCode: "", errorMessage: "Update Profile error")
+                                failure(errObj)
+                                return Observable.empty()
+                            }
+                            .subscribe(onNext: {[weak self] groupList in
+                                success("")
+                            })
                     }
                 } else {
                     print("ERROR JSON RESPONSE = \(json)")
@@ -65,6 +75,24 @@ class LoginApiService {
             print("oncompleted")
         }) {
             print("ondisposed")
+        }
+    }
+    
+    func updateProfile () -> Observable<ApiStatusResult> {
+        
+        let updatePath = "/profile/update"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let firebaseToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.FIREBASE_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        let params: [String: Any] = ["deviceToken": firebaseToken]
+        
+        return apiService.postString(path: updatePath, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
         }
     }
 }
