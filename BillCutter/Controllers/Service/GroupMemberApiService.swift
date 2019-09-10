@@ -19,7 +19,7 @@ class GroupMemberApiService {
         self.apiService = ApiService()
     }
     
-    func getGroupMember(groupId: Int) -> Observable<[GroupReceipt]> {
+    func getGroupMember(groupId: Int) -> Observable<[GroupMember]> {
         let path = "/groups/\(groupId)/members"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
@@ -27,7 +27,7 @@ class GroupMemberApiService {
         
         return apiService.getString(path: path, headers: headers)
             .map { (success, jsonString)  in
-                let groupMember = Mapper<GroupMemberResponse>().map(JSONString: jsonString)?.toGroupMember() ?? GroupMember()
+                let groupMember = Mapper<GroupMemberListResponse>().map(JSONString: jsonString)?.toGroupMembers() ?? [GroupMember]()
                 return groupMember
         }
     }

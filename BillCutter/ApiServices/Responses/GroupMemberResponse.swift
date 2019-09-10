@@ -31,3 +31,24 @@ class GroupMemberResponse: Mappable {
     }
     
 }
+
+class GroupMemberListResponse: Mappable {
+    var data = [GroupMemberResponse]()
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        data <- map["data"]
+    }
+    
+    func toGroupMembers() -> [GroupMember] {
+        var groupMember = [GroupMember]()
+        data.forEach { (groupMembers) in
+            groupMember.append(groupMembers.toGroupMember())
+        }
+        
+        return groupMember
+    }
+    
+}
+
