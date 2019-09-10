@@ -14,12 +14,17 @@ class GroupTagViewController: ParentViewController {
     @IBOutlet weak var tableGroup: UITableView!
     
     var groups: [GroupReceipt] = []
+    var groupMember: [GroupMember] = []
+    var tagMembers: [TagMember] = []
     var itemName: String?
     var itemPrice: Float = 0.0
     
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
+        self.navigationItem.title = "Choose Group"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.orange]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         loadAllGroup()
         // Do any additional setup after loading the view.
@@ -64,6 +69,22 @@ class GroupTagViewController: ParentViewController {
             self.tableGroup.reloadData()
         })
     }
+    
+    private func onLoadGroupMembers(groupMember: [GroupMember]) {
+        self.dismiss(animated: true, completion: {
+            self.groupMember = groupMember
+            self.tagMembers.removeAll()
+            print("GroupMember count = \(self.groupMember.count)")
+            for i in 0..<self.groupMember.count {
+                let tgMember = TagMember()
+                tgMember.id = self.groupMember[i].id
+                self.tagMembers.append(tgMember)
+                print("Group member name = \(self.groupMember[i].name)")
+                print("Group member phone = \(self.groupMember[i].handphone)")
+                print("Group member id = \(self.groupMember[i].id)")
+            }
+        })
+    }
 
     /*
     // MARK: - Navigation
@@ -76,7 +97,35 @@ class GroupTagViewController: ParentViewController {
     */
 
     @IBAction func doSave(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        if self.groupMember.count > 0 {
+            let items = ItemDataController.shared.getAllItem()
+            for item in items {
+                var twoDecimalPlaces = ""
+                if item.price >= 0.0 {
+                    twoDecimalPlaces = String(format: "%.2f", item.price)
+                } else {
+                    twoDecimalPlaces = String(format: "%.2f", item.price)
+                    twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+                    twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+                }
+                ReceiptApiService.shared.addReceipt(itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
+                    .catchError {  _ in
+                        self.dismiss(animated: true, completion: {
+                            ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                        })
+                        return Observable.empty()
+                    }
+                    .subscribe(onNext: {[weak self] statusResponse in
+                        if statusResponse.success {
+                            
+                        }
+                    }).disposed(by: self.disposeBag)
+            }
+        } else {
+            self.showErrorMessage(errorCode: "", errorMessage: "Gorup does not have any member!")
+        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
@@ -100,5 +149,17 @@ extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
 //        tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row < groups.count else { return }
         let groupId = groups[indexPath.row].id
+        self.showLoading {
+            GroupMemberApiService.shared.getGroupMember(groupId: groupId)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] groupMember in
+                    self?.onLoadGroupMembers(groupMember: groupMember)
+                }).disposed(by: self.disposeBag)
+        }
     }
 }
