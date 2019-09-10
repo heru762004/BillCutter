@@ -40,6 +40,9 @@
 		C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */; };
 		C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D6CB923253A4700BE93F3 /* UserNotifications.framework */; };
 		C98D6CBD2327970100BE93F3 /* ReceiptApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */; };
+		C98D6CBF2327A6B500BE93F3 /* GroupMemberApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBE2327A6B500BE93F3 /* GroupMemberApiService.swift */; };
+		C98D6CC22327A83100BE93F3 /* GroupMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC12327A83100BE93F3 /* GroupMemberResponse.swift */; };
+		C98D6CC42327A89300BE93F3 /* GroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC32327A89300BE93F3 /* GroupMember.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -119,6 +122,9 @@
 		C98D6CB923253A4700BE93F3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BillCutter.entitlements; sourceTree = "<group>"; };
 		C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptApiService.swift; sourceTree = "<group>"; };
+		C98D6CBE2327A6B500BE93F3 /* GroupMemberApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberApiService.swift; sourceTree = "<group>"; };
+		C98D6CC12327A83100BE93F3 /* GroupMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberResponse.swift; sourceTree = "<group>"; };
+		C98D6CC32327A89300BE93F3 /* GroupMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMember.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -220,6 +226,7 @@
 				A70CEA3323269289006BF5E5 /* GroupReceiptResponse.swift */,
 				A70CEA372326948D006BF5E5 /* ReceiptResponse.swift */,
 				A70CEA3523269382006BF5E5 /* ReceiptItemResponse.swift */,
+				C98D6CC12327A83100BE93F3 /* GroupMemberResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				A7651B3C231D881100035774 /* RegisterApiService.swift */,
 				A70CEA3923269C5F006BF5E5 /* GroupReceiptApiService.swift */,
 				C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */,
+				C98D6CBE2327A6B500BE93F3 /* GroupMemberApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -373,6 +381,7 @@
 				A70CEA2D23269011006BF5E5 /* GroupReceipt.swift */,
 				A70CEA2F232690CE006BF5E5 /* Receipt.swift */,
 				A70CEA312326919F006BF5E5 /* ReceiptItem.swift */,
+				C98D6CC32327A89300BE93F3 /* GroupMember.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,7 +648,9 @@
 				C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
+				C98D6CC42327A89300BE93F3 /* GroupMember.swift in Sources */,
 				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
+				C98D6CBF2327A6B500BE93F3 /* GroupMemberApiService.swift in Sources */,
 				C93CDCE52316221E00416851 /* UserDataController.swift in Sources */,
 				A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */,
 				A70CEA3623269382006BF5E5 /* ReceiptItemResponse.swift in Sources */,
@@ -655,6 +666,7 @@
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
 				A70CEA382326948D006BF5E5 /* ReceiptResponse.swift in Sources */,
 				C91F80D32317F908001199FA /* ErrorResponse.swift in Sources */,
+				C98D6CC22327A83100BE93F3 /* GroupMemberResponse.swift in Sources */,
 				C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */,
 				A7651B3B231D86E300035774 /* ApiStatusResult.swift in Sources */,
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
