@@ -36,17 +36,18 @@ class LoginViewController: ParentViewController {
             showErrorMessage(errorCode: "", errorMessage: "Password must be filled")
             return
         }
-        self.showLoading()
-        LoginApiService.shared.sendRequest(userName: userName, password: password, onSuccess: { (success) in
-            self.dismiss(animated: true, completion: {
-                UserDefaultService.shared.storeString(key: UserDefaultService.Key.USERNAME, value: userName)
-                self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+        self.showLoading { () in
+            LoginApiService.shared.sendRequest(userName: userName, password: password, onSuccess: { (success) in
+                self.dismiss(animated: true, completion: {
+                    UserDefaultService.shared.storeString(key: UserDefaultService.Key.USERNAME, value: userName)
+                    self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+                })
+            }, onFailure: { (errResponse) in
+                self.dismiss(animated: true, completion: {
+                    self.showErrorMessage(errorCode: errResponse.errorCode, errorMessage: errResponse.errorMessage)
+                })
             })
-        }, onFailure: { (errResponse) in
-            self.dismiss(animated: true, completion: {
-                self.showErrorMessage(errorCode: errResponse.errorCode, errorMessage: errResponse.errorMessage)
-            })
-        })
+        }
     }
     
     @IBAction func signUpPressed(_ sender: Any) {

@@ -352,10 +352,10 @@
 				C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */,
 				C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */,
 				C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */,
+				A72E21A72326C6E800099AC4 /* GroupReceiptViewController.swift */,
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
 				C9B1576F231E9E1900369D45 /* GroupTagViewController.swift */,
-				A72E21A72326C6E800099AC4 /* GroupReceiptViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

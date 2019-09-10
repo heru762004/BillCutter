@@ -62,20 +62,22 @@ class GroupsViewController: ParentViewController {
     // MARK: -
     
     private func loadAllGroup() {
-        self.showLoading()
-        GroupReceiptApiService.shared.getGroupList()
-            .catchError {  _ in
-                self.dismiss(animated: true, completion: {
-                    ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-                })
-                return Observable.empty()
-            }
-            .subscribe(onNext: {[weak self] groupList in
-                self?.dismiss(animated: true, completion: {
-                    self?.groups = groupList
-                    self?.tableGroup.reloadData()
-                })
-            }).disposed(by: disposeBag)
+        self.showLoading { () in
+            GroupReceiptApiService.shared.getGroupList()
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] groupList in
+                    self?.dismiss(animated: true, completion: {
+                        self?.groups = groupList
+                        self?.tableGroup.reloadData()
+                    })
+                }).disposed(by: self.disposeBag)
+        }
+        
     }
     
     private func loadGroupReceiptView(groupReceipt: GroupReceipt) {

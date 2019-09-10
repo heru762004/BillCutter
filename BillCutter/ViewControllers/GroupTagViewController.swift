@@ -7,36 +7,62 @@
 //
 
 import UIKit
+import RxSwift
 
 class GroupTagViewController: ParentViewController {
 
     @IBOutlet weak var tableGroup: UITableView!
     
-    var groups: [Group] = []
+    var groups: [GroupReceipt] = []
     var itemName: String?
     var itemPrice: Float = 0.0
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadAllGroup()
         // Do any additional setup after loading the view.
-        groups = GroupDataController.shared.getAllGroups()
-        tableGroup.reloadData()
+//        groups = GroupDataController.shared.getAllGroups()
+        
+        //tableGroup.reloadData()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.showLoading()
-        ListGroupApiService.shared.sendRequest(onSuccess: { (successResult) in
-            self.dismiss(animated: true, completion: {
-                
-            })
-        }) { (error) in
-            self.dismiss(animated: true, completion: {
-                self.showErrorMessage(errorCode: error.errorCode, errorMessage: error.errorMessage)
-            })
+//        self.showLoading()
+//        ListGroupApiService.shared.sendRequest(onSuccess: { (successResult) in
+//            self.dismiss(animated: true, completion: {
+//
+//            })
+//        }) { (error) in
+//            self.dismiss(animated: true, completion: {
+//                self.showErrorMessage(errorCode: error.errorCode, errorMessage: error.errorMessage)
+//            })
+//        }
+    }
+    
+    private func loadAllGroup() {
+        self.showLoading { () in
+            GroupReceiptApiService.shared.getGroupList()
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] groupList in
+                    self?.onLoadSuccess(groupList: groupList)
+                }).disposed(by: self.disposeBag)
         }
+    }
+    
+    private func onLoadSuccess(groupList: [GroupReceipt]) {
+        self.dismiss(animated: true, completion: {
+            self.groups = groupList
+            self.tableGroup.reloadData()
+        })
     }
 
     /*
@@ -49,7 +75,7 @@ class GroupTagViewController: ParentViewController {
     }
     */
 
-    @IBAction func doClose(_ sender: Any) {
+    @IBAction func doSave(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -61,39 +87,18 @@ extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
-        cell.textLabel?.text = "\(groups[indexPath.row].groupName!) (\(groups[indexPath.row].numOfMember))"
+        cell.textLabel?.text = "\(groups[indexPath.row].name)"
+//        print("Label TEXT = \(cell.textLabel!.text)")
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
+//        cell.detailTextLabel?.text = "\(groups[indexPath.row].spendingAmt)"
+//        cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let groupId = Int(groups[indexPath.row].groupId)
-        let listUser: [User] = UserDataController.shared.getGroupWithFilterGroupId(groupId: groupId)
-        let listOfItem: [Item] = ItemDataController.shared.getAllItem()
-        ItemDataController.shared.removeAllItem()
-        let owe: Float = itemPrice / Float(listUser.count)
-        for item in listOfItem {
-            if item.name == itemName {
-                for user in listUser {
-                    let person = Person(name: user.userName!, phoneNumber: user.phoneNumber!)
-                    person.owe += owe
-                    item.addPerson(person: person)
-                }
-                ItemDataController.shared.addItem(item: item)
-            } else {
-                ItemDataController.shared.addItem(item: item)
-            }
-        }
-        let listOfItem2: [Item] = ItemDataController.shared.getAllItem()
-        for item in listOfItem {
-            print(item.name)
-            print(item.price)
-            print(item.people)
-        }
-        self.dismiss(animated: true, completion: nil)
-//        self.performSegue(withIdentifier: "goToCreateGroup", sender: nil)
+//        tableView.deselectRow(at: indexPath, animated: true)
+        guard indexPath.row < groups.count else { return }
+        let groupId = groups[indexPath.row].id
     }
 }

@@ -26,6 +26,7 @@ class GroupReceiptViewController: ParentViewController  {
 extension GroupReceiptViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard groupReceipt.listReceipt.count > 0 else { return 0 }
         return groupReceipt.listReceipt[0].listDetail.count
     }
     
