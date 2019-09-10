@@ -437,7 +437,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableGroup" destination="yPA-rm-Kwx" id="qlH-G8-9vB"/>
-                        <segue destination="GME-g3-3GV" kind="show" identifier="showGroupReceipt" id="jxn-nQ-E4u"/>
+                        <segue destination="GME-g3-3GV" kind="show" identifier="showGroupReceipt" id="tbJ-RR-y0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMP-u6-KNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -650,13 +650,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NfY-Bj-Kt7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ybN-Kj-MED">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Setting" image="setting" id="aMi-Xh-DM0"/>
+                            <barButtonItem title="Notification" image="notification" id="0Bg-Qn-SVw"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Z3X-fs-ccf" id="Ukb-jY-Fb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9g-a2-aDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5251" y="2284"/>
+            <point key="canvasLocation" x="5254" y="2326"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Ks-Dz-3YR">
