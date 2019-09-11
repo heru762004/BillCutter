@@ -46,6 +46,8 @@
 		C98D6CC42327A89300BE93F3 /* GroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC32327A89300BE93F3 /* GroupMember.swift */; };
 		C98D6CC62327CA1400BE93F3 /* TagMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC52327CA1400BE93F3 /* TagMember.swift */; };
 		C98D6CC8232868EF00BE93F3 /* ReceiptDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC7232868EF00BE93F3 /* ReceiptDetailItem.swift */; };
+		C98D6CCA232888D900BE93F3 /* AddReceiptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */; };
+		C98D6CCC2328898100BE93F3 /* AddReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CCB2328898100BE93F3 /* AddReceipt.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -131,6 +133,8 @@
 		C98D6CC32327A89300BE93F3 /* GroupMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMember.swift; sourceTree = "<group>"; };
 		C98D6CC52327CA1400BE93F3 /* TagMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagMember.swift; sourceTree = "<group>"; };
 		C98D6CC7232868EF00BE93F3 /* ReceiptDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailItem.swift; sourceTree = "<group>"; };
+		C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceiptResponse.swift; sourceTree = "<group>"; };
+		C98D6CCB2328898100BE93F3 /* AddReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceipt.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -233,6 +237,7 @@
 				A70CEA372326948D006BF5E5 /* ReceiptResponse.swift */,
 				A70CEA3523269382006BF5E5 /* ReceiptItemResponse.swift */,
 				C98D6CC12327A83100BE93F3 /* GroupMemberResponse.swift */,
+				C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				C98D6CC32327A89300BE93F3 /* GroupMember.swift */,
 				C98D6CC52327CA1400BE93F3 /* TagMember.swift */,
 				C98D6CC7232868EF00BE93F3 /* ReceiptDetailItem.swift */,
+				C98D6CCB2328898100BE93F3 /* AddReceipt.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -652,7 +658,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98D6CCC2328898100BE93F3 /* AddReceipt.swift in Sources */,
 				C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */,
+				C98D6CCA232888D900BE93F3 /* AddReceiptResponse.swift in Sources */,
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
 				C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,

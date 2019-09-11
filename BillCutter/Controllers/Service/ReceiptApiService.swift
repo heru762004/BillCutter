@@ -19,14 +19,23 @@ class ReceiptApiService {
         self.apiService = ApiService()
     }
     
-    func createReceipt(receiptTitle: String, receiptItem: [ReceiptDetailItem]) {
+    func createReceipt(receiptTitle: String, receiptItem: [ReceiptDetailItem]) -> Observable<AddReceipt> {
         let path = "/receipt"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
         let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
         var member_item = [[String:Any]]()
+        var total = 0.0
         for member in receiptItem {
+            if let price = Double(member.price) {
+                total += price
+            }
             member_item.append(member.toDict())
+        }
+        
+        var twoDecimalPlaces = ""
+        if total >= 0.0 {
+            twoDecimalPlaces = String(format: "%.2f", total)
         }
         
         let date = Date()
@@ -40,6 +49,7 @@ class ReceiptApiService {
         let receiptNo = format2.string(from: date)
         let subtotal = "0"
         let discount = "0"
+        let grandTotal = twoDecimalPlaces
         let receiptDate = formattedDate
         let params: [String: Any] = [
             "name": receiptTitle,
@@ -47,7 +57,7 @@ class ReceiptApiService {
             "receiptNo": receiptNo,
             "subtotal": subtotal,
             "discount": discount,
-            "grandtotal": subtotal,
+            "grandtotal": grandTotal,
             "seeDetail": member_item
         ]
         
@@ -60,9 +70,37 @@ class ReceiptApiService {
         } catch {
             print(error.localizedDescription)
         }
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<AddReceiptResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? AddReceipt()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
     }
     
-    func addReceipt(itemName: String, itemAmount: String, members: [TagMember]) -> Observable<ApiStatusResult> {
+    func attachReceipt(groupId: String, receiptId: String) -> Observable<ApiStatusResult> {
+        let path = "/receipt/action"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        //{"id":"1", "action":"ATTACH", "groupId":2}
+        let params: [String: Any] = [
+            "id" : receiptId,
+            "action": "ATTACH",
+            "groupId": groupId
+        ]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+    
+    func addReceipt(receiptHdrId: String, itemName: String, itemAmount: String, members: [TagMember]) -> Observable<ApiStatusResult> {
         let path = "/receipt/item"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
@@ -73,7 +111,7 @@ class ReceiptApiService {
             member_temp.append(member.toDict())
         }
         let params: [String: Any] = [
-                  "receiptHdrId" : "1",
+                  "receiptHdrId" : receiptHdrId,
                   "name": itemName,
                   "amount": itemAmount,
                   "total": itemAmount,

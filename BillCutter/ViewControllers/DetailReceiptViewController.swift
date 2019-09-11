@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RxSwift
 
-class DetailReceiptViewController: UIViewController {
+class DetailReceiptViewController: ParentViewController {
     
     @IBOutlet weak var tableReceipt: UITableView!
     var items: [Item] = []
     var selectedIdx = -1
     var typeEditor = 0
+    var receiptId = ""
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         self.navigationItem.title = "Review Items"
@@ -44,7 +48,7 @@ class DetailReceiptViewController: UIViewController {
                 detailReceipt.selectedIdx = selectedIdx
             }
         } else if let viewController = segue.destination as? GroupTagViewController {
-            
+            viewController.receiptId = self.receiptId
         }
         
     }
@@ -69,7 +73,60 @@ class DetailReceiptViewController: UIViewController {
     }
     
     @IBAction func showAssignTo(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
+        let alertController = UIAlertController(title: "Add Receipt Title", message: "", preferredStyle: UIAlertController.Style.alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Receipt Title"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            let receiptTitle = alertController.textFields![0] as UITextField
+            if receiptTitle.text != nil && receiptTitle.text!.count > 0 {
+                var listItem: [ReceiptDetailItem] = []
+                for item in self.items {
+                    let myItem = ReceiptDetailItem()
+                    myItem.name = item.name
+                    var twoDecimalPlaces = ""
+                    if item.price >= 0.0 {
+                        twoDecimalPlaces = String(format: "%.2f", item.price)
+                    } else {
+                        twoDecimalPlaces = String(format: "%.2f", item.price)
+                        twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+                        twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+                    }
+                    myItem.price = twoDecimalPlaces
+                    listItem.append(myItem)
+                }
+                self.showLoading {
+                    ReceiptApiService.shared.createReceipt(receiptTitle: receiptTitle.text!, receiptItem: listItem)
+                        .catchError {  _ in
+                            self.dismiss(animated: true, completion: {
+                                ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                            })
+                            return Observable.empty()
+                        }
+                        .subscribe(onNext: {[weak self] result in
+                            self?.dismiss(animated: true, completion: {
+                                if result.success {
+                                    self?.receiptId = result.id
+                                    self?.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
+                                } else {
+                                    self?.showErrorMessage(errorCode: "", errorMessage: result.message)
+                                }
+                            })
+                        }).disposed(by: self.disposeBag)
+                }
+                
+            }
+
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: {
+            (action : UIAlertAction!) -> Void in })
+
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
     }
 }
 

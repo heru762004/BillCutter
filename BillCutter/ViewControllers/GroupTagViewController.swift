@@ -18,6 +18,8 @@ class GroupTagViewController: ParentViewController {
     var tagMembers: [TagMember] = []
     var itemName: String?
     var itemPrice: Float = 0.0
+    var receiptId: String?
+    var selectedGroupId: String?
     
     private let disposeBag = DisposeBag()
     
@@ -95,38 +97,58 @@ class GroupTagViewController: ParentViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateReceiptItem() {
+        let items = ItemDataController.shared.getAllItem()
+        for item in items {
+            var twoDecimalPlaces = ""
+            if item.price >= 0.0 {
+                twoDecimalPlaces = String(format: "%.2f", item.price)
+            } else {
+                twoDecimalPlaces = String(format: "%.2f", item.price)
+                twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+                twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+            }
+            
+            ReceiptApiService.shared.addReceipt(receiptHdrId: self.receiptId!, itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] statusResponse in
+                    if statusResponse.success {
+                        self?.navigationController?.popToRootViewController(animated: true)
+                    }
+                }).disposed(by: self.disposeBag)
+        }
+    }
 
     @IBAction func doSave(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
-        if self.groupMember.count > 0 {
-            let items = ItemDataController.shared.getAllItem()
-            for item in items {
-                var twoDecimalPlaces = ""
-                if item.price >= 0.0 {
-                    twoDecimalPlaces = String(format: "%.2f", item.price)
-                } else {
-                    twoDecimalPlaces = String(format: "%.2f", item.price)
-                    twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
-                    twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+        if self.groupMember.count > 0 && self.selectedGroupId != nil {
+            ReceiptApiService.shared.attachReceipt(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
                 }
-                ReceiptApiService.shared.addReceipt(itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
-                    .catchError {  _ in
-                        self.dismiss(animated: true, completion: {
-                            ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-                        })
-                        return Observable.empty()
-                    }
-                    .subscribe(onNext: {[weak self] statusResponse in
+                .subscribe(onNext: {[weak self] statusResponse in
+                    self?.dismiss(animated: true, completion: {
                         if statusResponse.success {
-                            
+                            self?.updateReceiptItem()
                         }
-                    }).disposed(by: self.disposeBag)
-            }
+                    })
+                }).disposed(by: self.disposeBag)
+            
         } else {
             self.showErrorMessage(errorCode: "", errorMessage: "Gorup does not have any member!")
         }
-        self.navigationController?.popToRootViewController(animated: true)
+        
     }
+        
 }
 
 extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
@@ -149,6 +171,7 @@ extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
 //        tableView.deselectRow(at: indexPath, animated: true)
         guard indexPath.row < groups.count else { return }
         let groupId = groups[indexPath.row].id
+        self.selectedGroupId = "\(groupId)"
         self.showLoading {
             GroupMemberApiService.shared.getGroupMember(groupId: groupId)
                 .catchError {  _ in
