@@ -67,7 +67,13 @@ class GroupTagViewController: ParentViewController {
     
     private func onLoadSuccess(groupList: [GroupReceipt]) {
         self.dismiss(animated: true, completion: {
-            self.groups = groupList
+            for groupReceipt in groupList {
+//                if groupReceipt.mem
+//                print("TOTAL MEMBER = \(groupReceipt.totalMember)")
+                if groupReceipt.totalMember > 0 {
+                    self.groups.append(groupReceipt)
+                }
+            }
             self.tableGroup.reloadData()
         })
     }
@@ -99,35 +105,35 @@ class GroupTagViewController: ParentViewController {
     */
     
     func updateReceiptItem() {
-//        let items = ItemDataController.shared.getAllItem()
-//        var counter = 0
-//        for item in items {
-//            var twoDecimalPlaces = ""
-//            if item.price >= 0.0 {
-//                twoDecimalPlaces = String(format: "%.2f", item.price)
-//            } else {
-//                twoDecimalPlaces = String(format: "%.2f", item.price)
-//                twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
-//                twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
-//            }
-//
-//            ReceiptApiService.shared.addReceipt(receiptHdrId: self.receiptId!, itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
-//                .catchError {  _ in
-//                    self.dismiss(animated: true, completion: {
-//                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-//                    })
-//                    return Observable.empty()
-//                }
-//                .subscribe(onNext: {[weak self] statusResponse in
-//                    if statusResponse.success {
-//                        if counter < items.count {
-//                            self?.sendOweNotification()
-//                        }
-//                        counter+=1
-//                    }
-//                }).disposed(by: self.disposeBag)
-//        }
-        self.sendOweNotification()
+        let items = ItemDataController.shared.getAllItem()
+        var counter = 0
+        for item in items {
+            var twoDecimalPlaces = ""
+            if item.price >= 0.0 {
+                twoDecimalPlaces = String(format: "%.2f", item.price)
+            } else {
+                twoDecimalPlaces = String(format: "%.2f", item.price)
+                twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+                twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+            }
+
+            ReceiptApiService.shared.addReceipt(receiptHdrId: self.receiptId!, itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] statusResponse in
+                    if statusResponse.success {
+                        if counter < items.count {
+                            self?.sendOweNotification()
+                        }
+                        counter+=1
+                    }
+                }).disposed(by: self.disposeBag)
+        }
+//        self.sendOweNotification()
     }
     
     func sendOweNotification() {

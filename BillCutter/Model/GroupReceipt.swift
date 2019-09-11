@@ -16,7 +16,7 @@ class GroupReceipt {
     var splitType = ""
     var modifiedDate = ""
     var spendingAmt = 0.0
-    
+    var totalMember = 0
     var listReceipt = [Receipt]()
     
     
