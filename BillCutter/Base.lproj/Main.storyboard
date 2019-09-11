@@ -1517,7 +1517,7 @@
         <!--Notification-->
         <scene sceneID="ivF-by-K6z">
             <objects>
-                <viewController id="w7b-Kf-2eQ" sceneMemberID="viewController">
+                <viewController id="w7b-Kf-2eQ" customClass="NotificationViewController" customModule="BillCutter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NFu-hY-hBb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1527,8 +1527,23 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cw1-tS-Wgx">
                                 <rect key="frame" x="0.0" y="65" width="375" height="553"/>
-                                <color key="backgroundColor" red="0.04957443718" green="0.093109460800000002" blue="0.097195512819999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.95686274510000002" green="0.70588235290000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotifCell" rowHeight="60" id="exo-AK-W4J">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="exo-AK-W4J" id="u1S-Kr-YpE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="w7b-Kf-2eQ" id="DmU-1e-6XF"/>
+                                    <outlet property="delegate" destination="w7b-Kf-2eQ" id="dmd-aN-E96"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1545,6 +1560,9 @@
                         <viewLayoutGuide key="safeArea" id="6kR-nO-p2h"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notification" image="notification" selectedImage="notification" id="ZZf-O2-zxv"/>
+                    <connections>
+                        <outlet property="notifTable" destination="Cw1-tS-Wgx" id="bTY-6h-oje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhf-iu-cbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1553,7 +1571,7 @@
         <!--Setting-->
         <scene sceneID="Hhb-gx-dlf">
             <objects>
-                <viewController id="EUl-N2-uDD" customClass="SettingViewController" customModule="BillCutter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EUl-N2-uDD" customClass="SettingViewController" customModule="BillCutter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C3P-c5-WYV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1649,6 +1667,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="setting" selectedImage="setting" id="7n7-vg-IJw"/>
                     <connections>
+                        <outlet property="emailLabel" destination="0c1-fE-ctZ" id="Wyz-7O-vq6"/>
+                        <outlet property="phoneLabel" destination="Hhc-Y7-ppd" id="gj0-C6-cag"/>
+                        <outlet property="usernameLabel" destination="0BQ-lb-aHY" id="7wT-sa-9a0"/>
                         <segue destination="lqg-iz-H80" kind="show" identifier="goToLogin" id="Ouj-WU-LcL"/>
                     </connections>
                 </viewController>

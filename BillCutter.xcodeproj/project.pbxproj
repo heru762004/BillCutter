@@ -51,6 +51,11 @@
 		C98D6CCA232888D900BE93F3 /* AddReceiptResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */; };
 		C98D6CCC2328898100BE93F3 /* AddReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CCB2328898100BE93F3 /* AddReceipt.swift */; };
 		C98D6CCE232898B100BE93F3 /* NotificationApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CCD232898B100BE93F3 /* NotificationApiService.swift */; };
+		C98D6CD0232975A100BE93F3 /* GetProfileApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CCF232975A100BE93F3 /* GetProfileApiService.swift */; };
+		C98D6CD2232975EA00BE93F3 /* LoginProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CD1232975EA00BE93F3 /* LoginProfile.swift */; };
+		C98D6CD42329764100BE93F3 /* GetLoginProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CD32329764100BE93F3 /* GetLoginProfileResponse.swift */; };
+		C98D6CD623297A6300BE93F3 /* NotificationDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CD523297A6300BE93F3 /* NotificationDataController.swift */; };
+		C98D6CD823297BFE00BE93F3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CD723297BFE00BE93F3 /* NotificationViewController.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -141,6 +146,11 @@
 		C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceiptResponse.swift; sourceTree = "<group>"; };
 		C98D6CCB2328898100BE93F3 /* AddReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReceipt.swift; sourceTree = "<group>"; };
 		C98D6CCD232898B100BE93F3 /* NotificationApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApiService.swift; sourceTree = "<group>"; };
+		C98D6CCF232975A100BE93F3 /* GetProfileApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfileApiService.swift; sourceTree = "<group>"; };
+		C98D6CD1232975EA00BE93F3 /* LoginProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfile.swift; sourceTree = "<group>"; };
+		C98D6CD32329764100BE93F3 /* GetLoginProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLoginProfileResponse.swift; sourceTree = "<group>"; };
+		C98D6CD523297A6300BE93F3 /* NotificationDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDataController.swift; sourceTree = "<group>"; };
+		C98D6CD723297BFE00BE93F3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -244,6 +254,7 @@
 				A70CEA3523269382006BF5E5 /* ReceiptItemResponse.swift */,
 				C98D6CC12327A83100BE93F3 /* GroupMemberResponse.swift */,
 				C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */,
+				C98D6CD32329764100BE93F3 /* GetLoginProfileResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 				C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */,
 				C98D6CBE2327A6B500BE93F3 /* GroupMemberApiService.swift */,
 				C98D6CCD232898B100BE93F3 /* NotificationApiService.swift */,
+				C98D6CCF232975A100BE93F3 /* GetProfileApiService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -302,6 +314,7 @@
 				C9168D972310F57200396BA0 /* ItemDataController.swift */,
 				C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */,
 				C93CDCE42316221E00416851 /* UserDataController.swift */,
+				C98D6CD523297A6300BE93F3 /* NotificationDataController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -388,6 +401,7 @@
 				A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */,
 				A74B657F232827F5004E939F /* GroupSummaryViewController.swift */,
 				A7E4752823294ED5007144DC /* SettingViewController.swift */,
+				C98D6CD723297BFE00BE93F3 /* NotificationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +420,7 @@
 				C98D6CC52327CA1400BE93F3 /* TagMember.swift */,
 				C98D6CC7232868EF00BE93F3 /* ReceiptDetailItem.swift */,
 				C98D6CCB2328898100BE93F3 /* AddReceipt.swift */,
+				C98D6CD1232975EA00BE93F3 /* LoginProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -702,6 +717,8 @@
 				C998034C22FAFE5F008E6A28 /* AppDelegate.swift in Sources */,
 				A70CEA30232690CE006BF5E5 /* Receipt.swift in Sources */,
 				C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */,
+				C98D6CD42329764100BE93F3 /* GetLoginProfileResponse.swift in Sources */,
+				C98D6CD0232975A100BE93F3 /* GetProfileApiService.swift in Sources */,
 				A7E4752923294ED5007144DC /* SettingViewController.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C94369A32312B9B4009F2FB0 /* GroupsViewController.swift in Sources */,
@@ -709,6 +726,9 @@
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
 				C91DD88723192582003D2705 /* ListGroupApiService.swift in Sources */,
 				C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */,
+				C98D6CD623297A6300BE93F3 /* NotificationDataController.swift in Sources */,
+				C98D6CD823297BFE00BE93F3 /* NotificationViewController.swift in Sources */,
+				C98D6CD2232975EA00BE93F3 /* LoginProfile.swift in Sources */,
 				C98D6CC8232868EF00BE93F3 /* ReceiptDetailItem.swift in Sources */,
 				A7651B40231D921900035774 /* ViewUtil.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,

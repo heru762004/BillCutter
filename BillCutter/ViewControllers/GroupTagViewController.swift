@@ -172,6 +172,9 @@ class GroupTagViewController: ParentViewController {
                         self?.dismiss(animated: true, completion: {
                             if statusResponse.error == false {
 //                                self?.sendOweNotification()
+                                self?.navigationController?.popToRootViewController(animated: true)
+                            } else {
+                                self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                             }
                         })
                     }).disposed(by: self.disposeBag)

@@ -167,7 +167,19 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         // Print full message.
         print(userInfo)
-        
+        if let aps = userInfo["aps"] as? NSDictionary {
+            if let alert = aps["alert"] as? NSDictionary {
+                if let message = alert["body"] as? NSString {
+                    //Do stuff
+                    print("message = \(message)")
+                    NotificationDataController.shared.insertIntoNotification(message: message as String)
+                }
+            } else if let alert = aps["alert"] as? NSString {
+                //Do stuff
+                print("alert = \(alert)")
+                NotificationDataController.shared.insertIntoNotification(message: alert as String)
+            }
+        }
         // Change this to your preferred presentation option
         completionHandler([.alert, .sound])
     }
@@ -183,7 +195,19 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         // Print full message.
         print(userInfo)
-        
+        if let aps = userInfo["aps"] as? NSDictionary {
+            if let alert = aps["alert"] as? NSDictionary {
+                if let message = alert["body"] as? NSString {
+                    //Do stuff
+                    print("message = \(message)")
+                    NotificationDataController.shared.insertIntoNotification(message: message as String)
+                }
+            } else if let alert = aps["alert"] as? NSString {
+                //Do stuff
+                print("alert = \(alert)")
+                NotificationDataController.shared.insertIntoNotification(message: alert as String)
+            }
+        }
         completionHandler()
     }
 }

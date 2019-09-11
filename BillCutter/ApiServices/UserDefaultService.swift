@@ -18,6 +18,7 @@ class UserDefaultService {
         static let ACCESS_TOKEN = "ACCESS_TOKEN"
         static let USERNAME = "USERNAME"
         static let FIREBASE_TOKEN = "FIREBASE_TOKEN"
+        static let ID_NOTIF = "ID_NOTIF"
     }
     
     //Initializer access level change now
