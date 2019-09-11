@@ -13,12 +13,20 @@ class GroupReceiptViewController: ParentViewController  {
     
     @IBOutlet weak var tableView: UITableView!
     var groupReceipt = GroupReceipt()
+    var groupId = -1
     
     override func viewDidLoad() {
         tableView.tableFooterView = UIView()
         navigationController?.navigationBar.tintColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         guard groupReceipt.listReceipt.count > 0 else { return }
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGroupMember" {
+            guard let destinationViewController = segue.destination as? GroupMemberViewController else { return }
+            destinationViewController.groupId = groupId
+        }
     }
     
 }

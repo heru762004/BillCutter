@@ -21,6 +21,7 @@
 		A7651B3B231D86E300035774 /* ApiStatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3A231D86E300035774 /* ApiStatusResult.swift */; };
 		A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3C231D881100035774 /* RegisterApiService.swift */; };
 		A7651B40231D921900035774 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3F231D921900035774 /* ViewUtil.swift */; };
+		A7FBB4882327F119000FAE35 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
 		C91DD88723192582003D2705 /* ListGroupApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91DD88623192582003D2705 /* ListGroupApiService.swift */; };
@@ -100,6 +101,7 @@
 		A7651B3A231D86E300035774 /* ApiStatusResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatusResult.swift; sourceTree = "<group>"; };
 		A7651B3C231D881100035774 /* RegisterApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiService.swift; sourceTree = "<group>"; };
 		A7651B3F231D921900035774 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
+		A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A62F765A5A0BF63A9820F2 /* Pods-BillCutterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterTests/Pods-BillCutterTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
 				C9B1576F231E9E1900369D45 /* GroupTagViewController.swift */,
+				A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				C98D6CC62327CA1400BE93F3 /* TagMember.swift in Sources */,
 				C92C233F2305970B00B85772 /* UIImageFixedOrientationExtension.swift in Sources */,
 				CD734CBA230A5729007D4A6B /* Person.swift in Sources */,
+				A7FBB4882327F119000FAE35 /* GroupMemberViewController.swift in Sources */,
 				A70CEA382326948D006BF5E5 /* ReceiptResponse.swift in Sources */,
 				C91F80D32317F908001199FA /* ErrorResponse.swift in Sources */,
 				C98D6CC22327A83100BE93F3 /* GroupMemberResponse.swift in Sources */,

@@ -31,4 +31,42 @@ class GroupMemberApiService {
                 return groupMember
         }
     }
+    
+    func addMember(groupId: Int, name: String, phone: String) -> Observable<ApiStatusResult> {
+        
+        let path = "/groups/addmember"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        let params: [String: Any] = ["groupId": "\(groupId)",
+                                     "name": name,
+                                     "handphone": phone]
+
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+    
+    func removeMember(groupId: Int, memberId: Int) -> Observable<ApiStatusResult> {
+        
+        let path = "/groups/members/delete"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        let params: [String: Any] = ["groupId": "\(groupId)", "id": "\(memberId)"]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+    
+    
 }

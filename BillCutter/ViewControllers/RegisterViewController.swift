@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: ParentViewController {
 
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var mobileNumberText: UITextField!
@@ -52,19 +52,26 @@ class RegisterViewController: UIViewController {
             return
         }
 
-        RegisterApiService.shared.register(username: username, password: password, email: email, phone: phone)
-            .catchError {  _ in
-                ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-                return Observable.empty()
-            }
-            .subscribe(onNext: { [weak self] apiResultStatus in
-                guard let weakSelf = self else { return }
-                ViewUtil.showAlert(controller: weakSelf, message: "", title: apiResultStatus.message, handler: { (uiAlertAction) in
-                    if apiResultStatus.error == false {
-                        self?.navigationController?.popViewController(animated: true)
-                    }
-                })
-            }).disposed(by: disposeBag)
+        showLoading { () in
+            RegisterApiService.shared.register(username: username, password: password, email: email, phone: phone)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: { [weak self] apiResultStatus in
+                    guard let weakSelf = self else { return }
+                    self?.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: weakSelf, message: "", title: apiResultStatus.message, handler: { (uiAlertAction) in
+                            if apiResultStatus.error == false {
+                                self?.navigationController?.popViewController(animated: true)
+                            }
+                        })
+                    })
+
+                }).disposed(by: self.disposeBag)
+        }
     }
 
 }
