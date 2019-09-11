@@ -11,6 +11,8 @@ import Foundation
 class ReceiptDetailItem {
     var name = ""
     var price = ""
+    var amount = ""
+    var total = ""
     
     func toDict() -> [String:Any] {
         var dict = [String:Any]()

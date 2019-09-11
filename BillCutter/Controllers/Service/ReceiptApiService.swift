@@ -58,7 +58,7 @@ class ReceiptApiService {
             "subtotal": subtotal,
             "discount": discount,
             "grandtotal": grandTotal,
-            "seeDetail": member_item
+            "setDetail": member_item
         ]
         
         do {

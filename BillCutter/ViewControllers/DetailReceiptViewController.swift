@@ -93,6 +93,8 @@ class DetailReceiptViewController: ParentViewController {
                         twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
                     }
                     myItem.price = twoDecimalPlaces
+                    myItem.amount = "1"
+                    myItem.total = twoDecimalPlaces
                     listItem.append(myItem)
                 }
                 self.showLoading {
