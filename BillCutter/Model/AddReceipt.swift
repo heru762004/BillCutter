@@ -9,5 +9,5 @@
 import Foundation
 
 class AddReceipt: ApiStatusResult {
-    var id = ""
+    var id = 0
 }

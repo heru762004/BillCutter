@@ -31,6 +31,16 @@ class NotificationApiService {
             "groupMemberId": groupId
         ]
         
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+            // here "jsonData" is the dictionary encoded in JSON data
+            
+            let convertedString = String(data: jsonData, encoding: String.Encoding.utf8) // the data will be converted to the string
+            print(convertedString!)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         return apiService.postString(path: path, headers: headers, params: params)
             .map { (success, jsonString)  in
                 let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()

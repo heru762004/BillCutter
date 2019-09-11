@@ -75,6 +75,8 @@ class ReceiptApiService {
             .map { (success, jsonString)  in
                 let apiStatusResult = Mapper<AddReceiptResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? AddReceipt()
                 apiStatusResult.success = success
+                print("apiStatusResult.message = \(apiStatusResult.message)")
+                print("apiStatusResult.id = \(apiStatusResult.id)")
                 return apiStatusResult
         }
     }
@@ -89,8 +91,19 @@ class ReceiptApiService {
         let params: [String: Any] = [
             "id" : receiptId,
             "action": "ATTACH",
-            "groupId": groupId
+            "groupId": groupId,
+            "splitType": "EQUAL"
         ]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+            // here "jsonData" is the dictionary encoded in JSON data
+            
+            let convertedString = String(data: jsonData, encoding: String.Encoding.utf8) // the data will be converted to the string
+            print(convertedString!)
+        } catch {
+            print(error.localizedDescription)
+        }
         
         return apiService.postString(path: path, headers: headers, params: params)
             .map { (success, jsonString)  in

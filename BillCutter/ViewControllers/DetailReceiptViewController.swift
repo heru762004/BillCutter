@@ -108,7 +108,8 @@ class DetailReceiptViewController: ParentViewController {
                         .subscribe(onNext: {[weak self] result in
                             self?.dismiss(animated: true, completion: {
                                 if result.success {
-                                    self?.receiptId = result.id
+                                    print("Receipt ID = \(result.id)")
+                                    self?.receiptId = "\(result.id)"
                                     self?.performSegue(withIdentifier: "goToAssignGroup", sender: nil)
                                 } else {
                                     self?.showErrorMessage(errorCode: "", errorMessage: result.message)

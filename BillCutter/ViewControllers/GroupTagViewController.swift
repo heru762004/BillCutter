@@ -99,55 +99,41 @@ class GroupTagViewController: ParentViewController {
     */
     
     func updateReceiptItem() {
-        let items = ItemDataController.shared.getAllItem()
-        var counter = 0
-        for item in items {
-            var twoDecimalPlaces = ""
-            if item.price >= 0.0 {
-                twoDecimalPlaces = String(format: "%.2f", item.price)
-            } else {
-                twoDecimalPlaces = String(format: "%.2f", item.price)
-                twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
-                twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
-            }
-            
-            ReceiptApiService.shared.addReceipt(receiptHdrId: self.receiptId!, itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
-                .catchError {  _ in
-                    self.dismiss(animated: true, completion: {
-                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-                    })
-                    return Observable.empty()
-                }
-                .subscribe(onNext: {[weak self] statusResponse in
-                    if statusResponse.success {
-                        if counter < items.count {
-                            self?.sendOweNotification()
-                        }
-                        counter+=1
-                    }
-                }).disposed(by: self.disposeBag)
-        }
+//        let items = ItemDataController.shared.getAllItem()
+//        var counter = 0
+//        for item in items {
+//            var twoDecimalPlaces = ""
+//            if item.price >= 0.0 {
+//                twoDecimalPlaces = String(format: "%.2f", item.price)
+//            } else {
+//                twoDecimalPlaces = String(format: "%.2f", item.price)
+//                twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+//                twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+//            }
+//
+//            ReceiptApiService.shared.addReceipt(receiptHdrId: self.receiptId!, itemName: item.name, itemAmount: twoDecimalPlaces, members: self.tagMembers)
+//                .catchError {  _ in
+//                    self.dismiss(animated: true, completion: {
+//                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+//                    })
+//                    return Observable.empty()
+//                }
+//                .subscribe(onNext: {[weak self] statusResponse in
+//                    if statusResponse.success {
+//                        if counter < items.count {
+//                            self?.sendOweNotification()
+//                        }
+//                        counter+=1
+//                    }
+//                }).disposed(by: self.disposeBag)
+//        }
+        self.sendOweNotification()
     }
     
     func sendOweNotification() {
-        NotificationApiService.shared.sendNotification(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
-            .catchError {  _ in
-                self.dismiss(animated: true, completion: {
-                    ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
-                })
-                return Observable.empty()
-            }
-            .subscribe(onNext: {[weak self] statusResponse in
-                if statusResponse.success {
-                    self?.navigationController?.popToRootViewController(animated: true)
-                }
-            }).disposed(by: self.disposeBag)
-    }
-
-    @IBAction func doSave(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-        if self.groupMember.count > 0 && self.selectedGroupId != nil {
-            ReceiptApiService.shared.attachReceipt(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
+        print("sendOweNotification")
+        self.showLoading {
+            NotificationApiService.shared.sendNotification(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
                 .catchError {  _ in
                     self.dismiss(animated: true, completion: {
                         ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
@@ -156,14 +142,36 @@ class GroupTagViewController: ParentViewController {
                 }
                 .subscribe(onNext: {[weak self] statusResponse in
                     self?.dismiss(animated: true, completion: {
-                        if statusResponse.success {
-                            self?.updateReceiptItem()
+                        if statusResponse.success {   self?.navigationController?.popToRootViewController(animated: true)
+                        } else {
+                            self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                         }
                     })
                 }).disposed(by: self.disposeBag)
-            
+        }
+    }
+
+    @IBAction func doSave(_ sender: Any) {
+        
+        if self.groupMember.count > 0 && self.selectedGroupId != nil {
+            self.showLoading {
+                ReceiptApiService.shared.attachReceipt(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
+                    .catchError {  _ in
+                        self.dismiss(animated: true, completion: {
+                            ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                        })
+                        return Observable.empty()
+                    }
+                    .subscribe(onNext: {[weak self] statusResponse in
+                        self?.dismiss(animated: true, completion: {
+                            if statusResponse.error == false {
+                                self?.sendOweNotification()
+                            }
+                        })
+                    }).disposed(by: self.disposeBag)
+            }
         } else {
-            self.showErrorMessage(errorCode: "", errorMessage: "Gorup does not have any member!")
+            self.showErrorMessage(errorCode: "", errorMessage: "Group does not have any member!")
         }
         
     }

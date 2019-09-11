@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class AddReceiptResponse: Mappable {
-    var id = ""
+    var id = 0
     var message = ""
     var error = false
     
