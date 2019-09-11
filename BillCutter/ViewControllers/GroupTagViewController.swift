@@ -100,6 +100,7 @@ class GroupTagViewController: ParentViewController {
     
     func updateReceiptItem() {
         let items = ItemDataController.shared.getAllItem()
+        var counter = 0
         for item in items {
             var twoDecimalPlaces = ""
             if item.price >= 0.0 {
@@ -119,10 +120,28 @@ class GroupTagViewController: ParentViewController {
                 }
                 .subscribe(onNext: {[weak self] statusResponse in
                     if statusResponse.success {
-                        self?.navigationController?.popToRootViewController(animated: true)
+                        if counter < items.count {
+                            self?.sendOweNotification()
+                        }
+                        counter+=1
                     }
                 }).disposed(by: self.disposeBag)
         }
+    }
+    
+    func sendOweNotification() {
+        NotificationApiService.shared.sendNotification(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
+            .catchError {  _ in
+                self.dismiss(animated: true, completion: {
+                    ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                })
+                return Observable.empty()
+            }
+            .subscribe(onNext: {[weak self] statusResponse in
+                if statusResponse.success {
+                    self?.navigationController?.popToRootViewController(animated: true)
+                }
+            }).disposed(by: self.disposeBag)
     }
 
     @IBAction func doSave(_ sender: Any) {

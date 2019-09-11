@@ -11,6 +11,8 @@ import CoreData
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import RxSwift
+import ObjectMapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +40,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.registerForRemoteNotifications()
         Messaging.messaging().delegate = self
+        
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        let firebaseToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.FIREBASE_TOKEN)
+        if accessToken.count > 0 && firebaseToken.count > 0 {
+            // need to add splash screen 
+            LoginApiService.shared.updateProfile()
+                .catchError {  _ in
+                    
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] groupList in
+                    if groupList.success {
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
+                        //                let navigationController = UINavigationController(rootViewController: exampleViewController)
+                        self?.window?.rootViewController = exampleViewController
+                        
+                        self?.window?.makeKeyAndVisible()
+                    }
+                })
+            
+        }
         return true
     }
 
@@ -162,8 +186,11 @@ extension AppDelegate : MessagingDelegate {
 //        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         print("FIREBASE REGISTRATION TOKEN = \(dataDict)")
         UserDefaultService.shared.storeString(key: UserDefaultService.Key.FIREBASE_TOKEN, value: fcmToken)
+        
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
+        
+        
     }
     // [END refresh_token]
     // [START ios_10_data_message]
