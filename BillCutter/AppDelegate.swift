@@ -43,16 +43,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         let firebaseToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.FIREBASE_TOKEN)
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
         if accessToken.count > 0 && firebaseToken.count > 0 {
-            // need to add splash screen 
+            // need to add splash screen
             LoginApiService.shared.updateProfile()
                 .catchError {  _ in
+                    let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "navReg") as! UINavigationController
                     
+                    self.window?.rootViewController = exampleViewController
+                    
+                    self.window?.makeKeyAndVisible()
                     return Observable.empty()
                 }
                 .subscribe(onNext: {[weak self] groupList in
                     if groupList.success {
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
                         //                let navigationController = UINavigationController(rootViewController: exampleViewController)
                         self?.window?.rootViewController = exampleViewController
@@ -61,6 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                 })
             
+        } else {
+            let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "navReg") as! UINavigationController
+            
+            self.window?.rootViewController = exampleViewController
+            
+            self.window?.makeKeyAndVisible()
         }
         return true
     }
