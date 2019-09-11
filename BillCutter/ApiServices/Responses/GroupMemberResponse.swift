@@ -13,13 +13,17 @@ class GroupMemberResponse: Mappable {
     var id = 0
     var name = ""
     var handphone = ""
-    
+    var totalpayment = 0.0
+    var statusPayment = ""
+
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
         handphone <- map["handphone"]
+        totalpayment <- map["totalpayment"]
+        statusPayment <- map["statusPayment"]
     }
     
     func toGroupMember() -> GroupMember {
@@ -27,6 +31,8 @@ class GroupMemberResponse: Mappable {
         groupMember.id = id
         groupMember.name = name
         groupMember.handphone = handphone
+        groupMember.totalpayment = totalpayment
+        groupMember.statusPayment = statusPayment
         return groupMember
     }
     
