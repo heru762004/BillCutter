@@ -18,7 +18,8 @@ class GroupReceiptResponse: Mappable {
     var spendingAmt = 0.0
     var totalMember = 0
     var listReceipt = [ReceiptResponse]()
-    
+    var receiptHdrId = 0
+
     required init?(map: Map) {}
     
     func mapping(map: Map) {
@@ -30,6 +31,7 @@ class GroupReceiptResponse: Mappable {
         listReceipt <- map["listReceipt"]
         spendingAmt <- map["spendingAmt"]
         totalMember <- map["totalMember"]
+        receiptHdrId <- map["receiptHdrId"]
     }
     
     func toGroupReceipt() -> GroupReceipt {
@@ -41,6 +43,7 @@ class GroupReceiptResponse: Mappable {
         groupReceipt.modifiedDate = modifiedDate
         groupReceipt.spendingAmt = spendingAmt
         groupReceipt.totalMember = totalMember
+        groupReceipt.receiptHdrId = receiptHdrId
         listReceipt.forEach { (receiptResponse) in
             groupReceipt.listReceipt.append(receiptResponse.toReceipt())
         }

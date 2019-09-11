@@ -19,7 +19,7 @@ class NotificationApiService {
         self.apiService = ApiService()
     }
     
-    func sendNotification(groupId: String, receiptId: String) -> Observable<ApiStatusResult> {
+    func sendNotification(groupMemberId: String, receiptId: String) -> Observable<ApiStatusResult> {
         let path = "/groups/notif"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
@@ -28,7 +28,7 @@ class NotificationApiService {
         //{"id":"1", "action":"ATTACH", "groupId":2}
         let params: [String: Any] = [
             "receiptHdrId" : receiptId,
-            "groupMemberId": groupId
+            "groupMemberId": groupMemberId
         ]
         
         do {

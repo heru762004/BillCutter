@@ -139,7 +139,7 @@ class GroupTagViewController: ParentViewController {
     func sendOweNotification() {
         print("sendOweNotification")
         self.showLoading {
-            NotificationApiService.shared.sendNotification(groupId: self.selectedGroupId!, receiptId: self.receiptId!)
+            NotificationApiService.shared.sendNotification(groupMemberId: self.selectedGroupId!, receiptId: self.receiptId!)
                 .catchError {  _ in
                     self.dismiss(animated: true, completion: {
                         ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
@@ -171,7 +171,7 @@ class GroupTagViewController: ParentViewController {
                     .subscribe(onNext: {[weak self] statusResponse in
                         self?.dismiss(animated: true, completion: {
                             if statusResponse.error == false {
-                                self?.sendOweNotification()
+//                                self?.sendOweNotification()
                             }
                         })
                     }).disposed(by: self.disposeBag)

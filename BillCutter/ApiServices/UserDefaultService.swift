@@ -50,4 +50,9 @@ class UserDefaultService {
             return self.userDefault.object(forKey: key) as! String
         }
     }
+    
+    func clear(key: String) {
+        self.userDefault.removeObject(forKey: key)
+    }
+    
 }

@@ -51,10 +51,6 @@ class GroupsViewController: ParentViewController {
         if segue.identifier == "showGroupReceipt" {
             guard let destinationViewController = segue.destination as? GroupReceiptViewController, let groupReceipt = sender as? GroupReceipt else { return }
             destinationViewController.groupReceipt = groupReceipt
-            destinationViewController.groupId = selectedGroupId
-        } else if segue.identifier == "showGroupSummary" {
-            guard let destinationViewController = segue.destination as? GroupSummaryViewController else { return }
-            destinationViewController.groupId = selectedGroupId
         }
     }
 
@@ -80,7 +76,6 @@ class GroupsViewController: ParentViewController {
                     })
                 }).disposed(by: self.disposeBag)
         }
-        
     }
     
     private func loadGroupReceiptView(groupReceipt: GroupReceipt) {
@@ -114,7 +109,9 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
                 return Observable.empty()
             }
             .subscribe(onNext: { [weak self] groupReceipt in
-                self?.loadGroupReceiptView(groupReceipt: groupReceipt)
+                guard let weakSelf = self else { return }
+                groupReceipt.receiptHdrId = weakSelf.groups[indexPath.row].receiptHdrId
+                weakSelf.loadGroupReceiptView(groupReceipt: groupReceipt)
             }).disposed(by: disposeBag)
     }
 }

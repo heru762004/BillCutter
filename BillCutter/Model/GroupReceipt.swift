@@ -18,6 +18,6 @@ class GroupReceipt {
     var spendingAmt = 0.0
     var totalMember = 0
     var listReceipt = [Receipt]()
-    
+    var receiptHdrId = 0
     
 }

@@ -13,7 +13,6 @@ class GroupReceiptViewController: ParentViewController  {
     
     @IBOutlet weak var tableView: UITableView!
     var groupReceipt = GroupReceipt()
-    var groupId = -1
     
     override func viewDidLoad() {
         tableView.tableFooterView = UIView()
@@ -25,7 +24,10 @@ class GroupReceiptViewController: ParentViewController  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGroupMember" {
             guard let destinationViewController = segue.destination as? GroupMemberViewController else { return }
-            destinationViewController.groupId = groupId
+            destinationViewController.groupId = groupReceipt.id
+        } else if segue.identifier == "showGroupSummary" {
+            guard let destinationViewController = segue.destination as? GroupSummaryViewController else { return }
+            destinationViewController.groupReceipt = groupReceipt
         }
     }
     
