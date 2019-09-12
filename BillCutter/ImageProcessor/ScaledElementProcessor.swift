@@ -84,6 +84,8 @@ class ScaledElementProcessor {
                     strNum = strNum.replacingOccurrences(of: "$", with: "")
                     // in case the receipt has 'S' char
                     strNum = strNum.replacingOccurrences(of: "S", with: "")
+                    // in case have '*'
+                    strNum = strNum.replacingOccurrences(of: "*", with: "")
                     if strNum.contains(".") && strNum.count > 1 {
                         if Double(strNum) != nil  {
                             let price = strNum
@@ -109,7 +111,7 @@ class ScaledElementProcessor {
                     print("LINE MID Y = \(line.frame.midY) vs \(posY))")
                     if abs((posY - line.frame.midY)) <= thresholdYPct && abs((posY - line.frame.midY)) > 0 {
 //                        print("TEXT 2 = \(line.text)")
-                        let abc = line.text.replacingOccurrences(of: "$", with: "")
+                        let abc = line.text.replacingOccurrences(of: "$", with: "").replacingOccurrences(of: "*", with: "")
                         let set = NSCharacterSet.alphanumerics
                         if abc.rangeOfCharacter(from: set) == .none {
 

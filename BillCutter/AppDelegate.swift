@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        
+        
         if accessToken.count > 0 && firebaseToken.count > 0 {
             // need to add splash screen
             LoginApiService.shared.updateProfile()
@@ -59,11 +61,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 .subscribe(onNext: {[weak self] groupList in
                     if groupList.success {
+                        // check if launch from notification
+                    if(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
+                            // your code here
+                            let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "notifNav") as! UINavigationController
+                            
+                            self?.window?.rootViewController = exampleViewController
+                            self?.window?.makeKeyAndVisible()
+                    } else {
                         let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
                         //                let navigationController = UINavigationController(rootViewController: exampleViewController)
                         self?.window?.rootViewController = exampleViewController
                         
                         self?.window?.makeKeyAndVisible()
+                    }
                     }
                 })
             
@@ -74,6 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.makeKeyAndVisible()
         }
+        
+        
         return true
     }
 
