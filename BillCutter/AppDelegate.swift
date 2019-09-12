@@ -66,15 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             // your code here
                             let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "notifNav") as! UINavigationController
                             
-                            self?.window?.rootViewController = exampleViewController
+                        self?.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
                             self?.window?.makeKeyAndVisible()
-                    } else {
-                        let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
+                        } else {
+                            let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
                         //                let navigationController = UINavigationController(rootViewController: exampleViewController)
-                        self?.window?.rootViewController = exampleViewController
+                            self?.window?.rootViewController = exampleViewController
                         
-                        self?.window?.makeKeyAndVisible()
-                    }
+                            self?.window?.makeKeyAndVisible()
+                        }
                     }
                 })
             
@@ -102,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -209,6 +210,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                 NotificationDataController.shared.insertIntoNotification(message: alert as String)
             }
         }
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "notifNav") as! UINavigationController
+        
+        self.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
+        self.window?.makeKeyAndVisible()
         completionHandler()
     }
 }
