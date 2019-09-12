@@ -20,7 +20,6 @@ class GroupsViewController: ParentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadAllGroup()
         tableGroup.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
@@ -29,20 +28,11 @@ class GroupsViewController: ParentViewController {
         super.viewWillAppear(animated)
 //        groups = GroupDataController.shared.getAllGroups()
 //        tableGroup.reloadData()
+        loadAllGroup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.showLoading()
-//        ListGroupApiService.shared.sendRequest(onSuccess: { (successResult) in
-//            self.dismiss(animated: true, completion: {
-//
-//            })
-//        }) { (error) in
-//            self.dismiss(animated: true, completion: {
-//                self.showErrorMessage(errorCode: error.errorCode, errorMessage: error.errorMessage)
-//            })
-//        }
     }
     
     // MARK: - Navigation

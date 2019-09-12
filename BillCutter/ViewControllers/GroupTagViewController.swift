@@ -38,16 +38,6 @@ class GroupTagViewController: ParentViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.showLoading()
-//        ListGroupApiService.shared.sendRequest(onSuccess: { (successResult) in
-//            self.dismiss(animated: true, completion: {
-//
-//            })
-//        }) { (error) in
-//            self.dismiss(animated: true, completion: {
-//                self.showErrorMessage(errorCode: error.errorCode, errorMessage: error.errorMessage)
-//            })
-//        }
     }
     
     private func loadAllGroup() {

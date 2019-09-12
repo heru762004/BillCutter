@@ -20,6 +20,24 @@ class GroupReceiptApiService {
         self.apiService = ApiService()
     }
     
+    func createGroup(groupName: String) -> Observable<ApiStatusResult> {
+        let path = "/groups"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        let params: [String: Any] = ["name": "\(groupName)",
+            "description": "\(groupName)",
+            "splitType": "EQUAL"]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+    
     func getGroupList() -> Observable<[GroupReceipt]> {
         let path = "/groups"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)

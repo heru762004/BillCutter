@@ -8,8 +8,9 @@
 
 import UIKit
 import ContactsUI
+import RxSwift
 
-class AddGroupViewController: UIViewController {
+class AddGroupViewController: ParentViewController {
     
     @IBOutlet weak var groupNameText: UITextField!
     
@@ -17,6 +18,8 @@ class AddGroupViewController: UIViewController {
     var selectedGroupId: Int = -1
     
     var listPerson: [Person] = []
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,24 +47,44 @@ class AddGroupViewController: UIViewController {
     }
     
     @IBAction func doSubmit(_ sender: Any) {
+        
         if let groupName = groupNameText.text {
-            GroupDataController.shared.insertIntoGroup(groupName: groupName, numOfMember: listPerson.count)
-            var idGroup: Int64 = -1
-            if selectedGroupId == -1 {
-                idGroup = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_GROUP)
-                print(idGroup)
-                for person in listPerson {
-                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: (Int(idGroup) - 1), phoneNumber: person.phoneNumber)
-                }
-            } else {
-                idGroup = Int64(selectedGroupId)
-                for person in listPerson {
-                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: Int(idGroup), phoneNumber: person.phoneNumber)
-                }
+            self.showLoading {
+                GroupReceiptApiService.shared.createGroup(groupName: groupName)
+                    .catchError {  _ in
+                        self.dismiss(animated: true, completion: {
+                            ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                        })
+                        return Observable.empty()
+                    }
+                    .subscribe(onNext: {[weak self] statusResponse in
+                        self?.dismiss(animated: true, completion: {
+                            if statusResponse.success {   self?.navigationController?.popToRootViewController(animated: true)
+                            } else {
+                                self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
+                            }
+                        })
+                    }).disposed(by: self.disposeBag)
             }
-            
-            self.navigationController?.popViewController(animated: true)
         }
+//            GroupDataController.shared.insertIntoGroup(groupName: groupName, numOfMember: listPerson.count)
+//            var idGroup: Int64 = -1
+//            if selectedGroupId == -1 {
+//                idGroup = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_GROUP)
+//                print(idGroup)
+//                for person in listPerson {
+//                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: (Int(idGroup) - 1), phoneNumber: person.phoneNumber)
+//                }
+//            } else {
+//                idGroup = Int64(selectedGroupId)
+//                for person in listPerson {
+//                    UserDataController.shared.insertIntoGroup(userName: person.name, groupId: Int(idGroup), phoneNumber: person.phoneNumber)
+//                }
+//            }
+//
+//            self.navigationController?.popViewController(animated: true)
+//        }
+        
     }
     
     
