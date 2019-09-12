@@ -46,6 +46,7 @@ class SettingViewController: ParentViewController {
     @IBAction func logoutButtonOnTap(_ sender: Any) {
         UserDefaultService.shared.clear(key: UserDefaultService.Key.USERNAME)
         UserDefaultService.shared.clear(key: UserDefaultService.Key.ACCESS_TOKEN)
+        NotificationDataController.shared.removeAllNotification()
         self.performSegue(withIdentifier: "goToLogin", sender: self)
     }
     

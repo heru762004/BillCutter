@@ -22,10 +22,14 @@ class RegisterApiService {
     }
 
     func register(username: String, password: String, email: String, phone: String) -> Observable<ApiStatusResult> {
+        var phoneNumber = phone
+        if !phoneNumber.starts(with: "+65") {
+            phoneNumber = "+65\(phoneNumber)"
+        }
         let params: [String: Any] = ["username": username,
                                      "password": password,
                                      "email": email,
-                                     "handphone": phone]
+                                     "handphone": phoneNumber]
         
         return apiService.postString(path: path, headers: ["Content-Type": "application/json"], params: params)
             .map { (success, jsonString)  in

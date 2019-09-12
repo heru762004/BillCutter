@@ -19,8 +19,6 @@ class NotificationDataController {
     private init(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.context = appDelegate.persistentContainer.viewContext
-        
-        
     }
     
     private func save() {
@@ -58,6 +56,22 @@ class NotificationDataController {
             print("Failed")
         }
         return []
+    }
+    
+    func removeAllNotification() {
+        let request: NSFetchRequest<Notification> = Notification.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
+        do {
+            let result = try context.fetch(request)
+            for managedObject in result {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                context.delete(managedObjectData)
+            }
+            save()
+        } catch {
+            
+            print("Failed")
+        }
     }
     
 }

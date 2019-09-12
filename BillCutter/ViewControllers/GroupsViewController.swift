@@ -61,7 +61,8 @@ class GroupsViewController: ParentViewController {
                 }
                 .subscribe(onNext: {[weak self] groupList in
                     self?.dismiss(animated: true, completion: {
-                        self?.groups = groupList
+                        let sortedGroup = groupList.sorted { $0.id > $1.id }
+                        self?.groups = sortedGroup
                         self?.tableGroup.reloadData()
                     })
                 }).disposed(by: self.disposeBag)
