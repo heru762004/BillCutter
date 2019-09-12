@@ -172,7 +172,12 @@ class GroupTagViewController: ParentViewController {
                         self?.dismiss(animated: true, completion: {
                             if statusResponse.error == false {
 //                                self?.sendOweNotification()
-                                self?.navigationController?.popToRootViewController(animated: true)
+                                let alertController = UIAlertController(title: "Success", message: "Receipt has been splitted!", preferredStyle: .alert)
+                                
+                                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {(alert: UIAlertAction!) in
+                                    self?.navigationController?.popToRootViewController(animated: true)
+                                }))
+                                self?.present(alertController, animated: true, completion: nil)
                             } else {
                                 self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                             }

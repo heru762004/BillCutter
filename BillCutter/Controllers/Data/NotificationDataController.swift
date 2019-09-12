@@ -42,13 +42,14 @@ class NotificationDataController {
         notification.id = idNotif
         notification.message = message
         save()
-        UserDefaultService.shared.store(key: UserDefaultService.Key.ID_USER, value: (idNotif + 1))
+        UserDefaultService.shared.store(key: UserDefaultService.Key.ID_NOTIF, value: (idNotif + 1))
         
     }
     
     func getAllNotification() -> [Notification] {
         
         let request: NSFetchRequest<Notification> = Notification.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
         do {
             let result = try context.fetch(request)
             return result
