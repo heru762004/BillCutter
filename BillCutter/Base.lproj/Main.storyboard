@@ -816,10 +816,10 @@
             </objects>
             <point key="canvasLocation" x="6281" y="2741"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="2Ks-Dz-3YR">
             <objects>
-                <viewController id="t34-H9-ZpF" sceneMemberID="viewController">
+                <viewController id="t34-H9-ZpF" customClass="DashboardViewController" customModule="BillCutter" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j7J-7e-Gjl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1105,6 +1105,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="WdG-Ew-hNp"/>
                     <connections>
+                        <outlet property="averageMonthSpendingText" destination="OO6-tU-cA6" id="hcJ-oK-07c"/>
+                        <outlet property="outstandingBalanceText" destination="wkr-Z3-dbA" id="HI4-ZB-E2m"/>
+                        <outlet property="thisMonthSpendingText" destination="swm-Pg-5BH" id="Ra1-a5-ozp"/>
+                        <outlet property="todaySpendingText" destination="7Le-Hs-4z5" id="iYE-SJ-KUb"/>
+                        <outlet property="totalOwedText" destination="Rcc-Ge-ime" id="5xT-3o-FzT"/>
+                        <outlet property="upToDateSpendingText" destination="T6D-Yh-xXc" id="UCE-NU-g8I"/>
                         <segue destination="Rmw-Jy-sWh" kind="show" identifier="goToDetailSpending" id="KtR-Kw-qJ3"/>
                     </connections>
                 </viewController>
