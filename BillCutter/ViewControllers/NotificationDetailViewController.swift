@@ -10,13 +10,29 @@ import UIKit
 
 class NotificationDetailViewController: UIViewController {
 
+    @IBOutlet weak var notificationTitle: UILabel!
+    
+    @IBOutlet weak var notificationAmount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let notification = NotificationDataController.shared.getLastNotification()
+        let notificationName = notification.itemName
+        let notifAmount = notification.amount
+        
+        notificationTitle.text = notificationName
+        notificationAmount.text = "$ \(notifAmount)"
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

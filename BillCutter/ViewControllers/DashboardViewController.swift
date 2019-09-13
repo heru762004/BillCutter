@@ -24,6 +24,8 @@ class DashboardViewController: ParentViewController {
     
     @IBOutlet weak var totalOwedText: UILabel!
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +50,7 @@ class DashboardViewController: ParentViewController {
                         self?.outstandingBalanceText.text = "$\(groupList.outstandingBill)"
                         self?.totalOwedText.text = "$\(groupList.oweByGroups)"
                     })
-                })
+                }).disposed(by: self.disposeBag)
         }
         
     }

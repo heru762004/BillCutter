@@ -31,7 +31,7 @@ class NotificationDataController {
         }
     }
     
-    func insertIntoNotification(message: String) {
+    func insertIntoNotification(message: String, itemName: String, amount: Double) {
         let idNotif = UserDefaultService.shared.retrieve(key: UserDefaultService.Key.ID_NOTIF)
         
         //insert as new data
@@ -39,6 +39,8 @@ class NotificationDataController {
         notification = Notification(context: context)
         notification.id = idNotif
         notification.message = message
+        notification.itemName = itemName
+        notification.amount = amount
         save()
         UserDefaultService.shared.store(key: UserDefaultService.Key.ID_NOTIF, value: (idNotif + 1))
         
@@ -56,6 +58,24 @@ class NotificationDataController {
             print("Failed")
         }
         return []
+    }
+    
+    func getLastNotification() -> Notification {
+        
+        let request: NSFetchRequest<Notification> = Notification.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
+        do {
+            let result = try context.fetch(request)
+            if result.first != nil {
+                return result.first!
+            } else {
+                return Notification()
+            }
+        } catch {
+            
+            print("Failed")
+        }
+        return Notification()
     }
     
     func removeAllNotification() {

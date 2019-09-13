@@ -2088,6 +2088,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notificationAmount" destination="aSB-ar-PW5" id="7JX-Lj-RIC"/>
+                        <outlet property="notificationTitle" destination="uDK-Bl-ZfI" id="zEx-hj-1YM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjd-Lg-enA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

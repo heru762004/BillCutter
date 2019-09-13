@@ -202,12 +202,22 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                 if let message = alert["body"] as? NSString {
                     //Do stuff
                     print("message = \(message)")
-                    NotificationDataController.shared.insertIntoNotification(message: message as String)
+                    if let name = userInfo["name"] as? String {
+                        print("name = \(name)")
+                        if let amount = userInfo["amount"] as? NSString {
+                            print("amount = \(amount)")
+                            NotificationDataController.shared.insertIntoNotification(message: message as String, itemName: name as String, amount: amount.doubleValue)
+                        }
+                    }
                 }
             } else if let alert = aps["alert"] as? NSString {
                 //Do stuff
                 print("alert = \(alert)")
-                NotificationDataController.shared.insertIntoNotification(message: alert as String)
+                if let name = userInfo["name"] as? String {
+                    if let amount = userInfo["amount"] as? NSString {
+                        NotificationDataController.shared.insertIntoNotification(message: alert as String, itemName: name as String, amount: amount.doubleValue )
+                    }
+                }
             }
         }
         
