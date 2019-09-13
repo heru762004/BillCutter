@@ -17,6 +17,7 @@ class GroupMemberViewController: ParentViewController {
     
     var groupId = -1
     var groupMembers = [GroupMember]()
+    var listMembers = [Member]()
     var contactPicker: CNContactPickerViewController?
     private let disposeBag = DisposeBag()
 
@@ -73,8 +74,14 @@ class GroupMemberViewController: ParentViewController {
     }
     
     private func addMember(name: String, phone: String) {
+        listMembers.removeAll()
+        let member = Member()
+        member.groupId = self.groupId
+        member.name = name
+        member.handphone = phone
+        listMembers.append(member)
         showLoading { () in
-            GroupMemberApiService.shared.addMember(groupId: self.groupId, name: name, phone: phone)
+            GroupMemberApiService.shared.addMember(listMembers: self.listMembers)
                 .catchError { _ in
                     self.dismiss(animated: true, completion: {
                         ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")

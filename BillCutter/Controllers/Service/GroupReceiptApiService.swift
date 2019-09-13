@@ -20,7 +20,7 @@ class GroupReceiptApiService {
         self.apiService = ApiService()
     }
     
-    func createGroup(groupName: String) -> Observable<ApiStatusResult> {
+    func createGroup(groupName: String) -> Observable<AddReceipt> {
         let path = "/groups"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
@@ -32,7 +32,7 @@ class GroupReceiptApiService {
         
         return apiService.postString(path: path, headers: headers, params: params)
             .map { (success, jsonString)  in
-                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                let apiStatusResult = Mapper<CreateGroupResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? AddReceipt()
                 apiStatusResult.success = success
                 return apiStatusResult
         }

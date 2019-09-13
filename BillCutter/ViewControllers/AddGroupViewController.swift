@@ -59,7 +59,7 @@ class AddGroupViewController: ParentViewController {
                     }
                     .subscribe(onNext: {[weak self] statusResponse in
                         self?.dismiss(animated: true, completion: {
-                            if statusResponse.success {   self?.navigationController?.popToRootViewController(animated: true)
+                            if statusResponse.success {   self?.addMembers(groupId: statusResponse.id)
                             } else {
                                 self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                             }
@@ -85,6 +85,34 @@ class AddGroupViewController: ParentViewController {
 //            self.navigationController?.popViewController(animated: true)
 //        }
         
+    }
+    
+    func addMembers(groupId: Int) {
+        var listMembers = [Member]()
+        for person in listPerson {
+            let member = Member()
+            member.name = person.name
+            member.handphone = person.phoneNumber
+            member.groupId = groupId
+            listMembers.append(member)
+        }
+        self.showLoading {
+            GroupMemberApiService.shared.addMember(listMembers: listMembers)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] statusResponse in
+                    self?.dismiss(animated: true, completion: {
+                        if statusResponse.success {   self?.navigationController?.popToRootViewController(animated: true)
+                        } else {
+                            self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
+                        }
+                    })
+                }).disposed(by: self.disposeBag)
+        }
     }
     
     

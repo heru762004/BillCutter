@@ -60,6 +60,8 @@
 		C98D6CE1232B468A00BE93F3 /* DashboardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CE0232B468A00BE93F3 /* DashboardResponse.swift */; };
 		C98D6CE3232B475800BE93F3 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CE2232B475800BE93F3 /* Dashboard.swift */; };
 		C98D6CE5232B482800BE93F3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CE4232B482800BE93F3 /* DashboardViewController.swift */; };
+		C98D6CE7232B7AEC00BE93F3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CE6232B7AEC00BE93F3 /* Member.swift */; };
+		C98D6CE9232B965800BE93F3 /* CreateGroupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CE8232B965800BE93F3 /* CreateGroupResponse.swift */; };
 		C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CD82313D08A00E3EEB0 /* CheckBox.swift */; };
 		C9906CDD23140F6600E3EEB0 /* GroupDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */; };
 		C9906CE0231410E300E3EEB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9906CDF231410E300E3EEB0 /* CoreData.framework */; };
@@ -159,6 +161,8 @@
 		C98D6CE0232B468A00BE93F3 /* DashboardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardResponse.swift; sourceTree = "<group>"; };
 		C98D6CE2232B475800BE93F3 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		C98D6CE4232B482800BE93F3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		C98D6CE6232B7AEC00BE93F3 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		C98D6CE8232B965800BE93F3 /* CreateGroupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupResponse.swift; sourceTree = "<group>"; };
 		C9906CD82313D08A00E3EEB0 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		C9906CDC23140F6600E3EEB0 /* GroupDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDataController.swift; sourceTree = "<group>"; };
 		C9906CDF231410E300E3EEB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -264,6 +268,7 @@
 				C98D6CC9232888D900BE93F3 /* AddReceiptResponse.swift */,
 				C98D6CD32329764100BE93F3 /* GetLoginProfileResponse.swift */,
 				C98D6CE0232B468A00BE93F3 /* DashboardResponse.swift */,
+				C98D6CE8232B965800BE93F3 /* CreateGroupResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				C98D6CCB2328898100BE93F3 /* AddReceipt.swift */,
 				C98D6CD1232975EA00BE93F3 /* LoginProfile.swift */,
 				C98D6CE2232B475800BE93F3 /* Dashboard.swift */,
+				C98D6CE6232B7AEC00BE93F3 /* Member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -713,6 +719,7 @@
 				C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */,
 				C92C23402305970B00B85772 /* ScaledElementProcessor.swift in Sources */,
 				C92C233923058A4900B85772 /* ScanViewController.swift in Sources */,
+				C98D6CE7232B7AEC00BE93F3 /* Member.swift in Sources */,
 				C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */,
 				A70CEA322326919F006BF5E5 /* ReceiptItem.swift in Sources */,
 				A70CEA3423269289006BF5E5 /* GroupReceiptResponse.swift in Sources */,
@@ -742,6 +749,7 @@
 				C9D4B6DD230A835F001E0EDD /* DetailReceiptTableViewCell.swift in Sources */,
 				C98D6CDA2329DF3700BE93F3 /* NotificationDetailViewController.swift in Sources */,
 				C93CDCE12315078000416851 /* AddGroupViewController.swift in Sources */,
+				C98D6CE9232B965800BE93F3 /* CreateGroupResponse.swift in Sources */,
 				C98D6CD623297A6300BE93F3 /* NotificationDataController.swift in Sources */,
 				C98D6CD823297BFE00BE93F3 /* NotificationViewController.swift in Sources */,
 				C98D6CD2232975EA00BE93F3 /* LoginProfile.swift in Sources */,
