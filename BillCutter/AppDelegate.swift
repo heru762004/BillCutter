@@ -224,8 +224,15 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "notifNav") as! UINavigationController
         
-        self.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
-        self.window?.makeKeyAndVisible()
+        var yourCurrentViewController = UIApplication.shared.keyWindow!.rootViewController;
+        
+        while ((yourCurrentViewController?.presentedViewController) != nil)
+        {
+            yourCurrentViewController = yourCurrentViewController?.presentedViewController;
+        }
+        yourCurrentViewController?.present(exampleViewController, animated: false, completion: nil)
+//        self.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
+//        self.window?.makeKeyAndVisible()
         completionHandler()
     }
 }

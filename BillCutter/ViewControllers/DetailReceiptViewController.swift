@@ -164,5 +164,8 @@ extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.typeEditor = ModifyDetailReceiptViewController.TYPE_EDIT
+        selectedIdx = indexPath.row
+        self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
     }
 }

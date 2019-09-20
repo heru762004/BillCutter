@@ -160,16 +160,25 @@ class AddGroupViewController: ParentViewController {
 
 extension AddGroupViewController: CNContactPickerDelegate {
     
-    func contactPicker(_ picker: CNContactPickerViewController,
-                       didSelect contacts: [CNContact]) {
-        
-        for contact in contacts {
-            let phoneNumber = (contact.phoneNumbers[0].value ).value(forKey: "digits") as! String
-            let person = Person(name: "\(contact.givenName) \(contact.familyName)", phoneNumber: phoneNumber)
-            listPerson.append(person)
+//    func contactPicker(_ picker: CNContactPickerViewController,
+//                       didSelect contacts: [CNContact]) {
+//        
+//        for contact in contacts {
+//            let phoneNumber = (contact.phoneNumbers[0].value ).value(forKey: "digits") as! String
+//            let person = Person(name: "\(contact.givenName) \(contact.familyName)", phoneNumber: phoneNumber)
+//            listPerson.append(person)
 //            print("Contact = \(contact.givenName) \(contact.familyName)")
 //            print("Phone = \(phoneNumber)")
-        }
+//        }
+//        tableContact.reloadData()
+//    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        let phoneNumber = (contact.phoneNumbers[0].value ).value(forKey: "digits") as! String
+        let person = Person(name: "\(contact.givenName) \(contact.familyName)", phoneNumber: phoneNumber)
+        listPerson.append(person)
+        print("Contact = \(contact.givenName) \(contact.familyName)")
+        print("Phone = \(phoneNumber)")
         tableContact.reloadData()
     }
 }
