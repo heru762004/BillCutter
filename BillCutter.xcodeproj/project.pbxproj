@@ -40,6 +40,7 @@
 		C94369A32312B9B4009F2FB0 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */; };
+		C981207B2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981207A2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift */; };
 		C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D6CB923253A4700BE93F3 /* UserNotifications.framework */; };
 		C98D6CBD2327970100BE93F3 /* ReceiptApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */; };
 		C98D6CBF2327A6B500BE93F3 /* GroupMemberApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBE2327A6B500BE93F3 /* GroupMemberApiService.swift */; };
@@ -140,6 +141,7 @@
 		C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		C981207A2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupReceiptHeaderViewController.swift; sourceTree = "<group>"; };
 		C98D6CB923253A4700BE93F3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BillCutter.entitlements; sourceTree = "<group>"; };
 		C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptApiService.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				C9D4B6DC230A835F001E0EDD /* DetailReceiptTableViewCell.swift */,
 				C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */,
 				C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */,
+				C981207A2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift */,
 				A72E21A72326C6E800099AC4 /* GroupReceiptViewController.swift */,
 				C93CDCE02315078000416851 /* AddGroupViewController.swift */,
 				C91F80CB2316BCFC001199FA /* AssignToViewController.swift */,
@@ -714,6 +717,7 @@
 				C98D6CBF2327A6B500BE93F3 /* GroupMemberApiService.swift in Sources */,
 				C93CDCE52316221E00416851 /* UserDataController.swift in Sources */,
 				A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */,
+				C981207B2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift in Sources */,
 				A70CEA3623269382006BF5E5 /* ReceiptItemResponse.swift in Sources */,
 				CDC2CC97230A7DFD00F533FD /* DetailReceiptViewController.swift in Sources */,
 				C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */,

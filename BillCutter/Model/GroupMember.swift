@@ -13,5 +13,6 @@ class GroupMember {
     var name = ""
     var handphone = ""
     var totalpayment = 0.0
+    var totalOwe = 0.0
     var statusPayment = ""
 }

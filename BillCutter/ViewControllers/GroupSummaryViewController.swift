@@ -15,6 +15,7 @@ class GroupSummaryViewController: ParentViewController {
     
     var groupReceipt = GroupReceipt()
     var groupMembers = [GroupMember]()
+    var selectedIdx = -1
 
     private let disposeBag = DisposeBag()
 
@@ -27,6 +28,10 @@ class GroupSummaryViewController: ParentViewController {
     
     private func loadMembers() {
         showLoading { () in
+//            if self.groupReceipt.listReceipt[self.selectedIdx].listDetail.count > 0 {
+//                GroupMemberApiService.shared.getGroupMember(groupId: self.groupReceipt.id, receiptHeaderId: self.groupReceipt.listReceipt[self.selectedIdx].listDetail[0].receiptHdrId)
+                
+//            }
             GroupMemberApiService.shared.getGroupMember(groupId: self.groupReceipt.id)
                 .catchError {  _ in
                     self.dismiss(animated: true, completion: {
@@ -76,7 +81,7 @@ extension GroupSummaryViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupSummaryViewCell", for: indexPath)
         cell.textLabel?.text = "\(member.name)"
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        cell.detailTextLabel?.text = "\(member.totalpayment)"
+        cell.detailTextLabel?.text = "\(member.totalOwe)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         
         if member.statusPayment == "NOT COMPLETED" {

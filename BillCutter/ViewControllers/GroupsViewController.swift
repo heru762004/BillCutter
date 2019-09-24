@@ -38,8 +38,8 @@ class GroupsViewController: ParentViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGroupReceipt" {
-            guard let destinationViewController = segue.destination as? GroupReceiptViewController, let groupReceipt = sender as? GroupReceipt else { return }
+        if segue.identifier == "showGroupReceiptHeader" {
+            guard let destinationViewController = segue.destination as? GroupReceiptHeaderViewController, let groupReceipt = sender as? GroupReceipt else { return }
             destinationViewController.groupReceipt = groupReceipt
         }
     }
@@ -70,7 +70,7 @@ class GroupsViewController: ParentViewController {
     }
     
     private func loadGroupReceiptView(groupReceipt: GroupReceipt) {
-        performSegue(withIdentifier: "showGroupReceipt", sender: groupReceipt)
+        performSegue(withIdentifier: "showGroupReceiptHeader", sender: groupReceipt)
     }
     
 }
