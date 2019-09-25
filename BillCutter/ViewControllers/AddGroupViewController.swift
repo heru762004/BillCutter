@@ -27,7 +27,7 @@ class AddGroupViewController: ParentViewController {
             // need to be replaced by username and registered phone number
             let userName = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.USERNAME)
             let phoneNumber = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.PHONE_NUMBER)
-            if phoneNumber == nil || phoneNumber.count == 0 {
+            if phoneNumber.count == 0 {
                 // use get profile to get user phone number
                 self.showLoading {
                     GetProfileApiService.shared.getLoginProfile()
@@ -40,9 +40,9 @@ class AddGroupViewController: ParentViewController {
                         .subscribe(onNext: {[weak self] statusResponse in
                             self?.dismiss(animated: true, completion: {
                                 if statusResponse.success {
-                                    let person = Person(name: userName, phoneNumber: statusResponse.handphone)
-                                    self?.listPerson.append(person)
-                                    self?.tableContact.reloadData()
+//                                    let person = Person(name: userName, phoneNumber: statusResponse.handphone)
+//                                    self?.listPerson.append(person)
+//                                    self?.tableContact.reloadData()
                                 } else {
                                     self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                                 }
@@ -50,8 +50,8 @@ class AddGroupViewController: ParentViewController {
                         }).disposed(by: self.disposeBag)
                 }
             } else {
-                let person = Person(name: userName, phoneNumber: phoneNumber)
-                listPerson.append(person)
+//                let person = Person(name: userName, phoneNumber: phoneNumber)
+//                listPerson.append(person)
             }
         } else {
             if let selectedGroup: Group = GroupDataController.shared.getGroupWithFilter(groupId: selectedGroupId) {

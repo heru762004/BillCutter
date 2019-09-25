@@ -73,6 +73,27 @@ class GroupsViewController: ParentViewController {
         performSegue(withIdentifier: "showGroupReceiptHeader", sender: groupReceipt)
     }
     
+    private func deleteGroup(groupId: Int) {
+        showLoading { () in
+            GroupReceiptApiService.shared.deleteGroup(groupId: groupId)
+                .catchError { _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: { [weak self] apiResultStatus in
+                    self?.dismiss(animated: true, completion: {
+                        if apiResultStatus.success {
+                            self?.loadAllGroup()
+                        } else if let weakSelf = self {
+                            ViewUtil.showAlert(controller: weakSelf, message: apiResultStatus.message)
+                        }
+                    })
+                }).disposed(by: self.disposeBag)
+        }
+    }
+    
 }
 
 extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -104,5 +125,12 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
                 groupReceipt.receiptHdrId = weakSelf.groups[indexPath.row].receiptHdrId
                 weakSelf.loadGroupReceiptView(groupReceipt: groupReceipt)
             }).disposed(by: disposeBag)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard indexPath.row < groups.count else { return }
+            deleteGroup(groupId: groups[indexPath.row].id)
+        }
     }
 }
