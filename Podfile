@@ -17,6 +17,7 @@ target 'BillCutter' do
   pod 'Alamofire'
   pod 'RxAlamofire'
   pod 'ObjectMapper', '~> 3.4'
+  pod 'IQKeyboardManagerSwift'
   
   target 'BillCutterTests' do
     inherit! :search_paths
