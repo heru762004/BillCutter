@@ -13,6 +13,8 @@ class SettingViewController: ParentViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var phoneLabel: UILabel!
@@ -31,6 +33,7 @@ class SettingViewController: ParentViewController {
                 .subscribe(onNext: {[weak self] statusResponse in
                     self?.dismiss(animated: true, completion: {
                         if statusResponse.success {
+                            self?.nameLabel.text = statusResponse.name
                             self?.usernameLabel.text = statusResponse.username
                             self?.emailLabel.text = statusResponse.email
                             self?.phoneLabel.text = statusResponse.handphone

@@ -14,6 +14,7 @@ class GetLoginProfileResponse: Mappable {
     var email = ""
     var username = ""
     var handphone = ""
+    var name = ""
     var error = false
     
     required init?(map: Map) {}
@@ -24,12 +25,14 @@ class GetLoginProfileResponse: Mappable {
         email <- map["email"]
         username <- map["username"]
         handphone <- map["handphone"]
+        name <- map["name"]
     }
     
     func toApiStatusResult() -> LoginProfile {
         let apiStatusResult = LoginProfile()
         apiStatusResult.message = message
         apiStatusResult.error = error
+        apiStatusResult.name = name
         apiStatusResult.username = username
         apiStatusResult.email = email
         apiStatusResult.handphone = handphone
