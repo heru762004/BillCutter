@@ -17,6 +17,7 @@ class UserDefaultService {
         static let ID_USER = "ID_USER"
         static let ACCESS_TOKEN = "ACCESS_TOKEN"
         static let USERNAME = "USERNAME"
+        static let PHONE_NUMBER = "PHONE_NUMBER"
         static let FIREBASE_TOKEN = "FIREBASE_TOKEN"
         static let ID_NOTIF = "ID_NOTIF"
     }

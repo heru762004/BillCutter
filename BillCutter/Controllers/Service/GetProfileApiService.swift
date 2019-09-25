@@ -29,6 +29,8 @@ class GetProfileApiService {
             .map { (success, jsonString)  in
                 let apiStatusResult = Mapper<GetLoginProfileResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? LoginProfile()
                 apiStatusResult.success = success
+                
+                UserDefaultService.shared.storeString(key: UserDefaultService.Key.PHONE_NUMBER, value: apiStatusResult.handphone)
                 return apiStatusResult
         }
     }

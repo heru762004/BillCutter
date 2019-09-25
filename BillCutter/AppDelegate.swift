@@ -63,17 +63,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .subscribe(onNext: {[weak self] groupList in
                     if groupList.success {
                         // check if launch from notification
-                    if(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
+                        if(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
                             // your code here
                             let exampleViewController: UINavigationController = mainStoryboard.instantiateViewController(withIdentifier: "notifNav") as! UINavigationController
                             
-                        self?.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
+                            self?.window?.rootViewController?.present(exampleViewController, animated: false, completion: nil)
                             self?.window?.makeKeyAndVisible()
                         } else {
                             let exampleViewController: UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarMain") as! UITabBarController
-                        //                let navigationController = UINavigationController(rootViewController: exampleViewController)
+                            //                let navigationController = UINavigationController(rootViewController: exampleViewController)
                             self?.window?.rootViewController = exampleViewController
-                        
+                            
                             self?.window?.makeKeyAndVisible()
                         }
                     }

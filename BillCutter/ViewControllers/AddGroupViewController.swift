@@ -26,8 +26,33 @@ class AddGroupViewController: ParentViewController {
         if selectedGroupId == -1 {
             // need to be replaced by username and registered phone number
             let userName = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.USERNAME)
-            let person = Person(name: userName, phoneNumber: "+6588888888")
-            listPerson.append(person)
+            let phoneNumber = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.PHONE_NUMBER)
+            if phoneNumber == nil || phoneNumber.count == 0 {
+                // use get profile to get user phone number
+                self.showLoading {
+                    GetProfileApiService.shared.getLoginProfile()
+                        .catchError {  _ in
+                            self.dismiss(animated: true, completion: {
+                                ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                            })
+                            return Observable.empty()
+                        }
+                        .subscribe(onNext: {[weak self] statusResponse in
+                            self?.dismiss(animated: true, completion: {
+                                if statusResponse.success {
+                                    let person = Person(name: userName, phoneNumber: statusResponse.handphone)
+                                    self?.listPerson.append(person)
+                                    self?.tableContact.reloadData()
+                                } else {
+                                    self?.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
+                                }
+                            })
+                        }).disposed(by: self.disposeBag)
+                }
+            } else {
+                let person = Person(name: userName, phoneNumber: phoneNumber)
+                listPerson.append(person)
+            }
         } else {
             if let selectedGroup: Group = GroupDataController.shared.getGroupWithFilter(groupId: selectedGroupId) {
                 groupNameText.text = selectedGroup.groupName
