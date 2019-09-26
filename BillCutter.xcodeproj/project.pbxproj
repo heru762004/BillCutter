@@ -22,6 +22,9 @@
 		A7651B3B231D86E300035774 /* ApiStatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3A231D86E300035774 /* ApiStatusResult.swift */; };
 		A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3C231D881100035774 /* RegisterApiService.swift */; };
 		A7651B40231D921900035774 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7651B3F231D921900035774 /* ViewUtil.swift */; };
+		A7CAA413233BE6C700086C6D /* ReceiptItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CAA412233BE6C700086C6D /* ReceiptItemDetail.storyboard */; };
+		A7CAA415233BED1000086C6D /* ReceiptItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAA414233BED1000086C6D /* ReceiptItemDetailViewController.swift */; };
+		A7DF8D25233D464900230FFF /* MemberList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF8D24233D464900230FFF /* MemberList.storyboard */; };
 		A7E4752923294ED5007144DC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4752823294ED5007144DC /* SettingViewController.swift */; };
 		A7FBB4882327F119000FAE35 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
@@ -119,6 +122,9 @@
 		A7651B3A231D86E300035774 /* ApiStatusResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiStatusResult.swift; sourceTree = "<group>"; };
 		A7651B3C231D881100035774 /* RegisterApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApiService.swift; sourceTree = "<group>"; };
 		A7651B3F231D921900035774 /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
+		A7CAA412233BE6C700086C6D /* ReceiptItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReceiptItemDetail.storyboard; sourceTree = "<group>"; };
+		A7CAA414233BED1000086C6D /* ReceiptItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemDetailViewController.swift; sourceTree = "<group>"; };
+		A7DF8D24233D464900230FFF /* MemberList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberList.storyboard; sourceTree = "<group>"; };
 		A7E4752823294ED5007144DC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +289,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A7CAA411233BE69D00086C6D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
+				A7CAA412233BE6C700086C6D /* ReceiptItemDetail.storyboard */,
+				A7DF8D24233D464900230FFF /* MemberList.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		C9168D962310EF8500396BA0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +377,7 @@
 		C998034A22FAFE5F008E6A28 /* BillCutter */ = {
 			isa = PBXGroup;
 			children = (
+				A7CAA411233BE69D00086C6D /* Storyboards */,
 				C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */,
 				A7651B3E231D920100035774 /* Utils */,
 				A71142B323144DC900257E6E /* ApiServices */,
@@ -370,7 +387,6 @@
 				C92C233C230596D600B85772 /* ImageProcessor */,
 				C92C233623058A0000B85772 /* GoogleService-Info.plist */,
 				C998034B22FAFE5F008E6A28 /* AppDelegate.swift */,
-				C998034F22FAFE5F008E6A28 /* Main.storyboard */,
 				C998035522FAFE61008E6A28 /* Assets.xcassets */,
 				C998035722FAFE61008E6A28 /* LaunchScreen.storyboard */,
 				C998035A22FAFE61008E6A28 /* Info.plist */,
@@ -421,6 +437,7 @@
 				C98D6CD723297BFE00BE93F3 /* NotificationViewController.swift */,
 				C98D6CD92329DF3700BE93F3 /* NotificationDetailViewController.swift */,
 				C98D6CE4232B482800BE93F3 /* DashboardViewController.swift */,
+				A7CAA414233BED1000086C6D /* ReceiptItemDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -561,8 +578,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C998035922FAFE61008E6A28 /* LaunchScreen.storyboard in Resources */,
+				A7CAA413233BE6C700086C6D /* ReceiptItemDetail.storyboard in Resources */,
 				C92C233723058A0000B85772 /* GoogleService-Info.plist in Resources */,
 				C998035622FAFE61008E6A28 /* Assets.xcassets in Resources */,
+				A7DF8D25233D464900230FFF /* MemberList.storyboard in Resources */,
 				C998035122FAFE5F008E6A28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,7 +610,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMLVisionTextModel/GoogleMVTextDetectorResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -717,6 +736,7 @@
 				A71142B523144DEE00257E6E /* ApiService.swift in Sources */,
 				C98D6CCE232898B100BE93F3 /* NotificationApiService.swift in Sources */,
 				C98D6CBF2327A6B500BE93F3 /* GroupMemberApiService.swift in Sources */,
+				A7CAA415233BED1000086C6D /* ReceiptItemDetailViewController.swift in Sources */,
 				C93CDCE52316221E00416851 /* UserDataController.swift in Sources */,
 				A7651B3D231D881100035774 /* RegisterApiService.swift in Sources */,
 				C981207B2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift in Sources */,

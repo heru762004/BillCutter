@@ -30,6 +30,11 @@ class GroupReceiptViewController: ParentViewController  {
             guard let destinationViewController = segue.destination as? GroupSummaryViewController else { return }
             destinationViewController.groupReceipt = groupReceipt
             destinationViewController.selectedIdx = selectedIdx
+        } else if segue.identifier == "openReceiptItemDetail" {
+            guard let destinationViewController = segue.destination as? ReceiptItemDetailViewController, let receiptItem = sender as? ReceiptItem else { return }
+            destinationViewController.paidBy = groupReceipt.listReceipt[selectedIdx].paidBy
+            destinationViewController.receiptItem = receiptItem
+            destinationViewController.groupId = groupReceipt.id
         }
     }
     
@@ -57,7 +62,7 @@ extension GroupReceiptViewController: UITableViewDelegate, UITableViewDataSource
         guard indexPath.row < groupReceipt.listReceipt[selectedIdx].listDetail.count else { return }
         let receiptItem = groupReceipt.listReceipt[selectedIdx].listDetail[indexPath.row]
 
-        // Open Receipt Item Detail
+        performSegue(withIdentifier: "openReceiptItemDetail", sender: receiptItem)
         
     }
 }
