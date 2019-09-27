@@ -27,9 +27,7 @@ class ReceiptApiService {
         var member_item = [[String:Any]]()
         var total = 0.0
         for member in receiptItem {
-            if let price = Double(member.price) {
-                total += price
-            }
+            total += member.price
             member_item.append(member.toDict())
         }
         
@@ -196,4 +194,48 @@ class ReceiptApiService {
                 return apiStatusResult
         }
     }
+    
+    func getReceiptItemDetail(receiptHeaderId: Int, itemId: Int) -> Observable<ReceiptDetailItem> {
+        let path = "/receipt/\(receiptHeaderId)/detail/\(itemId)"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        return apiService.getString(path: path, headers: headers)
+            .map { (success, jsonString)  in
+                let itemDetail = Mapper<ReceiptDetailItemResponse>().map(JSONString: jsonString)?.toReceiptDetailItem() ?? ReceiptDetailItem()
+                return itemDetail
+        }
+    }
+    
+    func updateReceiptItemDetail(receiptHdrId: Int, id: Int, name: String, price: Float, total: Float, amount: Int, tagMembers: [TagMember]) -> Observable<ApiStatusResult> {
+        
+        let path = "/receipt/item"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        var members = [[String: Any]]()
+        for member in tagMembers {
+            members.append(member.toIdDict())
+        }
+
+        let params: [String: Any] = ["receiptHdrId": "\(receiptHdrId)",
+            "id": id,
+            "name": name,
+            "price": "\(price)",
+            "total": "\(total)",
+            "amount": "\(amount)",
+            "splitType" : "EQUAL",
+            "tagMember": members]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+        
+    }
+    
 }

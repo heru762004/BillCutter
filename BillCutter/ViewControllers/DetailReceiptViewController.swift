@@ -84,17 +84,17 @@ class DetailReceiptViewController: ParentViewController {
                 for item in self.items {
                     let myItem = ReceiptDetailItem()
                     myItem.name = item.name
-                    var twoDecimalPlaces = ""
-                    if item.price >= 0.0 {
-                        twoDecimalPlaces = String(format: "%.2f", item.price)
-                    } else {
-                        twoDecimalPlaces = String(format: "%.2f", item.price)
-                        twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
-                        twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
-                    }
-                    myItem.price = twoDecimalPlaces
-                    myItem.amount = "1"
-                    myItem.total = twoDecimalPlaces
+//                    var twoDecimalPlaces = ""
+//                    if item.price >= 0.0 {
+//                        twoDecimalPlaces = String(format: "%.2f", item.price)
+//                    } else {
+//                        twoDecimalPlaces = String(format: "%.2f", item.price)
+//                        twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
+//                        twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
+//                    }
+                    myItem.price = Double(item.price)
+                    myItem.amount = 1
+                    myItem.total = Double(item.price)
                     listItem.append(myItem)
                 }
                 self.showLoading {

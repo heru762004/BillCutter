@@ -12,6 +12,10 @@ import RxSwift
 
 class GroupMemberViewController: ParentViewController {
     
+    typealias TagMemberSelectedClosure = (Int) -> Void
+    
+    private var tagMemberSelected: TagMemberSelectedClosure = { _  in }
+
     @IBOutlet weak var membersTableView: UITableView!
     @IBOutlet weak var addMemberBarButton: UIBarButtonItem!
     
@@ -19,6 +23,8 @@ class GroupMemberViewController: ParentViewController {
     var groupMembers = [GroupMember]()
     var listMembers = [Member]()
     var contactPicker: CNContactPickerViewController?
+    var isSelectionMode = false
+    
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -29,6 +35,10 @@ class GroupMemberViewController: ParentViewController {
         membersTableView.tableFooterView = UIView()
         
         loadMembers()
+        
+        if isSelectionMode {
+            navigationItem.rightBarButtonItems = nil
+        }
     }
     
     @objc func addMemberButtonOnTap(sender: UIBarButtonItem) {
@@ -53,6 +63,10 @@ class GroupMemberViewController: ParentViewController {
             contactPicker!.predicateForEnablingContact = predicate
         }
         present(contactPicker!, animated: true, completion: nil)
+    }
+    
+    func setSelectionDelegate(tagMemberSelectedClosure: @escaping TagMemberSelectedClosure) {
+        self.tagMemberSelected = tagMemberSelectedClosure
     }
     
     private func loadMembers() {
@@ -144,9 +158,27 @@ extension GroupMemberViewController: UITableViewDataSource, UITableViewDelegate 
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         cell.detailTextLabel?.text = "\(groupMembers[indexPath.row].handphone)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
+        if self.isSelectionMode {
+            cell.selectionStyle = .default
+        } else {
+            cell.selectionStyle = .none
+        }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < groupMembers.count else { return }
+        tagMemberSelected(groupMembers[indexPath.row].id)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if self.isSelectionMode {
+            return .none
+        }
+        
+        return .delete
+    }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard indexPath.row < groupMembers.count else { return }

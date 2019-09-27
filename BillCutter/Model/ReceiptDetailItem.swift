@@ -9,10 +9,13 @@
 import Foundation
 
 class ReceiptDetailItem {
+    
+    var id = 0
     var name = ""
-    var price = ""
-    var amount = ""
-    var total = ""
+    var amount = 0
+    var price = 0.0
+    var total = 0.0
+    var tagMembers = [TagMember]()
     
     func toDict() -> [String:Any] {
         var dict = [String:Any]()

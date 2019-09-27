@@ -26,6 +26,8 @@
 		A7CAA415233BED1000086C6D /* ReceiptItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CAA414233BED1000086C6D /* ReceiptItemDetailViewController.swift */; };
 		A7DF8D25233D464900230FFF /* MemberList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7DF8D24233D464900230FFF /* MemberList.storyboard */; };
 		A7E4752923294ED5007144DC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4752823294ED5007144DC /* SettingViewController.swift */; };
+		A7EAC617233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */; };
+		A7EAC619233E65F900F13EC5 /* TagMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */; };
 		A7FBB4882327F119000FAE35 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
@@ -126,6 +128,8 @@
 		A7CAA414233BED1000086C6D /* ReceiptItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemDetailViewController.swift; sourceTree = "<group>"; };
 		A7DF8D24233D464900230FFF /* MemberList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MemberList.storyboard; sourceTree = "<group>"; };
 		A7E4752823294ED5007144DC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemDetailresponse.swift; sourceTree = "<group>"; };
+		A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagMemberResponse.swift; sourceTree = "<group>"; };
 		A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				C98D6CD32329764100BE93F3 /* GetLoginProfileResponse.swift */,
 				C98D6CE0232B468A00BE93F3 /* DashboardResponse.swift */,
 				C98D6CE8232B965800BE93F3 /* CreateGroupResponse.swift */,
+				A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */,
+				A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -728,6 +734,7 @@
 				C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */,
 				C98D6CCA232888D900BE93F3 /* AddReceiptResponse.swift in Sources */,
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,
+				A7EAC619233E65F900F13EC5 /* TagMemberResponse.swift in Sources */,
 				C91F80CC2316BCFC001199FA /* AssignToViewController.swift in Sources */,
 				C998034E22FAFE5F008E6A28 /* LoginViewController.swift in Sources */,
 				C998035422FAFE5F008E6A28 /* BillCutter.xcdatamodeld in Sources */,
@@ -779,6 +786,7 @@
 				C98D6CD623297A6300BE93F3 /* NotificationDataController.swift in Sources */,
 				C98D6CD823297BFE00BE93F3 /* NotificationViewController.swift in Sources */,
 				C98D6CD2232975EA00BE93F3 /* LoginProfile.swift in Sources */,
+				A7EAC617233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift in Sources */,
 				C98D6CC8232868EF00BE93F3 /* ReceiptDetailItem.swift in Sources */,
 				A7651B40231D921900035774 /* ViewUtil.swift in Sources */,
 				C9906CD92313D08A00E3EEB0 /* CheckBox.swift in Sources */,
