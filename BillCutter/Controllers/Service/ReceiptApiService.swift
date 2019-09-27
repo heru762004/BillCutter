@@ -148,4 +148,21 @@ class ReceiptApiService {
                 return apiStatusResult
         }
     }
+    
+    func deleteReceipt(receiptHeaderId: Int) -> Observable<ApiStatusResult> {
+        
+        let path = "/receipt/delete"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        let params: [String: Any] = ["id": "\(receiptHeaderId)"]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
 }
