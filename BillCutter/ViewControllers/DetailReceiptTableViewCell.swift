@@ -14,8 +14,6 @@ class DetailReceiptTableViewCell: UITableViewCell {
     
     @IBOutlet weak var buttonPrice: UIButton!
     
-    @IBOutlet weak var buttonDelete: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

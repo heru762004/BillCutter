@@ -13,6 +13,8 @@ class GroupReceiptHeaderViewController: ParentViewController  {
     @IBOutlet weak var tableView: UITableView!
     var groupReceipt = GroupReceipt()
     var selectedIdx: Int = -1
+    var selectedGroupId: Int = -1
+    var selectedRemoveIdx: Int = -1
     
     override func viewDidLoad() {
         tableView.tableFooterView = UIView()
@@ -48,6 +50,48 @@ class GroupReceiptHeaderViewController: ParentViewController  {
     private func loadGroupReceiptView(groupReceipt: GroupReceipt) {
         performSegue(withIdentifier: "showGroupReceipt", sender: groupReceipt)
     }
+    
+    private func detachReceipt(receiptId: Int, groupId: Int) {
+        showLoading { () in
+            ReceiptApiService.shared.detachReceipt(groupId: groupId, receiptId: receiptId)
+                .catchError { _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: { [weak self] apiResultStatus in
+                    self?.dismiss(animated: true, completion: {
+                        if apiResultStatus.success {
+                            self?.removeReceipt(receiptId: receiptId)
+                        } else if let weakSelf = self {
+                            ViewUtil.showAlert(controller: weakSelf, message: apiResultStatus.message)
+                        }
+                    })
+                })
+        }
+    }
+    private func removeReceipt(receiptId: Int) {
+        showLoading { () in
+            ReceiptApiService.shared.deleteReceipt(receiptHeaderId: receiptId)
+                .catchError { _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: { [weak self] apiResultStatus in
+                    self?.dismiss(animated: true, completion: {
+                        if apiResultStatus.success {
+                            self?.groupReceipt.listReceipt.remove(at: self!.selectedRemoveIdx)
+                            self?.tableView.reloadData()
+                        } else if let weakSelf = self {
+                            ViewUtil.showAlert(controller: weakSelf, message: apiResultStatus.message)
+                        }
+                    })
+                })
+        }
+    }
 }
 
 
@@ -74,6 +118,13 @@ extension GroupReceiptHeaderViewController: UITableViewDelegate, UITableViewData
         self.selectedIdx = indexPath.row
         self.loadGroupReceiptView(groupReceipt: groupReceipt)
         // Open Receipt Item Detail
-        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard indexPath.row < groupReceipt.listReceipt.count else { return }
+            selectedRemoveIdx = indexPath.row
+            self.detachReceipt(receiptId: groupReceipt.listReceipt[indexPath.row].id, groupId: self.selectedGroupId)
+        }
     }
 }

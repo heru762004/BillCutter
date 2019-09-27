@@ -130,9 +130,21 @@ class ScaledElementProcessor {
         
         var idx: Int = 0
         for text in arrayText {
+            var isGst = false
+            var isGrandTotal = false
+            var isRoundingAmount = false
             print("Title = \(text)")
             print("Amount = \(arrayMoney[idx])")
-            let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue)
+            if text.uppercased().contains("GST") {
+                isGst = true
+            }
+            if text.lowercased().contains("grand total") || text.lowercased() == "total" {
+                isGrandTotal = true
+            }
+            if text.lowercased().contains("rounding") {
+                isRoundingAmount = true
+            }
+            let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue, isGst: isGst, isGrandTotal: isGrandTotal, isRoundingAmount: isRoundingAmount)
             items.append(item)
             idx+=1
         }
@@ -186,7 +198,19 @@ class ScaledElementProcessor {
         allLines = allLines.filter{ !$0.trimmingCharacters(in: .whitespaces).isEmpty}
         
         for line in allLines {
-            let item = Item(name: line, price: 0)
+            var isGst = false
+            var isGrandTotal = false
+            var isRoundingAmount = false
+            if line.uppercased().contains("GST") {
+                isGst = true
+            }
+            if line.lowercased().contains("grand total") || line.lowercased() == "total" {
+                isGrandTotal = true
+            }
+            if line.lowercased().contains("rounding") {
+                isRoundingAmount = true
+            }
+            let item = Item(name: line, price: 0, isGst: isGst, isGrandTotal: isGrandTotal, isRoundingAmount: isRoundingAmount)
             items.append(item)
         }
     }

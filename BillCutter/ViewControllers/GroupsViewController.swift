@@ -41,6 +41,7 @@ class GroupsViewController: ParentViewController {
         if segue.identifier == "showGroupReceiptHeader" {
             guard let destinationViewController = segue.destination as? GroupReceiptHeaderViewController, let groupReceipt = sender as? GroupReceipt else { return }
             destinationViewController.groupReceipt = groupReceipt
+            destinationViewController.selectedGroupId = self.selectedGroupId
         }
     }
 

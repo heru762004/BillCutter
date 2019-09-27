@@ -60,10 +60,10 @@ class DetailReceiptViewController: ParentViewController {
         self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
     }
     
-    @objc func deleteButtonTapped(sender: UIButton!) {
+    private func deleteButtonTapped(selectedIdx: Int) {
         
-        self.items.remove(at: sender.tag)
-        ItemDataController.shared.removeItemAtIndex(idx: sender.tag)
+        self.items.remove(at: selectedIdx)
+        ItemDataController.shared.removeItemAtIndex(idx: selectedIdx)
         self.tableReceipt.reloadData()
     }
     
@@ -156,9 +156,6 @@ extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSourc
         // add target to button price, so user can change the price
         cell.buttonPrice.addTarget(self, action: #selector(priceButtonTapped), for: UIControl.Event.touchUpInside)
         
-        cell.buttonDelete.tag = indexPath.row
-        // Add target to the deleteButton so that the row can be deleted when tapped
-        cell.buttonDelete.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         return cell
     }
     
@@ -167,5 +164,12 @@ extension DetailReceiptViewController: UITableViewDelegate, UITableViewDataSourc
         self.typeEditor = ModifyDetailReceiptViewController.TYPE_EDIT
         selectedIdx = indexPath.row
         self.performSegue(withIdentifier: "goToModifyDetailReceipt", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard indexPath.row < items.count else { return }
+            self.deleteButtonTapped(selectedIdx: indexPath.row)
+        }
     }
 }

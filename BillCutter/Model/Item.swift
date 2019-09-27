@@ -11,11 +11,17 @@ import Foundation
 class Item {
     var name: String
     var price: Float
+    var isGst: Bool
+    var isGrandTotal: Bool
+    var isRoundingAmount: Bool
     var people: [Person]
     
-    init(name: String, price: Float) {
+    init(name: String, price: Float, isGst: Bool, isGrandTotal: Bool, isRoundingAmount: Bool) {
         self.name = name
         self.price = price
+        self.isGst = isGst
+        self.isGrandTotal = isGrandTotal
+        self.isRoundingAmount = isRoundingAmount
         people = []
     }
     

@@ -17,6 +17,12 @@ class ModifyDetailReceiptViewController: UIViewController {
     
     @IBOutlet weak var checkIsDiscount: CheckBox!
     
+    @IBOutlet weak var checkIsGst: CheckBox!
+    
+    @IBOutlet weak var checkIsGrandTotal: CheckBox!
+    
+    @IBOutlet weak var checkIsRoundingAmount: CheckBox!
+    
     var items: [Item] = []
     var selectedIdx: Int = 0
     
@@ -71,6 +77,15 @@ class ModifyDetailReceiptViewController: UIViewController {
                 if price < 0.0 {
                     checkIsDiscount.isChecked = true
                 }
+                if items[selectedIdx].isGst {
+                    checkIsGst.isChecked = true
+                }
+                if items[selectedIdx].isGrandTotal {
+                    checkIsGrandTotal.isChecked = true
+                }
+                if items[selectedIdx].isRoundingAmount {
+                    checkIsRoundingAmount.isChecked = true
+                }
             }
         }
     }
@@ -98,7 +113,7 @@ class ModifyDetailReceiptViewController: UIViewController {
                 var amoutFloat: Float = 0.0
                 if let textFieldNumber = textFieldNumber{
                     amoutFloat = Float(textFieldNumber)
-                    let myItem = Item(name: myItemName, price: amoutFloat)
+                    let myItem = Item(name: myItemName, price: amoutFloat, isGst: checkIsGst.isChecked, isGrandTotal: checkIsGrandTotal.isChecked, isRoundingAmount: checkIsRoundingAmount.isChecked)
                     self.items.append(myItem)
                     
                     ItemDataController.shared.removeAllItem()

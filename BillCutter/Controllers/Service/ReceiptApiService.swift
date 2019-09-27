@@ -113,6 +113,38 @@ class ReceiptApiService {
         }
     }
     
+    func detachReceipt(groupId: Int, receiptId: Int) -> Observable<ApiStatusResult> {
+        let path = "/receipt/action"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        //{"id":"1", "action":"ATTACH", "groupId":2}
+        let params: [String: Any] = [
+            "id" : receiptId,
+            "action": "DETACH",
+            "groupId": groupId,
+            "splitType": "EQUAL"
+        ]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+            // here "jsonData" is the dictionary encoded in JSON data
+            
+            let convertedString = String(data: jsonData, encoding: String.Encoding.utf8) // the data will be converted to the string
+            print(convertedString!)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+    
     func addReceipt(receiptHdrId: String, itemName: String, itemAmount: String, members: [TagMember]) -> Observable<ApiStatusResult> {
         let path = "/receipt/item"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
@@ -150,7 +182,6 @@ class ReceiptApiService {
     }
     
     func deleteReceipt(receiptHeaderId: Int) -> Observable<ApiStatusResult> {
-        
         let path = "/receipt/delete"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         
