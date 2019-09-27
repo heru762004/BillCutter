@@ -52,7 +52,7 @@ extension GroupReceiptViewController: UITableViewDelegate, UITableViewDataSource
         let receiptItem = groupReceipt.listReceipt[selectedIdx].listDetail[indexPath.row]
         cell.textLabel?.text = "\(receiptItem.amount) x \(receiptItem.name)"
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        cell.detailTextLabel?.text = "\(receiptItem.total)"
+        cell.detailTextLabel?.text = "$\(receiptItem.total)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }

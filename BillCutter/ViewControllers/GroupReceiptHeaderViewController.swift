@@ -108,7 +108,7 @@ extension GroupReceiptHeaderViewController: UITableViewDelegate, UITableViewData
         cell.textLabel?.text = "\(receiptItem.name)"
         print("ReceiptItem name = \(receiptItem.name)")
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        cell.detailTextLabel?.text = "\(receiptItem.grandtotal)"
+        cell.detailTextLabel?.text = "$\(receiptItem.grandtotal)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }

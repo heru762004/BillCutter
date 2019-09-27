@@ -107,7 +107,7 @@ extension GroupsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupViewCell", for: indexPath)
         cell.textLabel?.text = "\(groups[indexPath.row].name)"
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        cell.detailTextLabel?.text = "\(groups[indexPath.row].spendingAmt)"
+        cell.detailTextLabel?.text = "$\(groups[indexPath.row].spendingAmt)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }
