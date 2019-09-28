@@ -174,7 +174,7 @@ class ScaledElementProcessor {
                         if text.lowercased().starts(with: "visa") || text.lowercased().starts(with: "master") || text.lowercased().starts(with: "cash") ||
                             text.lowercased().contains("tota") ||
                             text.lowercased().starts(with: "pay") ||
-                            text.lowercased().starts(with: "paid") ||
+                            text.lowercased().contains("paid") ||
                             text.lowercased().starts(with: "rebate") ||
                             text.lowercased().starts(with: "amex") ||
                             text.lowercased().starts(with: "change") ||

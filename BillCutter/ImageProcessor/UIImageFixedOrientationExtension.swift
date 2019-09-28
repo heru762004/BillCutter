@@ -88,20 +88,26 @@ extension UIImage {
         // 3
         let filteredImage = stillImageFilter.image(byFilteringImage: self)
         
-        let sharpenImage = GPUImageSharpenFilter()
-        sharpenImage.sharpness = 4.0
-
-        let filteredImage2 = sharpenImage.image(byFilteringImage: filteredImage)
-        
-        let constrastImage = GPUImageContrastFilter()
-        constrastImage.contrast = 4.0
-        
-        let filteredImage3 = constrastImage.image(byFilteringImage: filteredImage2)
-        
-        let exposure = GPUImageExposureFilter()
-        exposure.exposure = 0.8
-        let filteredImage4 = exposure.image(byFilteringImage: filteredImage3)
+//        let sharpenImage = GPUImageSharpenFilter()
+//        sharpenImage.sharpness = 0.8
+//
+//        let filteredImage2 = sharpenImage.image(byFilteringImage: filteredImage)
+//
+//        let constrastImage = GPUImageContrastFilter()
+//        constrastImage.contrast = 0.8
+//
+//        let filteredImage3 = constrastImage.image(byFilteringImage: filteredImage2)
+//
+//        let exposure = GPUImageExposureFilter()
+//        exposure.exposure = 0.8
+//
+//        let filteredImage4 = exposure.image(byFilteringImage: filteredImage3)
+//
+//        let imageBright = GPUImageBrightnessFilter()
+//        imageBright.brightness = 0.5
+//
+//        let filteredImage5 = exposure.image(byFilteringImage: filteredImage4)
         // 4
-        return filteredImage4
+        return filteredImage
     }
 }
