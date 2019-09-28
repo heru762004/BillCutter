@@ -193,8 +193,6 @@ extension GroupTagViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = "\(groups[indexPath.row].name)"
 //        print("Label TEXT = \(cell.textLabel!.text)")
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-//        cell.detailTextLabel?.text = "\(groups[indexPath.row].spendingAmt)"
-//        cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         return cell
     }
     
