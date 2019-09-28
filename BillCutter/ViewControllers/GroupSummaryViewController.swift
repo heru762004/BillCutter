@@ -83,9 +83,7 @@ class GroupSummaryViewController: ParentViewController {
                     guard let weakSelf = self else { return }
                     self?.dismiss(animated: true, completion: {
                         if statusResponse.success {
-                            self?.dismiss(animated: true, completion: {
-                                self?.loadMembers()
-                            })
+                            self?.loadMembers()
                         } else {
                             weakSelf.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                         }
