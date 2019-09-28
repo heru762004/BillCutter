@@ -19,7 +19,7 @@ class ReceiptApiService {
         self.apiService = ApiService()
     }
     
-    func createReceipt(receiptTitle: String, receiptItem: [ReceiptDetailItem]) -> Observable<AddReceipt> {
+    func createReceipt(receiptTitle: String, receiptItem: [ReceiptDetailItemCreate]) -> Observable<AddReceipt> {
         let path = "/receipt"
         let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
         

@@ -80,9 +80,9 @@ class DetailReceiptViewController: ParentViewController {
         let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
             let receiptTitle = alertController.textFields![0] as UITextField
             if receiptTitle.text != nil && receiptTitle.text!.count > 0 {
-                var listItem: [ReceiptDetailItem] = []
+                var listItem: [ReceiptDetailItemCreate] = []
                 for item in self.items {
-                    let myItem = ReceiptDetailItem()
+                    let myItem = ReceiptDetailItemCreate()
                     myItem.name = item.name
 //                    var twoDecimalPlaces = ""
 //                    if item.price >= 0.0 {

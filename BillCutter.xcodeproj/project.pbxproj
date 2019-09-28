@@ -45,6 +45,7 @@
 		C94369A32312B9B4009F2FB0 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */; };
 		C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F758E230407ED00988758 /* RegisterViewController.swift */; };
 		C97A4DBF23192CB600A3EF4E /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */; };
+		C9808948233EDD3800D8258F /* ReceiptDetailItemCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9808947233EDD3800D8258F /* ReceiptDetailItemCreate.swift */; };
 		C981207B2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981207A2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift */; };
 		C98D6CBA23253A4700BE93F3 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98D6CB923253A4700BE93F3 /* UserNotifications.framework */; };
 		C98D6CBD2327970100BE93F3 /* ReceiptApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D6CBC2327970100BE93F3 /* ReceiptApiService.swift */; };
@@ -151,6 +152,7 @@
 		C94369A22312B9B4009F2FB0 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		C96F758E230407ED00988758 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C97A4DBE23192CB600A3EF4E /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		C9808947233EDD3800D8258F /* ReceiptDetailItemCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailItemCreate.swift; sourceTree = "<group>"; };
 		C981207A2339AB7C0073B1AF /* GroupReceiptHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupReceiptHeaderViewController.swift; sourceTree = "<group>"; };
 		C98D6CB923253A4700BE93F3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		C98D6CBB2325453600BE93F3 /* BillCutter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BillCutter.entitlements; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				C98D6CD1232975EA00BE93F3 /* LoginProfile.swift */,
 				C98D6CE2232B475800BE93F3 /* Dashboard.swift */,
 				C98D6CE6232B7AEC00BE93F3 /* Member.swift */,
+				C9808947233EDD3800D8258F /* ReceiptDetailItemCreate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				C98D6CE3232B475800BE93F3 /* Dashboard.swift in Sources */,
 				C98D6CD42329764100BE93F3 /* GetLoginProfileResponse.swift in Sources */,
 				C98D6CD0232975A100BE93F3 /* GetProfileApiService.swift in Sources */,
+				C9808948233EDD3800D8258F /* ReceiptDetailItemCreate.swift in Sources */,
 				A7E4752923294ED5007144DC /* SettingViewController.swift in Sources */,
 				C96F758F230407ED00988758 /* RegisterViewController.swift in Sources */,
 				C98D6CDF232B462C00BE93F3 /* DashboardApiService.swift in Sources */,

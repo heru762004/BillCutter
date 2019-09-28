@@ -31,7 +31,7 @@ class ReceiptDetailItemResponse: Mappable {
     
     func toReceiptDetailItem() -> ReceiptDetailItem {
         let receiptDetailItem = ReceiptDetailItem()
-        receiptDetailItem.id = id
+//        receiptDetailItem.id = id
         receiptDetailItem.name = name
         receiptDetailItem.amount = amount
         receiptDetailItem.price = price

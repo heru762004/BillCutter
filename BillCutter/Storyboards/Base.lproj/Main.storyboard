@@ -1507,7 +1507,7 @@
                             <constraint firstItem="Q3n-Fb-wb7" firstAttribute="leading" secondItem="NMC-r4-Fa8" secondAttribute="trailing" constant="21" id="ij3-Rh-NET"/>
                             <constraint firstItem="Qjk-Qm-GEK" firstAttribute="leading" secondItem="kco-ki-ljY" secondAttribute="trailing" constant="21" id="lwf-ch-7R6"/>
                             <constraint firstItem="ON3-QQ-1DP" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" constant="66" id="ngT-hA-YGn"/>
-                            <constraint firstItem="Q3n-Fb-wb7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NMC-r4-Fa8" secondAttribute="trailing" symbolic="YES" id="npY-Q6-r0h"/>
+                            <constraint firstItem="Q3n-Fb-wb7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NMC-r4-Fa8" secondAttribute="trailing" constant="8" symbolic="YES" id="npY-Q6-r0h"/>
                             <constraint firstItem="bYP-UP-1my" firstAttribute="top" secondItem="LF7-Uf-tvJ" secondAttribute="bottom" constant="25" id="p43-JA-FHa"/>
                             <constraint firstItem="8aa-f5-dbe" firstAttribute="top" secondItem="KRq-fT-jHO" secondAttribute="bottom" constant="29" id="phZ-xS-L7q"/>
                             <constraint firstItem="kco-ki-ljY" firstAttribute="leading" secondItem="Hpr-cd-Ea6" secondAttribute="leading" constant="66" id="pnF-0G-wVr"/>

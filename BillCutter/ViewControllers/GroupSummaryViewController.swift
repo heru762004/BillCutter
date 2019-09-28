@@ -81,7 +81,7 @@ extension GroupSummaryViewController: UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupSummaryViewCell", for: indexPath)
         cell.textLabel?.text = "\(member.name)"
         cell.textLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        cell.detailTextLabel?.text = "\(member.totalOwe)"
+        cell.detailTextLabel?.text = "$\(member.totalOwe)"
         cell.detailTextLabel?.textColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
         
         if member.statusPayment == "NOT COMPLETED" {
