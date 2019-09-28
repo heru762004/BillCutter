@@ -683,7 +683,7 @@
                 <viewControllerPlaceholder storyboardName="MemberList" id="nRw-pn-St2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fv5-mn-aaf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5253" y="2790"/>
+            <point key="canvasLocation" x="3762" y="2780"/>
         </scene>
         <!--Group Receipt-->
         <scene sceneID="2dJ-6K-MVj">
@@ -747,7 +747,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NfY-Bj-Kt7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ybN-Kj-MED"/>
+                    <navigationItem key="navigationItem" id="Vo0-Ly-MxH">
+                        <barButtonItem key="rightBarButtonItem" title="showGroupSummary" image="notification" id="zE3-BC-E9g">
+                            <connections>
+                                <action selector="viewGroupSummary:" destination="uFr-BN-9vn" id="fSE-V4-Zit"/>
+                                <segue destination="oA8-Hf-2JA" kind="show" identifier="showGroupSummary" id="08e-Lo-nc8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="Z3X-fs-ccf" id="Ukb-jY-Fb7"/>
                         <segue destination="ezH-0B-FsF" kind="show" identifier="openReceiptItemDetail" id="XwZ-cZ-ewZ"/>
@@ -2213,18 +2221,11 @@
                         <viewLayoutGuide key="safeArea" id="slI-um-0LQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="v8g-R8-mXJ">
-                        <rightBarButtonItems>
-                            <barButtonItem title="showGroupMember" image="group" id="ova-ht-qcb">
-                                <connections>
-                                    <action selector="viewGroupMember:" destination="uFr-BN-9vn" id="aRF-ib-xdg"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="showGroupSummary" image="notification" id="3KO-uq-oXY">
-                                <connections>
-                                    <action selector="viewGroupSummary:" destination="uFr-BN-9vn" id="Ig9-nA-jQ0"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="showGroupMember" image="group" id="ova-ht-qcb">
+                            <connections>
+                                <action selector="viewGroupMember:" destination="uFr-BN-9vn" id="aRF-ib-xdg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="InL-q2-SQl" id="yd4-y5-RUY"/>
@@ -2252,5 +2253,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ouj-WU-LcL"/>
+        <segue reference="xPy-tL-ud4"/>
     </inferredMetricsTieBreakers>
 </document>

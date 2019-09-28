@@ -19,7 +19,6 @@ class GroupReceiptHeaderViewController: ParentViewController  {
     override func viewDidLoad() {
         tableView.tableFooterView = UIView()
         navigationController?.navigationBar.tintColor = UIColor(displayP3Red: (254.0 / 255.0), green: (195.0 / 255.0), blue: (9.0 / 255.0), alpha: 1.0)
-        print("GROUP LIST RECEIPT = \(groupReceipt.listReceipt.count)")
         guard groupReceipt.listReceipt.count > 0 else { return }
         tableView.reloadData()
     }
@@ -35,7 +34,7 @@ class GroupReceiptHeaderViewController: ParentViewController  {
         } else if segue.identifier == "showGroupSummary" {
             guard let destinationViewController = segue.destination as? GroupSummaryViewController else { return }
             destinationViewController.groupReceipt = groupReceipt
-            destinationViewController.selectedIdx = selectedIdx
+            destinationViewController.selectedReceiptId = selectedIdx
         }
     }
     

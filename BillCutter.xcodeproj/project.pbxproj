@@ -28,6 +28,7 @@
 		A7E4752923294ED5007144DC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E4752823294ED5007144DC /* SettingViewController.swift */; };
 		A7EAC617233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */; };
 		A7EAC619233E65F900F13EC5 /* TagMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */; };
+		A7EAC61B233EE42600F13EC5 /* ReceiptMemberResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAC61A233EE42600F13EC5 /* ReceiptMemberResponse.swift */; };
 		A7FBB4882327F119000FAE35 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */; };
 		C9168D952310E70D00396BA0 /* ModifyDetailReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D942310E70D00396BA0 /* ModifyDetailReceiptViewController.swift */; };
 		C9168D982310F57200396BA0 /* ItemDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9168D972310F57200396BA0 /* ItemDataController.swift */; };
@@ -131,6 +132,7 @@
 		A7E4752823294ED5007144DC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItemDetailresponse.swift; sourceTree = "<group>"; };
 		A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagMemberResponse.swift; sourceTree = "<group>"; };
+		A7EAC61A233EE42600F13EC5 /* ReceiptMemberResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptMemberResponse.swift; sourceTree = "<group>"; };
 		A7FBB4872327F119000FAE35 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		BB402525E8D482C8238E46CA /* Pods-BillCutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutter/Pods-BillCutter.release.xcconfig"; sourceTree = "<group>"; };
 		C1EB0542A7785D59D0E0BF9C /* Pods-BillCutterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillCutterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BillCutterUITests/Pods-BillCutterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				C98D6CE8232B965800BE93F3 /* CreateGroupResponse.swift */,
 				A7EAC616233E64DE00F13EC5 /* ReceiptItemDetailresponse.swift */,
 				A7EAC618233E65F900F13EC5 /* TagMemberResponse.swift */,
+				A7EAC61A233EE42600F13EC5 /* ReceiptMemberResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98D6CCC2328898100BE93F3 /* AddReceipt.swift in Sources */,
+				A7EAC61B233EE42600F13EC5 /* ReceiptMemberResponse.swift in Sources */,
 				C91F80D12317B15E001199FA /* LoginApiService.swift in Sources */,
 				C98D6CCA232888D900BE93F3 /* AddReceiptResponse.swift in Sources */,
 				C93CDCDA2314FF7700416851 /* UserDefaultService.swift in Sources */,

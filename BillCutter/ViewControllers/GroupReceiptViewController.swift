@@ -29,7 +29,7 @@ class GroupReceiptViewController: ParentViewController  {
         } else if segue.identifier == "showGroupSummary" {
             guard let destinationViewController = segue.destination as? GroupSummaryViewController else { return }
             destinationViewController.groupReceipt = groupReceipt
-            destinationViewController.selectedIdx = selectedIdx
+            destinationViewController.selectedReceiptId = groupReceipt.listReceipt[selectedIdx].id
         } else if segue.identifier == "openReceiptItemDetail" {
             guard let destinationViewController = segue.destination as? ReceiptItemDetailViewController, let receiptItem = sender as? ReceiptItem else { return }
             destinationViewController.paidBy = groupReceipt.listReceipt[selectedIdx].paidBy

@@ -15,4 +15,5 @@ class GroupMember {
     var totalpayment = 0.0
     var totalOwe = 0.0
     var statusPayment = ""
+    var receiptHdrId = 0
 }

@@ -15,7 +15,7 @@ class GroupSummaryViewController: ParentViewController {
     
     var groupReceipt = GroupReceipt()
     var groupMembers = [GroupMember]()
-    var selectedIdx = -1
+    var selectedReceiptId = -1
 
     private let disposeBag = DisposeBag()
 
@@ -32,7 +32,7 @@ class GroupSummaryViewController: ParentViewController {
 //                GroupMemberApiService.shared.getGroupMember(groupId: self.groupReceipt.id, receiptHeaderId: self.groupReceipt.listReceipt[self.selectedIdx].listDetail[0].receiptHdrId)
                 
 //            }
-            GroupMemberApiService.shared.getGroupMember(groupId: self.groupReceipt.id)
+            GroupMemberApiService.shared.getGroupMemberPerReceipt(groupId: self.groupReceipt.id, receiptHeaderId: self.selectedReceiptId)
                 .catchError {  _ in
                     self.dismiss(animated: true, completion: {
                         ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
@@ -69,6 +69,30 @@ class GroupSummaryViewController: ParentViewController {
                 }).disposed(by: self.disposeBag)
         }
     }
+    
+    private func pay(groupMemberId: Int, receiptHdrId: Int) {
+        showLoading {
+            GroupReceiptApiService.shared.payGroup(groupMemberId: groupMemberId, receiptHdrId: receiptHdrId)
+                .catchError {  _ in
+                    self.dismiss(animated: true, completion: {
+                        ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
+                    })
+                    return Observable.empty()
+                }
+                .subscribe(onNext: {[weak self] statusResponse in
+                    guard let weakSelf = self else { return }
+                    self?.dismiss(animated: true, completion: {
+                        if statusResponse.success {
+                            self?.dismiss(animated: true, completion: {
+                                self?.loadMembers()
+                            })
+                        } else {
+                            weakSelf.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
+                        }
+                    })
+                }).disposed(by: self.disposeBag)
+        }
+    }
 }
 
 extension GroupSummaryViewController: UITableViewDataSource, UITableViewDelegate {
@@ -96,17 +120,28 @@ extension GroupSummaryViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard indexPath.row < groupMembers.count else { return nil }
         let member = groupMembers[indexPath.row]
-
-        if member.statusPayment == "NOT COMPLETED" {
-            let action = UIContextualAction(style: .normal, title: title,
+        
+        if member.statusPayment == "NOT PAY" {
+            let actionNotification = UIContextualAction(style: .normal, title: title,
                                             handler: { [weak self] (action, view, completionHandler) in
                                                 self?.sendNotification(memberId: member.id)
                                                 completionHandler(true)
             })
-
-            action.image = UIImage(named: "notification")
-            action.backgroundColor = .green
-            let configuration = UISwipeActionsConfiguration(actions: [action])
+            
+            actionNotification.image = UIImage(named: "notification")
+            actionNotification.backgroundColor = .orange
+            
+            let actionPay = UIContextualAction(style: .normal, title: title,
+                                            handler: { [weak self] (action, view, completionHandler) in
+                                                self?.pay(groupMemberId: member.id, receiptHdrId: member.receiptHdrId)
+                                                completionHandler(true)
+            })
+            
+            actionPay.image = UIImage(named: "pay")
+            actionPay.backgroundColor = .blue
+            
+            
+            let configuration = UISwipeActionsConfiguration(actions: [actionNotification, actionPay])
             return configuration
         }
         return nil

@@ -81,5 +81,22 @@ class GroupReceiptApiService {
         }
     }
     
+    func payGroup(groupMemberId: Int, receiptHdrId: Int) -> Observable<ApiStatusResult> {
+        
+        let path = "/groups/pay"
+        let accessToken = UserDefaultService.shared.retrieveString(key: UserDefaultService.Key.ACCESS_TOKEN)
+        
+        let headers = ["Authorization": "Bearer \(accessToken)", "Content-Type": "application/json"]
+        
+        let params: [String: Any] = ["groupMemberId": "\(groupMemberId)","receiptHdrId": "\(receiptHdrId)"]
+        
+        return apiService.postString(path: path, headers: headers, params: params)
+            .map { (success, jsonString)  in
+                let apiStatusResult = Mapper<ApiStatusResultResponse>().map(JSONString: jsonString)?.toApiStatusResult() ?? ApiStatusResult()
+                apiStatusResult.success = success
+                return apiStatusResult
+        }
+    }
+
     
 }
