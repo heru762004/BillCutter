@@ -15,6 +15,7 @@ class ScaledElementProcessor {
     
     let vision = Vision.vision()
     var textRecognizer: VisionTextRecognizer!
+    var isGrandTotalFound = false
     
     init() {
         textRecognizer = vision.onDeviceTextRecognizer()
@@ -79,7 +80,7 @@ class ScaledElementProcessor {
         var arrayText : [String] = []
         for block in result.blocks {
             for line in block.lines {
-                if line.frame.maxX >= endXMin {
+                if line.frame.minX >= endXMin {
                     var strNum = line.text.replacingOccurrences(of: " ", with: "")
                     strNum = strNum.replacingOccurrences(of: "$", with: "")
                     // in case the receipt has 'S' char
@@ -128,7 +129,10 @@ class ScaledElementProcessor {
             }
         }
         
+        isGrandTotalFound = false
+        
         var idx: Int = 0
+        var idxText: Int = -1
         for text in arrayText {
             var isGst = false
             var isGrandTotal = false
@@ -138,15 +142,70 @@ class ScaledElementProcessor {
             if text.uppercased().contains("GST") {
                 isGst = true
             }
-            if text.lowercased().contains("grand total") || text.lowercased() == "total" {
+            if text.lowercased().contains("grand total") || text.lowercased().contains( "tota") {
                 isGrandTotal = true
             }
             if text.lowercased().contains("rounding") {
                 isRoundingAmount = true
             }
-            let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue, isGst: isGst, isGrandTotal: isGrandTotal, isRoundingAmount: isRoundingAmount)
-            items.append(item)
-            idx+=1
+            
+            if isGrandTotal == true && isGrandTotalFound == false {
+                print("isgrandtotal = \(isGrandTotal)")
+                let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue, isGst: isGst, isGrandTotal: isGrandTotal, isRoundingAmount: isRoundingAmount)
+                items.append(item)
+                if idxText > -1 {
+                    items.remove(at: idxText)
+                }
+                idxText = items.count-1
+                idx+=1
+            } else {
+                if isGrandTotal == true {
+                    isGrandTotalFound = true
+                }
+                
+                if isGrandTotal == false {
+                    //                print("TEXT LOWERCASED = \(text)")
+                    if text.lowercased().contains("tota") {
+                        if isGrandTotalFound == true {
+                            idx+=1
+                        }
+                    } else {
+                        print("text 23 = \(text)")
+                        if text.lowercased().starts(with: "visa") || text.lowercased().starts(with: "master") || text.lowercased().starts(with: "cash") ||
+                            text.lowercased().contains("tota") ||
+                            text.lowercased().starts(with: "pay") ||
+                            text.lowercased().starts(with: "paid") ||
+                            text.lowercased().starts(with: "rebate") ||
+                            text.lowercased().starts(with: "amex") ||
+                            text.lowercased().starts(with: "change") ||
+                            text.lowercased().contains("inclu") ||
+                            text.lowercased().contains("diners") ||
+                            text.lowercased().contains("nets") ||
+                            text.lowercased().contains("pts") ||
+                            text.lowercased().contains("points") ||
+                            text.lowercased().contains("vi8a") ||
+                            text.lowercased().contains("ma8ter") ||
+                            text.lowercased().contains("chainge") ||
+                            text.lowercased().starts(with: "subttl ") ||
+                            text.lowercased().contains("credit") ||
+                            text.lowercased().contains("xxxxx") {//||
+                            //                    (arrayMoney[idx] as NSString).floatValue == 0.0 {
+                            idx+=1
+                        } else {
+                            //                    print("(arrayMoney[idx]).floatValue = \((arrayMoney[idx] as NSString).floatValue)")
+                            let moneyFloat = (arrayMoney[idx] as NSString).floatValue
+                            print("moneyFloat = \(moneyFloat)")
+                            if moneyFloat > 0.0 || moneyFloat < 0.0 {
+                                let item = Item(name: text, price: (arrayMoney[idx] as NSString).floatValue, isGst: isGst, isGrandTotal: isGrandTotal, isRoundingAmount: isRoundingAmount)
+                                items.append(item)
+                            }
+                            idx+=1
+                        }
+                    }
+                    
+                }
+            }
+            
         }
         
     }
