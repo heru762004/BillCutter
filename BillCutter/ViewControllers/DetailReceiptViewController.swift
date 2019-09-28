@@ -16,6 +16,7 @@ class DetailReceiptViewController: ParentViewController {
     var selectedIdx = -1
     var typeEditor = 0
     var receiptId = ""
+    var grandTotal = 0.0
     
     private let disposeBag = DisposeBag()
     
@@ -82,23 +83,21 @@ class DetailReceiptViewController: ParentViewController {
             if receiptTitle.text != nil && receiptTitle.text!.count > 0 {
                 var listItem: [ReceiptDetailItemCreate] = []
                 for item in self.items {
-                    let myItem = ReceiptDetailItemCreate()
-                    myItem.name = item.name
-//                    var twoDecimalPlaces = ""
-//                    if item.price >= 0.0 {
-//                        twoDecimalPlaces = String(format: "%.2f", item.price)
-//                    } else {
-//                        twoDecimalPlaces = String(format: "%.2f", item.price)
-//                        twoDecimalPlaces = twoDecimalPlaces.replacingOccurrences(of: "-", with: "")
-//                        twoDecimalPlaces = String(format: "-%@", twoDecimalPlaces)
-//                    }
-                    myItem.price = Double(item.price)
-                    myItem.amount = 1
-                    myItem.total = Double(item.price)
-                    listItem.append(myItem)
+                    if item.isGrandTotal {
+                        self.grandTotal = Double(item.price)
+                    } else {
+                        if Double(item.price) >= 0.0 {
+                            let myItem = ReceiptDetailItemCreate()
+                            myItem.name = item.name
+                            myItem.price = Double(item.price)
+                            myItem.amount = 1
+                            myItem.total = Double(item.price)
+                            listItem.append(myItem)
+                        }
+                    }
                 }
                 self.showLoading {
-                    ReceiptApiService.shared.createReceipt(receiptTitle: receiptTitle.text!, receiptItem: listItem)
+                    ReceiptApiService.shared.createReceipt(receiptTitle: receiptTitle.text!, receiptItem: listItem, grandTotal: self.grandTotal)
                         .catchError {  _ in
                             self.dismiss(animated: true, completion: {
                                 ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
