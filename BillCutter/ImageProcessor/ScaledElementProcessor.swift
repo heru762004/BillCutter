@@ -186,7 +186,7 @@ class ScaledElementProcessor {
                             text.lowercased().contains("vi8a") ||
                             text.lowercased().contains("ma8ter") ||
                             text.lowercased().contains("chainge") ||
-                            text.lowercased().starts(with: "subttl ") ||
+                            text.lowercased().contains("subttl") ||
                             text.lowercased().contains("credit") ||
                             text.lowercased().contains("xxxxx") {//||
                             //                    (arrayMoney[idx] as NSString).floatValue == 0.0 {

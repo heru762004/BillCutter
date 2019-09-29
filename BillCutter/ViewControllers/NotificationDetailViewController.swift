@@ -46,6 +46,7 @@ class NotificationDetailViewController: UIViewController {
     @IBAction func settlePayment(_ sender: Any) {
 //        let url = URL(string: "dbspaylah://")
         let url = URL(string: "https://www.dbs.com.sg/personal/mobile/paylink/index.html?tranRef=a8tJ0eacd5")
+//        let url = URL(string: "http://www.dbs.com.sg/personal/mobile/paylink/index.html?tranRef=ZNMUUzmkTw")
         UIApplication.shared.open(url!, options: [:]) { (success) in
             print(success)
         }
