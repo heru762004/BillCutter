@@ -48,9 +48,9 @@ class GroupSummaryViewController: ParentViewController {
         }
     }
     
-    private func sendNotification(memberId: Int) {
+    private func sendNotification(receiptHdrId: Int, memberId: Int) {
         showLoading {
-            NotificationApiService.shared.sendNotification(groupMemberId: "\(memberId)", receiptId: "\(self.groupReceipt.id)")
+            NotificationApiService.shared.sendNotification(groupMemberId: "\(memberId)", receiptId: "\(receiptHdrId)")
                 .catchError {  _ in
                     self.dismiss(animated: true, completion: {
                         ViewUtil.showAlert(controller: self, message: "Error! Please check your internet connection.")
@@ -84,7 +84,7 @@ class GroupSummaryViewController: ParentViewController {
                     self?.dismiss(animated: true, completion: {
                         if statusResponse.success {
                             self?.loadMembers()
-                        } else {
+                            } else {
                             weakSelf.showErrorMessage(errorCode: "", errorMessage: statusResponse.message)
                         }
                     })
@@ -122,7 +122,7 @@ extension GroupSummaryViewController: UITableViewDataSource, UITableViewDelegate
         if member.statusPayment == "NOT PAY" {
             let actionNotification = UIContextualAction(style: .normal, title: title,
                                             handler: { [weak self] (action, view, completionHandler) in
-                                                self?.sendNotification(memberId: member.id)
+                                                self?.sendNotification(receiptHdrId: member.receiptHdrId, memberId: member.id)
                                                 completionHandler(true)
             })
             
