@@ -19,6 +19,10 @@ class ScaledElementProcessor {
     
     init() {
         textRecognizer = vision.onDeviceTextRecognizer()
+//        textRecognizer = vision.cloudTextRecognizer()
+//        let options = VisionCloudTextRecognizerOptions()
+//        options.languageHints = ["en","hi"]
+//        textRecognizer = vision.cloudTextRecognizer(options: options)
     }
     
     func process(in image: UIImage,
@@ -28,6 +32,7 @@ class ScaledElementProcessor {
         // 3
         textRecognizer.process(visionImage) { result, error in
             // 4
+//            print("ERROR = \(error)")
             guard
                 error == nil,
                 let result = result,
@@ -51,7 +56,7 @@ class ScaledElementProcessor {
         // 1. define farthest right x coordinate
         var endx: CGFloat = 0.0
         var endXMin: CGFloat = 0.0
-        let thresholdXPct: CGFloat = 20.0
+        let thresholdXPct: CGFloat = 80.0
         let thresholdYPct: CGFloat = 40.0
         for block in result.blocks {
             print("MAX X = \(block.frame.maxX)")
@@ -80,6 +85,7 @@ class ScaledElementProcessor {
         var arrayText : [String] = []
         for block in result.blocks {
             for line in block.lines {
+                print("line text \(line.text) frame = \(line.frame.minX) | \(endXMin)")
                 if line.frame.minX >= endXMin {
                     var strNum = line.text.replacingOccurrences(of: " ", with: "")
                     strNum = strNum.replacingOccurrences(of: "$", with: "")
@@ -188,6 +194,7 @@ class ScaledElementProcessor {
                             text.lowercased().contains("chainge") ||
                             text.lowercased().contains("subttl") ||
                             text.lowercased().contains("credit") ||
+                            text.lowercased().contains("mana") ||
                             text.lowercased().contains("xxxxx") {//||
                             //                    (arrayMoney[idx] as NSString).floatValue == 0.0 {
                             idx+=1
